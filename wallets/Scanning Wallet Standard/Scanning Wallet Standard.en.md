@@ -8,11 +8,11 @@ tags = [
 bounty = 5
 date = "2018-01-03"
 categories = [
-    "Wallets",
+    "Scanning Wallet",
 ]
 +++
 
-When scanning a wallet to see how much coins it has within its balance, there exists an standard scanning technique used by wallets (cryptocurrency wallets), it’s a little bit slower but it has to take place to get the final balance. As you may know a wallet is a container of addresses, to get your wallet’s balance you have to find each address, one by one within the blockchain and sum the satoshis' amount.
+When scanning a wallet to see how much coins it has within its balance, there exists an standard scanning technique used by wallets (cryptocurrency wallets), it's a little bit slower but it has to take place to get the final balance. As you may know a wallet is a container of addresses, to get your wallet's balance you have to find each address, one by one within the blockchain and sum the satoshis' amount.
 
 Each address within the wallet has a **minimun scan block**, **maximun scan block** and **middle scan block**.
 
@@ -24,7 +24,7 @@ Each address within the wallet has a **minimun scan block**, **maximun scan bloc
 
 # How it works?
 
-This process will take 3 simple and easly to understand steps.
+This process will take 3 simple and easily to understand steps.
 
 ### Step 1.
 Scan the All blockchain by wallet to detect where deposits take place.

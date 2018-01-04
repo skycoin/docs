@@ -13,9 +13,9 @@ categories = [
 ]
 +++
 
-Before going forward i do must say that bitcoin and blockchain are two diffrent technologies, bitcoin is a digital coin or cryptocurrency and a blockchain is a digital, distributed and decentralised ledger or database, that records an incrising number of transaction of ownerships. Bitcoin, ethereum and others cryptocurrencies use the blockchain as its storage. What does decentrilised database mean? Slow down, first you need to understand what a centralised database is.
+Before going forward i do must say that bitcoin and blockchain are two diffrent technologies, bitcoin is a digital coin or cryptocurrency and a blockchain is a digital, distributed and decentralized ledger or database, that records an incrising number of transaction of ownerships. Bitcoin, ethereum and others cryptocurrencies use the blockchain as its storage. What does decentralized database mean? Slow down, first you need to understand what a centralized database is.
 
-In this world that we live everyday, there exists organizations, startups and goverments, each of them control a big amount of data stored at a single specific place in the planet and they use it to give us a service, by example: Google, facebook, Airbnb, Uber, BBVA, Amazon, United State of America goverment and others, only them can read, add, update and delete their data from their storage also called centrilised database, but what happen if someone try to get into their databases, that  person could manipulate information, steal money and even fake an user identity to do criminal stuff, hence, those companies, startups and organizations spend a lot of money to prevent that situation.
+In this world that we live everyday, there exists organizations, startups and governments, each of them control a big amount of data stored at a single specific place in the planet and they use it to give us a service, by example: Google, facebook, Airbnb, Uber, BBVA, Amazon, United State of America government and others, only them can read, add, update and delete their data from their storage also called centralized database, but what happen if someone try to get into their databases, that  person could manipulate information, steal money and even fake an user identity to do criminal stuff, hence, those companies, startups and organizations spend a lot of money to prevent that situation.
 
 The blockchain does not belong to anyone and it is not placed into a single place which mean could be around the world within a bunch of computers or nodes connected with each one another, creating a network.
 
@@ -29,7 +29,7 @@ Public blockchain means, that anyone can read and update the chain and anyone at
 
 By permissioned blockchain i mean that for anyone to read, add data or even put a node online, need special permissions, but where do you get this permissions?, by talking to its owner. By example, Ripple runs a permissioned blockchain. If you want to read transactions or join the network, first you need to talk to Ripple startup.
 
-Very cool haa!, but how is structured this blockchain? transactions or files are added into blocks, each one of them connected with one another with cryptographic encryption forming a linked-list or chain of blocks using complex mathematical algorithms, how is that? each block is connected with the last one created by a hash (SHA256) reference and so on until you reach the first created block also called genesis block, as follow.
+Very cool haa!, but how is structured this blockchain? transactions or files are added into blocks, each one of them connected with one another with cryptography encryption forming a linked-list or chain of blocks using complex mathematical algorithms, how is that? each block is connected with the last one created by a hash (SHA256) reference and so on until you reach the first created block also called genesis block, as follow.
 
 ![blockchain-data-structure linked-list.jpg](blockchain-data-structure-linked-list.jpg)
 
