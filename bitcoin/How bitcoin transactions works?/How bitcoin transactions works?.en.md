@@ -1,4 +1,15 @@
-# How Bitcoin transaction works?
++++
+title = "How Bitcoin transaction works?"
+tags = [
+    "Bitcoin",
+    "Bitcoin transactions"
+]
+bounty = 5
+date = "2018-01-03"
+categories = [
+    "Bitcoin transactions",
+]
++++
 
 `Party A wants to buy an asset and party B, only accepts bitcoins.`
 
