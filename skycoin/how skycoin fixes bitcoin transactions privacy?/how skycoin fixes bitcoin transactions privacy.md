@@ -1,16 +1,4 @@
-+++
-title = "how skycoin fixes bitcoin transactions privacy?"
-tags = [
-    "skycoin",
-    "Skycoin Privacy",
-    "Privacy"
-]
-bounty = 5
-date = "2018-01-03"
-categories = [
-    "Skycoin",
-]
-+++
+# How skycoin fixes bitcoin transactions privacy?
 
 As you may know, Bitcoin transactions are not totally anonymous, actually are pseudo-anonymous, users should implement techniques aside to improve their transaction privacy to avoid some else to trace, associate their public addresses to their identity or even stole their coins, you may say ok that's not a big deal because exists techniques that improve privacy, but there's an issue there, why? well, not all bitcoin's users know or research about bitcoins, some of them are just normal persons that hear about the cryptocurrency and want to participate, because they think that this new technology shall allow them to raise money anonymously without paying high fees to third-party, hence, those users can not implement any technique for their ignorance. Only dedicated researchers or developer can and will try to implement those techniques or even invent ones.
 

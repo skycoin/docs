@@ -1,17 +1,4 @@
-+++
-title = "What is Blockchain?"
-tags = [
-    "Blockchain",
-    "Blockchains",
-    "Blockchain Header",
-    "Blockchain Data Structure"
-]
-bounty = 5
-date = "2018-01-03"
-categories = [
-    "What is Blockchain",
-]
-+++
+# What is Blockchain?
 
 Before going forward i do must say that bitcoin and blockchain are two diffrent technologies, bitcoin is a digital coin or cryptocurrency and a blockchain is a digital, distributed and decentralized ledger or database, that records an incrising number of transaction of ownerships. Bitcoin, ethereum and others cryptocurrencies use the blockchain as its storage. What does decentralized database mean? Slow down, first you need to understand what a centralized database is.
 

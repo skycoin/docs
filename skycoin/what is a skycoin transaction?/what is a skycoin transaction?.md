@@ -1,16 +1,4 @@
-+++
-title = "what is a skycoin transaction?"
-tags = [
-    "Skycoin",
-    "Transactions",
-    "Skycoin Transactions"
-]
-bounty = 5
-date = "2018-01-03"
-categories = [
-    "Skycoin",
-]
-+++
+# What is a skycoin transaction?
 
 To buy assets with skycoin or to exchange the coin by any another coin, by example exchanges Bitcoins per Skycoin, a skycoin client must create a skycoin transaction that is serialized with CXO immutable object system.
 

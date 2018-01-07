@@ -1,16 +1,4 @@
-+++
-title = "Scanning Wallet Standard"
-tags = [
-    "Wallet",
-    "Wallets",
-    "Scanning Wallets"
-]
-bounty = 5
-date = "2018-01-03"
-categories = [
-    "Scanning Wallet",
-]
-+++
+# Scanning Wallet Standard
 
 When scanning a wallet to see how much coins it has within its balance, there exists an standard scanning technique used by wallets (cryptocurrency wallets), it's a little bit slower but it has to take place to get the final balance. As you may know a wallet is a container of addresses, to get your wallet's balance you have to find each address, one by one within the blockchain and sum the coins' amount.
 
@@ -22,7 +10,7 @@ Each address within the wallet has a **minimun scan block**, **maximun scan bloc
 
 **middle scan block**: used for keeping check point. It helps scan in both side simultaneously. Middle increase only if minimun reach middle.
 
-# How it works?
+## How it works?
 
 This process will take 3 simple and easily to understand steps.
 

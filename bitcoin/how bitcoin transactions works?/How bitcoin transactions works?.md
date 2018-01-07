@@ -1,14 +1,4 @@
-+++
-title = "How Bitcoin transaction works?"
-tags = [
-    "Bitcoin",
-    "Bitcoin transactions"
-]
-date = "2018-01-03"
-categories = [
-    "Bitcoin transactions",
-]
-+++
+# How Bitcoin transaction works?
 
 `Party A wants to buy an asset and party B, only accepts bitcoins.`
 

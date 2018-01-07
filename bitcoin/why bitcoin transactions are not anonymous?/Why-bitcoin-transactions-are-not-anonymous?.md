@@ -1,16 +1,4 @@
-+++
-title = "Why bitcoin transactions are not anonymous?"
-tags = [
-    "Bitcoin",
-    "Transactions",
-    "anonymous"
-]
-bounty = 5
-date = "2018-01-03"
-categories = [
-    "why bitcoin transactions are not anonymous?",
-]
-+++
+# Why bitcoin transactions are not anonymous?
 
 Each bitcoin transaction is recorded into the blockchain, which means that anyone can trace each transaction's address until the point to see the same address being sending or receiving bitcoins more than once. Is this bad? Yeah!, would you like that someone trace your transactions or even calculate your balance?, of course not, nobody wants that. The people want to keep their privacy over their money.
 
