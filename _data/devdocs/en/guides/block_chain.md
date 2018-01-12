@@ -183,7 +183,7 @@ spend at least one [coin hour][] to be valid, and half (rounded up) of the
 
 {% autocrossref %}
 
-TODO: Document
+TODO: Document block height and forking
 
 {% endautocrossref %}
 
@@ -257,7 +257,7 @@ otherwise, a valid block with the duplicates eliminated could have the same merk
 
 {% autocrossref %}
 
-TODO: Document
+TODO: Document changes in consensus rules
 
 {% endautocrossref %}
 
@@ -266,7 +266,7 @@ TODO: Document
 
 {% autocrossref %}
 
-TODO: Document
+TODO: Document fork detection
 
 {% endautocrossref %}
 

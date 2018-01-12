@@ -19,6 +19,8 @@ This is a script implementing the following workflow:
       import it from there and tag it as TODO: REVIEW
     - ... else create a new entry in _includes/references.md
       and tag it as TODO: EMPTY
+    - If an entry is not referenced anywhere in the docs then
+      tag it as TODO: NOTUSED
 
 This is necessary to limit references to the scope of Skycoin
 boundaries , keep docs in sync, and discover dangling references
@@ -81,7 +83,7 @@ for path in paths:
                     key = l[1:bracket_index]
                     # TODO : Log key value found in DEBUG mode
                     text = l[bracket_index + 2:].strip()
-                    refs[key] = (path, lineno, text)
+                    refs[key] = [path, lineno, text, 0]
                 # TODO : Log number of key / values retrieved in DEBUG mode
         except IOError:
             sys.exit('Error opening ' + filepath)
@@ -101,11 +103,12 @@ for dirpath, subdirs, subfiles, dir_fd in os.fwalk(skc_base_path, '_data'):
                     if key.startswith('/'):
                         pass
                     elif key in skc_refs:
-                        continue
+                        # Increment reference count
+                        skc_refs[key][3] += 1
                     else:
-                        source, lineno, text = btc_refs.get(key) or (None, None, None)
-                        skc_refs[key] = (source, None, 'REVIEW : ' + text \
-                                if key in btc_refs else 'TODO: EMPTY')
+                        source, lineno, text = (btc_refs.get(key) or (None, None, None))[:3]
+                        skc_refs[key] = [source, None, 'REVIEW : ' + text \
+                                if key in btc_refs else 'TODO: EMPTY', 1]
 
 print("""
 {% comment %}
@@ -116,5 +119,8 @@ http://opensource.org/licenses/MIT.
 """)
 
 for key in sorted(skc_refs.keys()):
-    print('[{key}]: {value}'.format(key=key, value=skc_refs[key][2]))
+    value = skc_refs[key]
+    if value[3] == 0:
+        value[2] = 'TODO: NOUSE ' + value[2]
+    print('[{key}]: {value}'.format(key=key, value=value[2]))
 
