@@ -29,7 +29,7 @@ The figure above shows the elements of a Skycoin transacion. Computationally spe
 
 **Inputs**: A list of references to unspent transaction outputs. Unlike other cryptocurrencies, such as Bitcoin, Skycoin unspent transaction outputs (UX) and Skycoin transactions (TX) are separated in the blockchain protocol, allowing for lighter transactions, thus reducing the broadcasting costs across the network.
 
-***Outputs**: A list of outputs created by the client, that will be recorded in the blockchain if transactions are confirmed. An output consists of a data structure representing an UTXT, which is composed by a Skycoin address to be sent to, the amount in Skycoin to be sent, and the amount of Coin Hours to be sent, and the SHA256 hash of the previous fields.
+**Outputs**: A list of outputs created by the client, that will be recorded in the blockchain if transactions are confirmed. An output consists of a data structure representing an UTXT, which is composed by a Skycoin address to be sent to, the amount in Skycoin to be sent, and the amount of Coin Hours to be sent, and the SHA256 hash of the previous fields.
 
 ### Transacion privacy
 Bitcoin transactions are not fully anonymous, but pseudo-anonymous. Yet, several researches <!-- include references to papers --> have shown how can public addresses be associated to users' identities. Therefore, users need to implement additional techniques to enhance their transaction privacy. Nevertheless, the integration of privacy schemes in Bitcoin is not seamless, an requires a certain level of expertise and knowledge level, which makes highly unlikely their mainstream adoption.
