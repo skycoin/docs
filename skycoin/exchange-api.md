@@ -10,6 +10,8 @@ Tradebot provides an internal Go API, a REST API, and a command line interface.
 
 Currently tradebot supports the `cryptopia` and `c2cx` exchanges. Additional exchanges can be implemented in Go.
 
+You can view [tradebot's source code](https://github.com/skycoin/exchange-api) via github.
+
 ## Terminology
 
 briancaine note:
