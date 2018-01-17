@@ -92,13 +92,17 @@ TODO : Message hex dump
 
 {% endautocrossref %}
 
-#### Block
+#### Give Blocks
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
+The `GIVB` message transmits one or many serialized block in the format
+described in the [serialized blocks section][section serialized blocks].
+See that section for an example hexdump.  It can be sent for the following
+different reasons:
 
-TODO: Finish
+TODO: Reasons for sending GIVB messages
 
 {% endautocrossref %}
 
@@ -107,8 +111,6 @@ TODO: Finish
 
 {% autocrossref %}
 
-
-TODO: Finish
 
 {% endautocrossref %}
 
