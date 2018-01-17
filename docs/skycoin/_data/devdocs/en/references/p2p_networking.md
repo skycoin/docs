@@ -30,7 +30,6 @@ The following constants and defaults are taken from Skycoin Core's
 | Default Port       | 6000         | 16000                             | N/A
 | Web Interface Port | 6420         | 16420                             | N/A
 | Default Port       | 6430         | 16430                             | N/A
-| Genesis Signature  | ieb10468d10054d15f2b6f8946cd46797779aa20a7617ceb4be884189f219bc9a164e56a5b9f7bec392a804ff3740210348d73db77a37adb542a8e08d429ac92700 | 07f46ce7502147a97f2fb32c7c1e66638af851c1cb532d893f1f360bb4ab1ccf0656f2f358695e8cb752e05080af69c8f44b0d72610bd11e3fb028ecdcfed2ea01 | N/A
 | Genesis Address    | 2jBbGxZRGoQG1mqhPBnXnLTxK6oxsTf8os6 | F5k1VyFHZGJgQADWpmMEW8Se2HNidFm9k3 | N/A
 | Genesis Timestamp  | 1426562704   | 1505801448                        | N/A
 
