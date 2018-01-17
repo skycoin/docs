@@ -108,7 +108,7 @@ different reasons:
 
 {% endautocrossref %}
 
-#### GetBlocks
+#### Get Blocks
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
@@ -117,6 +117,8 @@ The `GETB` message requests a `GIVB` message that provides block
 header hashes starting from a particular point in the block chain. It
 allows a peer which has been disconnected or started for the first time
 to get the data it needs to request the blocks it hasn't seen.
+A `GETB` message is exchanged between peers as a result of a successful
+[introduction handshake][].
 
 {% comment %}
 
@@ -127,7 +129,7 @@ TODO: Bitcoin's `getblocks` message allows for including header hashes. Useful f
 | Bytes    | Name                 | Data Type        | Description
 |----------|----------------------|------------------|----------------
 | 8        | last block           | uint64           | Instruct peer to send blocks with [height][block height] higher than value specified in this field.
-| 8        | requested blocks     | uint64           | Expect at most this number of blocks in subsequent [`GIVB` message][give blocks message].
+| 8        | requested blocks     | uint64           | Expect at most this number of blocks in subsequent [GIVB message][].
 
 The following annotated hexdump shows a `GETB` message.  (The
 message header has been omitted.)
@@ -165,14 +167,60 @@ TODO: Equivalent in Skycoin?
 
 {% endautocrossref %}
 
-#### Inv
+#### Announce Blocks
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
-TODO: Equivalent in Skycoin?
+The `ANNB` message transmits the [block height][] of the [head block][]
+known to the transmitting peer.  It can be sent unsolicited to
+announce new blocks, or it can be sent as a follow-up of
+receiving `GIVB` message so as to notify peers of
+recently discovered blocks.
+
+The receiving peer can compare [block height][] from an `ANNB` message
+against the highest height value of the blocks it has already seen,
+and then use a follow-up `GETB` message to request unseen objects.
+
+| Bytes    | Name      | Data Type             | Description
+|----------|-----------|-----------------------|-----------------
+| 8        | max bkseq | uint64                | The highest [BkSeq][block sequence number] known to the transmitting peer
+
+The following annotated hexdump shows an `ANNB` message with two
+inventory entries.  (The message header has been omitted.)
+
+{% highlight text %}
+TODO: Message hex dump
+{% endhighlight %}
 
 {% endautocrossref %}
+
+#### Announce Transactions
+{% include helpers/subhead-links.md %}
+
+The `ANNT` message transmits one or more [TXID hashes][/en/glossary/txid]{:#term-txid}{:.term}
+of transaction objects known to the transmitting peer. It can be sent
+unsolicited to announce new transactions or as a side-effect of
+[receiving transactions][givt message] so as to forward recently discovered
+TXIDs to another peer.
+Multiple `ANNT` messages may be exchanged between peers following
+a successful [introduction handshake][].
+
+The receiving peer can compare the TXIDs from an `ANNT` message
+against the unconfirmed transactions it has in its memory pool, and
+then use a follow-up [GETT message][] to request unseen transactions.
+
+| Bytes    | Name      | Data Type             | Description
+|----------|-----------|-----------------------|-----------------
+| *Varies* | txns      | `cipher.SHA256`       | One or more TXIDs up to a maximum of 16 entries.
+
+The following annotated hexdump shows an `ANNT` message with two
+inventory entries.  (The message header has been omitted.)
+
+{% highlight text %}
+Message hex dump
+{% endhighlight %}
+
 
 #### MemPool
 {% include helpers/subhead-links.md %}
