@@ -411,3 +411,23 @@ TODO: Finish
 TODO: Finish
 
 {% endautocrossref %}
+
+
+#### Final remarks about the P2P network
+{% include helpers/subhead-links.md %}
+
+{% autocrossref %}
+
+Skycoin is a next generation blockchain ledger technology. Therefore
+some of their innovatve concepts do not map one-to-one to similar
+elements present in other crypto-currencies. Some clarifications and
+comparisons will follow.
+
+Skycoin [gnet][] does not implement [inventories][/en/glossary/inventory]{:#term-inventory}{:.term}.
+Hence there is no equivalent to [Bitcoin `inv` message][bitcoin inv message].
+The closest match in Skycoin is [ANNT message][], but its scope is
+limited to transactions.
+
+{% endautocrossref %}
+
+
