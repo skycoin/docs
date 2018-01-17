@@ -122,6 +122,8 @@ to get the data it needs to request the blocks it hasn't seen.
 
 TODO: Bitcoin's `getblocks` message allows for including header hashes. Useful for determining the starting point of the fork and sync subsequent header hashes . What about Skycoin? No data for this in message struct
 
+{% endcomment %}
+
 | Bytes    | Name                 | Data Type        | Description
 |----------|----------------------|------------------|----------------
 | 8        | last block           | uint64           | Instruct peer to send blocks with [height][block height] higher than value specified in this field.
