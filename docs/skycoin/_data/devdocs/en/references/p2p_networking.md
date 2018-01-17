@@ -102,7 +102,9 @@ described in the [serialized blocks section][section serialized blocks].
 See that section for an example hexdump.  It can be sent for the following
 different reasons:
 
-TODO: Reasons for sending GIVB messages
+- TODO: Broadcast block . See CreateAndPublishBlock -> broadcastBlock
+- TODO: Response to GETB message . See GetBlocksMessage.Process
+- TODO: Other reasons for sending GIVB messages
 
 {% endautocrossref %}
 
@@ -111,6 +113,26 @@ TODO: Reasons for sending GIVB messages
 
 {% autocrossref %}
 
+The `GETB` message requests a `GIVB` message that provides block
+header hashes starting from a particular point in the block chain. It
+allows a peer which has been disconnected or started for the first time
+to get the data it needs to request the blocks it hasn't seen.
+
+{% comment %}
+
+TODO: Bitcoin's `getblocks` message allows for including header hashes. Useful for determining the starting point of the fork and sync subsequent header hashes . What about Skycoin? No data for this in message struct
+
+| Bytes    | Name                 | Data Type        | Description
+|----------|----------------------|------------------|----------------
+| 8        | last block           | uint64           | Instruct peer to send blocks with [height][block height] higher than value specified in this field.
+| 8        | requested blocks     | uint64           | Expect at most this number of blocks in subsequent [`GIVB` message][give blocks message].
+
+The following annotated hexdump shows a `GETB` message.  (The
+message header has been omitted.)
+
+{% highlight text %}
+TODO : Message hex dump
+{% endhighlight %}
 
 {% endautocrossref %}
 
@@ -119,8 +141,7 @@ TODO: Reasons for sending GIVB messages
 
 {% autocrossref %}
 
-
-TODO: Finish
+TODO: Equivalent in Skycoin?
 
 {% endautocrossref %}
 
@@ -129,8 +150,7 @@ TODO: Finish
 
 {% autocrossref %}
 
-
-TODO: Finish
+TODO: Equivalent in Skycoin?
 
 {% endautocrossref %}
 
@@ -139,8 +159,7 @@ TODO: Finish
 
 {% autocrossref %}
 
-
-TODO: Finish
+TODO: Equivalent in Skycoin?
 
 {% endautocrossref %}
 
@@ -149,8 +168,7 @@ TODO: Finish
 
 {% autocrossref %}
 
-
-TODO: Finish
+TODO: Equivalent in Skycoin?
 
 {% endautocrossref %}
 
@@ -159,8 +177,7 @@ TODO: Finish
 
 {% autocrossref %}
 
-
-TODO: Finish
+TODO: Equivalent in Skycoin?
 
 {% endautocrossref %}
 
