@@ -49,8 +49,15 @@ for the different networks.
 
 {% autocrossref %}
 
+The table below lists some notable versions of the P2P network protocol,
+with the most recent versions listed first. (If you know of a protocol
+version that implemented a major change but which is not listed here,
+please [open an issue][docs issue].)
 
-TODO: Finish
+As of Skycoin Core 0.21.1, the most recent protocol version is `TODO`.
+
+| Version | Initial Release                    | Major Changes
+|---------|------------------------------------|--------------
 
 {% endautocrossref %}
 
@@ -59,8 +66,21 @@ TODO: Finish
 
 {% autocrossref %}
 
+All messages in the network protocol use the same container format,
+which provides a required multi-field message header and an optional payload.
+The message header format is:
 
-TODO: Finish
+| Bytes | Name         | Data Type | Description
+|-------|--------------|-----------|-------------
+| 4     | payload size | uint32    | Number of bytes in payload.  The current maximum number of bytes ([`MaxMessageLength`][maximum message length]) allowed in the payload by the [Skycoin network][gnet] is 256 KiB---messages with a payload size larger than this will be dropped or rejected and sender disconnected.
+| 4    | prefix        | char[4]   | ASCII string which identifies what message type is contained in the payload.  Followed by nulls (0x00) to pad out byte count; for example: `MSG\0`.
+
+The following example is an annotated hex dump of a mainnet message
+header from a `verack` message which has no payload.
+
+{% highlight text %}
+TODO : Message hex dump
+{% endhighlight %}
 
 {% endautocrossref %}
 
@@ -69,8 +89,6 @@ TODO: Finish
 
 {% autocrossref %}
 
-
-TODO: Finish
 
 {% endautocrossref %}
 
