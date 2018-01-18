@@ -371,8 +371,13 @@ TODO: Finish
 
 {% autocrossref %}
 
+The `PING` message helps confirm that the receiving peer is still
+connected. If a TCP/IP error is encountered when sending the `PING`
+message (such as a connection timeout), the transmitting node can assume
+that the receiving node is disconnected. The response to a `PING`
+message is the `PONG` message.
 
-TODO: Finish
+The `PING` message has no payload.
 
 {% endautocrossref %}
 
@@ -381,8 +386,20 @@ TODO: Finish
 
 {% autocrossref %}
 
+The `PONG` message replies to a `PING` message, proving to the pinging
+node that the ponging node is still alive. Skycoin Core will, by
+default, disconnect from any clients which have not responded to a
+`PING` message within 20 minutes.
 
-TODO: Finish
+{% comment %}
+TODO: Skycoin PING timeout
+{% endcomment %}
+
+To allow nodes to keep track of latency, the `PONG` message sends back
+the same nonce received in the `PING` message it is replying to.
+
+The format of the `PONG` message is identical to the `PING` message;
+only the message header differs.
 
 {% endautocrossref %}
 
