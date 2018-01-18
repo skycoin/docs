@@ -72,7 +72,7 @@ The message header format is:
 
 | Bytes | Name         | Data Type | Description
 |-------|--------------|-----------|-------------
-| 4     | payload size | uint32    | Number of bytes in payload.  The current maximum number of bytes ([`MaxMessageLength`][maximum message length]) allowed in the payload by the [Skycoin network][gnet] is 256 KiB---messages with a payload size larger than this will be dropped or rejected and sender disconnected.
+| 4     | payload size | uint32    | Number of bytes in payload.  The current maximum number of bytes ([`MaxMessageLength`][maximum message length]) allowed in the payload by the [Skycoin network][network] is 256 KiB---messages with a payload size larger than this will be dropped or rejected and sender disconnected.
 | 4    | prefix        | char[4]   | ASCII string which identifies what message type is contained in the payload.  Followed by nulls (0x00) to pad out byte count; for example: `MSG\0`.
 
 The following example is an annotated hex dump of a mainnet message
@@ -438,7 +438,7 @@ some of their innovatve concepts do not map one-to-one to similar
 elements present in other crypto-currencies. Some clarifications and
 comparisons will follow.
 
-Skycoin [gnet][] does not implement [inventories][/en/glossary/inventory]{:#term-inventory}{:.term}.
+Skycoin [gnet][network] does not implement [inventories][/en/glossary/inventory]{:#term-inventory}{:.term}.
 Hence there is no equivalent to [Bitcoin `inv` message][bitcoin inv message].
 The closest match in Skycoin is [ANNT message][], but its scope is
 limited to transactions. [Bitcoin `getdata` message][bitcoin getdata message]
