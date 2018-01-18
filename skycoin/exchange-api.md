@@ -252,4 +252,25 @@ Returns: `Orderbook_record`
 
 ## CLI
 
-briancaine note: self explanatory, I'd think
+Tradebot provides a command line interface to the REST API.
+
+A CLI call takes the form: `cli <exchange> <command> [subcommand] [params...]`
+
+Available CLI commands:
+* `order`
+  * `info <orderid>`
+  * `status <orderid>`
+* `cancel`
+  * `all`
+  * `market <symbol>`
+  * `trade <orderid>`
+* `buy <symbol> <price> <amount>`
+* `sell <symbol> <price> <amount>`
+* `orderbook <symbol>`
+* `executed`
+  * `market <symbol>`
+  * `all`
+* `completed`
+  * `market <symbol>`
+  * `all`
+* `balance <currency>`
