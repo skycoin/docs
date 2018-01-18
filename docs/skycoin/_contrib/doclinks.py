@@ -80,7 +80,7 @@ for path in paths:
                     bracket_index = l.index(']:')
                     if bracket_index < 0:
                         continue
-                    key = l[1:bracket_index]
+                    key = l[1:bracket_index].lower()
                     # TODO : Log key value found in DEBUG mode
                     text = l[bracket_index + 2:].strip()
                     refs[key] = [path, lineno, text, 0]
@@ -100,6 +100,7 @@ for dirpath, subdirs, subfiles, dir_fd in os.fwalk(skc_base_path, '_data'):
                     key, value = match.group(2, 1)
                     if not key:
                         key = value
+                    key = key.lower()
                     if key.startswith('/'):
                         pass
                     elif key in skc_refs:
