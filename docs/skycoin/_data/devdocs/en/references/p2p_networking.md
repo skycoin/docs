@@ -417,13 +417,38 @@ TODO: Finish
 {% endautocrossref %}
 
 
-#### Version
+#### Introduction
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
+The `INTR` message provides information about the transmitting node
+to the receiving node at the beginning of a connection. Until both peers
+have exchanged `INTR` messages, no other messages will be accepted.
 
-TODO: Finish
+| Bytes    | Name                  | Data Type        | Required/Optional                        | Description
+|----------|-----------------------|------------------|------------------------------------------|-------------
+| 4        | mirror                 | uint32           | Required                                 | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt of an `INTR` message with a nonce it previously sent.
+| 2        | port                   | uint16           | Required                                 | The port number of the transmitting node in **big endian byte order**.
+| 4        | version               | int32            | Required                                 | The highest protocol version understood by the transmitting node.  See the [protocol version section][section protocol versions]. Protocol version mismatch leads to disconnection.
+
+Peers of a given node may establish a single connection and no more.
+Once an initial introduction handshake is established every node must
+halt processing of subsequent `INTR` messages matching an already known
+`address:mirror` combination. The best way to keep track of these pairs
+is at the discretion of every node.
+
+Immediately after accepting an introduction handshake each participating
+node should [request blocks][getb message] from its peer. It is at the
+discretion of each node to [announce unconfirmed transactions][annt message]
+stored locally in its memory pool at this moment as well.
+
+TODO: `INTR` retries
+
+The following annotated hexdump shows a `version` message. (The
+message header has been omitted and the actual IP addresses have been
+replaced with [RFC5737][] reserved IP addresses.)
+
 
 {% endautocrossref %}
 

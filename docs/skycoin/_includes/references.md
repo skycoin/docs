@@ -38,4 +38,5 @@ http://opensource.org/licenses/MIT.
 [skycoin-docs mailing list]: TODO: EMPTY
 [skycoin.go at master]: TODO: EMPTY
 [skycoin.go at testnet]: TODO: EMPTY
+[well known public peers]: https://downloads.skycoin.net/blockchain/peers.txt "A public list of Skycoin nodes maintained by Skycoin community members. These are not trusted initial network seed nodes"
 
