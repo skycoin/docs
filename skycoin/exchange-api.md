@@ -36,9 +36,111 @@ briancaine note:
 
 ### Exchange API
 
-briancaine note:
+The [`exchange` package](https://github.com/skycoin/exchange-api/tree/master/exchange) contains the necessary interfaces/types to implement support for a new exchange.
 
-  here's where we document implementing a new exchange for tradebot
+The [c2cx](https://github.com/skycoin/exchange-api/tree/master/exchange/c2cx.com) and [Cryptopia](https://github.com/skycoin/exchange-api/tree/master/exchange/cryptopia.co.nz) exchanges are already implemented and are useful as examples for future exchanges.
+
+Implementing a new exchange only requires implementing the [Client interface](#client). The other datatypes are documented for reference purposes.
+
+#### Client
+
+The [`exchange.Client` interface](https://github.com/skycoin/exchange-api/blob/0b17f1aaf8967d3423495918ab350e290eaeafa8/exchange/exchange.go#L30) is the primary interface to manipulating orders on the exchange.
+
+```golang
+type Client interface {
+	// Cancel cancels one order by order id
+	Cancel(int) (Order, error)
+	// CancelMarket cancels all orders in given market
+	CancelMarket(string) ([]Order, error)
+	// CancelAll cancels all orders that executed in exchange
+	CancelAll() ([]Order, error)
+	// GetBalance gets a information about balance in a string format, depends of exchange representation format
+	GetBalance(string) (string, error)
+	// Buy places buy order
+	Buy(string, float64, float64) (int, error)
+	// Sell places sell order
+	Sell(string, float64, float64) (int, error)
+	// Completed gets completed orders
+	Completed() []int
+	// Executed gets opened orders
+	Executed() []int
+	// OrderStatus gets a string representation of order status
+	// possible statuses defined below
+	OrderStatus(int) (string, error)
+	// OrderDetails gets detalied inforamtion about order with given order id
+	OrderDetails(int) (Order, error)
+	// Orderbook return Orderbooks interface
+	Orderbook() Orderbooks
+}
+```
+
+#### Orderbooks
+
+The [`exchange.Orderbooks` interface](https://github.com/skycoin/exchange-api/blob/0b17f1aaf8967d3423495918ab350e290eaeafa8/exchange/orderbooks.go#L9) provides access to an exchange's orderbooks, logically enough.
+
+A [redis-backed implementation of Orderbooks](https://github.com/skycoin/exchange-api/blob/0b17f1aaf8967d3423495918ab350e290eaeafa8/db/orderbooktracker.go) is provided.
+
+```golang
+type Orderbooks interface {
+	// Update updates orderbook for given market
+	Update(string, []MarketOrder, []MarketOrder)
+	//Get gets orderbook for given tradepair symbol
+	Get(string) (MarketRecord, error)
+}
+```
+
+#### Order
+
+```golang
+type Order struct {
+	Type      string
+	Market    string
+	Amount    float64
+	Price     float64
+	Submitted time.Time
+
+	//Mutable fields
+	OrderID         int
+	Fee             float64
+	CompletedAmount float64
+	Status          string
+	Accepted        time.Time
+	Completed       time.Time
+}
+```
+
+#### Order types
+
+```golang
+const (
+	Buy  = "buy"
+	Sell = "sell"
+)
+```
+
+#### MarketOrder
+
+A [MarketOrder](https://github.com/skycoin/exchange-api/blob/0b17f1aaf8967d3423495918ab350e290eaeafa8/exchange/orderbooks.go#L16) is one order in stock.
+
+```golang
+type MarketOrder struct {
+	Price  float64 `json:"price"`
+	Volume float64 `json:"volume"`
+}
+```
+
+#### MarketRecord
+
+A [MarketRecord](https://github.com/skycoin/exchange-api/blob/0b17f1aaf8967d3423495918ab350e290eaeafa8/exchange/orderbooks.go#L22) represents the order book for one market.
+
+```golang
+type MarketRecord struct {
+	Timestamp time.Time     `json:"timestamp"`
+	Symbol    string        `json:"symbol"`
+	Bids      []MarketOrder `json:"bids"`
+	Asks      []MarketOrder `json:"asks"`
+}
+```
 
 ## REST API
 
