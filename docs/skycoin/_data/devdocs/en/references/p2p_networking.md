@@ -386,13 +386,20 @@ TODO: Finish
 
 {% endautocrossref %}
 
-#### GetAddr
+#### Get Peers
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
+The `GETP` message requests a [`GIVP` message][givp message] from the receiving
+node, preferably one with lots of IP addresses of other receiving nodes.
+The transmitting node can use those IP addresses to quickly update its
+database of available nodes rather than waiting for unsolicited `GIVP`
+messages to arrive over time.
 
-TODO: Finish
+There is no payload in a `GETP` message.  See the
+[message header section][section message header] for an example of a
+message without a payload.
 
 {% endautocrossref %}
 
