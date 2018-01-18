@@ -290,17 +290,48 @@ TODO: Finish
 
 {% endautocrossref %}
 
-#### Addr
+#### Give Peers
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
+The `GIVP` message relays connection information
+for peers on the network. Each peer which wants to accept incoming
+connections may create a `GIVP` message providing its connection
+information and then send that message to its peers unsolicited. Some
+of its peers send that information to their peers (also unsolicited),
+some of which further distribute it, allowing decentralized peer
+discovery for any program already on the network.
 
-TODO: Finish
+If the connections cache of a node is full and this node receives
+yet another [`INTR` message][intr message] then it must send back
+to the originating peer a `GIVP` message with a (random)
+subset of the addresses in its local connection cache before
+halting the [introduction handshake][intr message].
+
+A `GIVP` message may also be sent in response to a `GETP` message.
+
+| Bytes      | Name             | Data Type          | Description
+|------------|------------------|--------------------|----------------
+| *Varies*   | IP addresses     | network IP address | IP address entries.  See the table below for the format of a Skycoin network IP address.
+
+Each encapsulated network IP address currently uses the following structure:
+
+
+| Bytes | Name       | Data Type | Description
+|-------|------------|-----------|---------------
+| 4     | IP address | char      | IPv4 address in **big endian byte order**.
+| 2     | port       | uint16_t  | Port number in **big endian byte order**.  Note that Skycoin Core will only connect to nodes with non-standard port numbers as a last resort for finding peers.  This is to prevent anyone from trying to use the network to disrupt non-Skycoin services that run on other ports.
+
+The following annotated hexdump shows part of an `addr` message. (The
+message header has been omitted and the actual IP address has been
+replaced with a [RFC5737][] reserved IP address.)
+
+{% highlight text %}
+Message hex dump
+{% endhighlight %}
 
 {% endautocrossref %}
-
-
 
 
 #### Alert
