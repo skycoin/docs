@@ -148,7 +148,107 @@ type MarketRecord struct {
 
 ## REST API
 
-briancaine note: as above... where I'd document the rest API, including samples
+Tradebot's REST API is based on [JSON-RPC 2.0](http://www.jsonrpc.org/specification).
+
+### Types
+
+The REST API accepts/returns simple JSON types, like strings and numbers, as well as complex structures.
+
+Two reoccurring structures the API uses are:
+
+* Order:
+```json
+{
+  "orderid": 1,
+  "type": "Buy",
+  "market": "LTC/BTC",
+  "amount": 100.123,
+  "price": 0.0001,
+  "submitted_at": 1501200244000,
+  "fee": 0.001,
+  "completed_amount": 99.9,
+  "status": "Cancelled",
+  "completed_at": 1501200244000,
+  "accepted_at": 1501200244000
+}
+```
+* Orderbook_record:
+```json
+{
+  "timestamp": 1516255342,
+  "symbol": "LTC/BTC",
+  "asks": [{"price": 12345.67, "volume": 12.345},{"price": 23456.78, "volume": 23.456}],
+  "bids": [{"price": 34567.89, "volume": 34.567},{"price": 14567.89, "volume": 543.21}]
+}
+```
+
+### Methods
+
+#### `buy`
+
+Parameters: `{"symbol": string, "price": number, "amount", number}`
+
+Returns: `number` (order ID)
+
+#### `sell`
+
+Parameters: `{"symbol": string, "price": number, "amount", number}`
+
+Returns: `number` (order ID)
+
+#### `cancel_trade`
+
+Parameters: `{"orderid": number}` (order ID)
+
+Returns: `Order`
+
+#### `cancel_market`
+
+Parameters: `{"symbol": string}`
+
+Returns: `array of Order`
+
+#### `cancel_all`
+
+Parameters: `{}` or `null`
+
+Returns: `array of Order`
+
+#### `balance`
+
+Parameters: `{"currency": string}`
+
+Returns: `string`
+
+#### `order_info`
+
+Parameters: `{"orderid": number}` (order ID, obviously enough)
+
+Returns: `Order`
+
+#### `order_status`
+
+Parameters: `{"orderid": number}` (order ID again)
+
+Returns: `string`
+
+#### `completed`
+
+Parameters: `{}` or `null`
+
+Returns: `array of number` (array of order IDs)
+
+#### `executed`
+
+Parameters: `{}` or `null`
+
+Returns: `array of number` (array of order IDs)
+
+#### `orderbook`
+
+Parameters: `{"symbol": string}`
+
+Returns: `Orderbook_record`
 
 ## CLI
 
