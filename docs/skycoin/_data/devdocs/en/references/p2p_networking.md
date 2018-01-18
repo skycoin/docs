@@ -257,18 +257,27 @@ TODO: Finish
 
 {% endautocrossref %}
 
-#### Tx
+#### Give Transactions
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
+The `GIVT` message transmits some transactions in the raw transaction
+format. It can be sent in a variety of situations;
 
-TODO: Finish
+* **Transaction Response:** Skycoin Core will send it in
+  response to a `GETT` message that requests transactions by TXID
+
+* **Unsolicited:** Wallet and other SPV clients may send a `GIVT`
+  message unsolicited for transactions they originate.
+
+After processing a `GIVT` message a node should notify its peers
+of the new transactions discovered by broadcasting an `ANNT` message.
+
+For an example hexdump of the raw transaction format, see the [raw
+transaction section][raw transaction format].
 
 {% endautocrossref %}
-
-
-
 
 
 ### Control Messages
