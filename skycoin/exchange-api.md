@@ -91,6 +91,8 @@ type Orderbooks interface {
 
 #### Order
 
+[Source](https://github.com/skycoin/exchange-api/blob/0b17f1aaf8967d3423495918ab350e290eaeafa8/exchange/exchange.go#L11)
+
 ```golang
 type Order struct {
 	Type      string
@@ -110,6 +112,8 @@ type Order struct {
 ```
 
 #### Order types
+
+[Source](https://github.com/skycoin/exchange-api/blob/0b17f1aaf8967d3423495918ab350e290eaeafa8/exchange/exchange.go#L5)
 
 ```golang
 const (
