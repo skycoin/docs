@@ -169,7 +169,7 @@ header differs.
 
 {% autocrossref %}
 
-TODO: Equivalent in Skycoin?
+TODO: Equivalent of GetHeaders in Skycoin?
 
 {% endautocrossref %}
 
@@ -178,7 +178,7 @@ TODO: Equivalent in Skycoin?
 
 {% autocrossref %}
 
-TODO: Equivalent in Skycoin?
+TODO: Equivalent of Headers in Skycoin?
 
 {% endautocrossref %}
 
@@ -242,8 +242,7 @@ Message hex dump
 
 {% autocrossref %}
 
-
-TODO: Finish
+TODO: Equivalent of MerkleBlock in Skycoin
 
 {% endautocrossref %}
 
@@ -253,7 +252,7 @@ TODO: Finish
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of NotFound in Skycoin
 
 {% endautocrossref %}
 
@@ -285,8 +284,17 @@ transaction section][raw transaction format].
 
 {% autocrossref %}
 
+The following network messages all help control the connection between
+two peers or allow them to advise each other about the rest of the
+network.
 
-TODO: Finish
+![Overview Of P2P Protocol Control And Advisory Messages](/img/dev/en-p2p-control-messages.svg)
+
+Note that almost none of the control messages are authenticated in any
+way, meaning they can contain incorrect or intentionally harmful
+information. In addition, this section does not yet cover P2P protocol
+operation over the [Tor network][tor]; if you would like to contribute
+information about Tor, please [open an issue][docs issue].
 
 {% endautocrossref %}
 
@@ -340,7 +348,7 @@ Message hex dump
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of Alert in Skycoin
 
 {% endautocrossref %}
 
@@ -350,7 +358,7 @@ TODO: Finish
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of FeeFilter in Skycoin
 
 {% endautocrossref %}
 
@@ -361,7 +369,7 @@ TODO: Finish
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of FilterAdd in Skycoin
 
 {% endautocrossref %}
 
@@ -371,7 +379,7 @@ TODO: Finish
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of FilterClear in Skycoin
 
 {% endautocrossref %}
 
@@ -382,7 +390,7 @@ TODO: Finish
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of FilterLoad in Skycoin
 
 {% endautocrossref %}
 
@@ -447,7 +455,7 @@ only the message header differs.
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of Reject in Skycoin
 
 {% endautocrossref %}
 
@@ -457,7 +465,7 @@ TODO: Finish
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of SendHeaders in Skycoin
 
 {% endautocrossref %}
 
@@ -467,7 +475,7 @@ TODO: Finish
 {% autocrossref %}
 
 
-TODO: Finish
+TODO: Equivalent of VerAck in Skycoin
 
 {% endautocrossref %}
 

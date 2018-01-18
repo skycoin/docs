@@ -21,9 +21,11 @@ http://opensource.org/licenses/MIT.
 [getb message]: TODO: EMPTY
 [gett message]: TODO: EMPTY
 [givb message]: TODO: EMPTY
+[givp message]: TODO: EMPTY
 [givt message]: TODO: EMPTY
 [head block]: TODO: EMPTY
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
+[intr message]: TODO: EMPTY
 [introduction handshake]: TODO: EMPTY
 [maximum message length]: TODO: EMPTY
 [miner]: TODO: EMPTY
@@ -33,10 +35,13 @@ http://opensource.org/licenses/MIT.
 [proof of burn]: TODO: EMPTY
 [proof of work]: TODO: EMPTY
 [rfc5737]: http://tools.ietf.org/html/rfc5737
+[section message header]: /en/developer-reference#message-headers
+[section protocol versions]: /en/developer-reference#protocol-versions
 [section serialized blocks]: /en/developer-reference#serialized-blocks
 [skycoin web wallet]: TODO: EMPTY
 [skycoin-docs mailing list]: TODO: EMPTY
 [skycoin.go at master]: TODO: EMPTY
 [skycoin.go at testnet]: TODO: EMPTY
+[tor]: https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29
 [well known public peers]: https://downloads.skycoin.net/blockchain/peers.txt "A public list of Skycoin nodes maintained by Skycoin community members. These are not trusted initial network seed nodes"
 
