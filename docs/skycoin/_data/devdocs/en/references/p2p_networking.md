@@ -140,12 +140,27 @@ TODO : Message hex dump
 
 {% endautocrossref %}
 
-#### GetData
+#### Get Transactions
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
-TODO: Equivalent in Skycoin?
+The `GETT` message requests one or more transaction objects from another
+node. The transactions are requested by TXID hash, which the requesting
+node typically received previously by way of an [`ANNT` message][annt message].
+
+The response to a `GETT` message most likely will be a `GIVT` message.
+
+This message cannot be used to request arbitrary data, such as historic
+transactions no longer in the memory pool or relay set. Full nodes may
+not even be able to provide older data objects if they've pruned old
+transactions from their block database. For this reason, the `GETT`
+message should usually only be used to request data from a node which
+previously advertised it had that data by sending an `ANNT` message.
+
+The format and maximum size limitations of the `GETT` message are
+identical to the [`ANNT` message][annt message]; only the message
+header differs.
 
 {% endautocrossref %}
 
@@ -221,15 +236,6 @@ inventory entries.  (The message header has been omitted.)
 Message hex dump
 {% endhighlight %}
 
-
-#### MemPool
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-TODO: Equivalent in Skycoin?
-
-{% endautocrossref %}
 
 #### MerkleBlock
 {% include helpers/subhead-links.md %}
@@ -426,7 +432,13 @@ comparisons will follow.
 Skycoin [gnet][] does not implement [inventories][/en/glossary/inventory]{:#term-inventory}{:.term}.
 Hence there is no equivalent to [Bitcoin `inv` message][bitcoin inv message].
 The closest match in Skycoin is [ANNT message][], but its scope is
-limited to transactions.
+limited to transactions. [Bitcoin `getdata` message][bitcoin getdata message]
+can not be mapped one-to-one to a single Skycoin messages type but many
+e.g. to [get blocks][getb message] and to [get transactions][gett message].
+
+Skycoin transactions are exchanged immediately after an
+introduction handshake has been successfully established. Hence there
+is no equivalent to [Bitcoin `mempool` message][bitcoin mempool message].
 
 {% endautocrossref %}
 
