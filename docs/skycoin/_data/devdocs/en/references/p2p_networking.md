@@ -54,7 +54,7 @@ with the most recent versions listed first. (If you know of a protocol
 version that implemented a major change but which is not listed here,
 please [open an issue][docs issue].)
 
-As of Skycoin Core 0.21.1, the most recent protocol version is `TODO`.
+As of Skycoin Core 0.21.1, the most recent protocol version is `2`.
 
 | Version | Initial Release                    | Major Changes
 |---------|------------------------------------|--------------
@@ -95,6 +95,10 @@ TODO : Message hex dump
 #### Give Blocks
 {% include helpers/subhead-links.md %}
 
+{% comment %}
+Skycoin GIVB messages are similar to [Bitcoin block message][].
+{% endcomment %}
+
 {% autocrossref %}
 
 The `GIVB` message transmits one or many serialized block in the format
@@ -102,14 +106,17 @@ described in the [serialized blocks section][section serialized blocks].
 See that section for an example hexdump.  It can be sent for the following
 different reasons:
 
-- TODO: Broadcast block . See CreateAndPublishBlock -> broadcastBlock
-- TODO: Response to GETB message . See GetBlocksMessage.Process
-- TODO: Other reasons for sending GIVB messages
+- Every time a new block is signed by a master node it broadcasts to its peers a `GIVB` messages including its contents.
+- A `GIVB` message should be sent in response to a `GETB` message. Block information must match requested hash ID.
 
 {% endautocrossref %}
 
 #### Get Blocks
 {% include helpers/subhead-links.md %}
+
+{% comment %}
+Skycoin GETB messages are similar to [Bitcoin getblocks message][].
+{% endcomment %}
 
 {% autocrossref %}
 
@@ -119,12 +126,6 @@ allows a peer which has been disconnected or started for the first time
 to get the data it needs to request the blocks it hasn't seen.
 A `GETB` message is exchanged between peers as a result of a successful
 [introduction handshake][].
-
-{% comment %}
-
-TODO: Bitcoin's `getblocks` message allows for including header hashes. Useful for determining the starting point of the fork and sync subsequent header hashes . What about Skycoin? No data for this in message struct
-
-{% endcomment %}
 
 | Bytes    | Name                 | Data Type        | Description
 |----------|----------------------|------------------|----------------
@@ -161,24 +162,6 @@ previously advertised it had that data by sending an `ANNT` message.
 The format and maximum size limitations of the `GETT` message are
 identical to the [`ANNT` message][annt message]; only the message
 header differs.
-
-{% endautocrossref %}
-
-#### GetHeaders
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-TODO: Equivalent of GetHeaders in Skycoin?
-
-{% endautocrossref %}
-
-#### Headers
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-TODO: Equivalent of Headers in Skycoin?
 
 {% endautocrossref %}
 
@@ -237,27 +220,12 @@ Message hex dump
 {% endhighlight %}
 
 
-#### MerkleBlock
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-TODO: Equivalent of MerkleBlock in Skycoin
-
-{% endautocrossref %}
-
-#### NotFound
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of NotFound in Skycoin
-
-{% endautocrossref %}
-
 #### Give Transactions
 {% include helpers/subhead-links.md %}
+
+{% comment %}
+Skycoin GIVT messages are similar to [Bitcoin tx message][].
+{% endcomment %}
 
 {% autocrossref %}
 
@@ -301,6 +269,10 @@ information about Tor, please [open an issue][docs issue].
 #### Give Peers
 {% include helpers/subhead-links.md %}
 
+{% comment %}
+Skycoin GIVP messages are similar to [Bitcoin addr message][].
+{% endcomment %}
+
 {% autocrossref %}
 
 The `GIVP` message relays connection information
@@ -342,60 +314,12 @@ Message hex dump
 {% endautocrossref %}
 
 
-#### Alert
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of Alert in Skycoin
-
-{% endautocrossref %}
-
-#### FeeFilter
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of FeeFilter in Skycoin
-
-{% endautocrossref %}
-
-
-#### FilterAdd
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of FilterAdd in Skycoin
-
-{% endautocrossref %}
-
-#### FilterClear
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of FilterClear in Skycoin
-
-{% endautocrossref %}
-
-
-#### FilterLoad
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of FilterLoad in Skycoin
-
-{% endautocrossref %}
-
 #### Get Peers
 {% include helpers/subhead-links.md %}
+
+{% comment %}
+Skycoin GETP messages are similar to [Bitcoin getaddr message][].
+{% endcomment %}
 
 {% autocrossref %}
 
@@ -415,6 +339,10 @@ message without a payload.
 #### Ping
 {% include helpers/subhead-links.md %}
 
+{% comment %}
+Skycoin PING messages are similar to [Bitcoin ping message][].
+{% endcomment %}
+
 {% autocrossref %}
 
 The `PING` message helps confirm that the receiving peer is still
@@ -429,6 +357,10 @@ The `PING` message has no payload.
 
 #### Pong
 {% include helpers/subhead-links.md %}
+
+{% comment %}
+Skycoin PONG messages are similar to [Bitcoin pong message][].
+{% endcomment %}
 
 {% autocrossref %}
 
@@ -449,39 +381,13 @@ only the message header differs.
 
 {% endautocrossref %}
 
-#### Reject
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of Reject in Skycoin
-
-{% endautocrossref %}
-
-#### SendHeaders
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of SendHeaders in Skycoin
-
-{% endautocrossref %}
-
-#### VerAck
-{% include helpers/subhead-links.md %}
-
-{% autocrossref %}
-
-
-TODO: Equivalent of VerAck in Skycoin
-
-{% endautocrossref %}
-
 
 #### Introduction
 {% include helpers/subhead-links.md %}
+
+{% comment %}
+Skycoin INTR messages are similar to [Bitcoin version message][].
+{% endcomment %}
 
 {% autocrossref %}
 
@@ -536,6 +442,25 @@ e.g. to [get blocks][getb message] and to [get transactions][gett message].
 Skycoin transactions are exchanged immediately after an
 introduction handshake has been successfully established. Hence there
 is no equivalent to [Bitcoin `mempool` message][bitcoin mempool message].
+There is no need for a message type equivalent to Bitcoin's
+[VerAck][bitcoin verack message]. 
+
+Current version of Skycoin only operates in [blocks-first][] mode.
+Hence there is no Skycoin message type equivalent to neither Bitcoin's
+[GetHeaders][bitcoin getheaders message], [Heders][bitcoin headers message],
+[SendHeaders][bitcoin sendheaders message],
+nor [MerkleBlock][bitcoin merkleblock message] message types.
+Skycoin does not implement [Bloom filters][section creating a bloom filter]
+so it does not offer equivalents to Bitcoin's
+[FeeFilter][bitcoin feefilter message], 
+[FilterAdd][bitcoin filteradd message], 
+[FilterClear][bitcoin filterclear message], 
+[FilterLoad][bitcoin filterload message] message types. 
+Skycoin does not implement [NotFound][bitcoin notfound message],
+[Reject][bitcoin reject message],
+and [Alert][bitcoin alert message] message types either.
+
+
 
 {% endautocrossref %}
 
