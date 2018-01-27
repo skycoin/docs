@@ -1,6 +1,6 @@
 # Graph Sample
 
-Basic hugo project where the main idea is to tests [mermaid](https://mermaidjs.github.io/) and **** graphs
+Basic ``hugo`` project where the main idea is to tests [mermaid](https://mermaidjs.github.io/) graphs
 
 ## Dependencies
 
