@@ -288,7 +288,42 @@ to the reference page for that message.
 
 {% autocrossref %}
 
-TODO: Finish
+When a node discovers a new block, it broadcasts the new block to its
+peers using one of the following methods:
+
+* **[Unsolicited Block Push][]{:#term-unsolicited-block-push}{:.term}:**
+  the node sends to each of its full node peers a `GIVP` message with
+  the new block. The miner can reasonably bypass the standard relay
+  method in this way because it knows none of its peers already have the
+  just-discovered block.
+
+* **[Standard Block Relay][]{:#term-standard-block-relay}{:.term}:**
+  the node, acting as a standard relay node, sends an `ANNB` message to
+  each of its peers (both full node and SPV) with the updated block height
+  of its local blockchain after discovering the new block. The most
+  common response is a `GETB` message from peers with a shorter blockchain.
+  The node replies to each request accordingly by sending the block(s)
+  in a `GIVB` message.
+
+**Note:**: Since Skycoin does not implement block header messages it
+does not support neither sending headers only during standard block relay
+nor [direct headers announcement][] method.
+
+**Note:**: Since Skycoin does not implement Merkle tree messages it
+does not provide SPV clients with Merkle block and transactions during
+standard block relay.
+
+By default, master nodes use unsolicited block push every time a new
+block is discovered. At all other times Skycoin Core broadcasts blocks using
+standard block relay for all peers. Skycoin Core
+will accept blocks sent using any of the methods described above.
+
+Full nodes validate received blocks. On success they advertise it to their
+peers using the standard block relay method described above.
+
+{% comment %}
+TODO: Table : messages for block broadcasting
+{% endcomment %}
 
 {% endautocrossref %}
 
@@ -328,12 +363,12 @@ TODO: Finish
 
 {% endautocrossref %}
 
-### Alerts
+### Final remarks
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
-TODO: Finish
+Skycoin does not implement an alerts system.
 
 {% endautocrossref %}
 
