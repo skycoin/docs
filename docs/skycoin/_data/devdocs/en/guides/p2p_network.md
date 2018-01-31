@@ -332,7 +332,26 @@ TODO: Table : messages for block broadcasting
 
 {% autocrossref %}
 
-TODO: Finish
+Blocks-first nodes may download orphan blocks---blocks whose previous
+block header hash field refers to a block header this node
+hasn't seen yet. In other words, orphan blocks have no known parent
+(unlike stale blocks, which have known parents but which aren't part of
+the best block chain).
+
+![Difference Between Orphan And Stale Blocks](/img/dev/en-orphan-stale-definition.svg)
+
+When a blocks-first node downloads an orphan block, it will silently
+reject it. Blocks are processed in sequence.
+This is particularly true when a *slow* node is a few blocks behind
+the master at the moment the later discovers a new block. The master will
+broadcast an unsolicited [`GIVB` message][givb message] and this slow
+node will discard it because its header’s `PrevBlockHash` 
+will not match the hash ID of the block at the tip of the chain.
+Orphan blocks discarded this way will be retrasmitted and eventually
+synchronized at a later time by following [standard block relay][]
+given the fact that local block length for the node synchronizing with
+the block chain will be smaller than the sequence number of the
+orphan block.
 
 {% endautocrossref %}
 
