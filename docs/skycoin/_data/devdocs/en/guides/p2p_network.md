@@ -360,7 +360,29 @@ orphan block.
 
 {% autocrossref %}
 
-TODO: Finish
+Transaction broadcasting starts since the very same moment a successful
+introduction handshake is established.  At that time nodes at both sides
+of the connection gather TXID's of all valid unconfirmed transactions
+in their respective memory pool and split the whole set in groups.
+Transactons are announced by packaging each group in
+[`ANNT` messages][annt message] which will be boadcast to the peers
+of both nodes.
+
+{% comment %}
+TODO: Broadcasting vs direct message
+{% endcomment %}
+
+Each network node should reply to an [`ANNT` message][annt message]
+with a [`GETT` message][gett message] including the TXID hashes of the
+transactions which are neither found in the node's memory pool nor
+previously confirmed. The peer receiving the `GETT` message should reply
+with a [`GIVT` message][givt message] including the signatures, inputs,
+outputs and all other data related to the TXID hashes included in
+previous `GETT` message as long as they are still unconfimed in the
+node's memory pool.
+
+During the transaction broadcasting process invalid transactions
+are filtered out.
 
 {% endautocrossref %}
 
