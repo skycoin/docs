@@ -435,7 +435,11 @@ next block.
 
 {% autocrossref %}
 
-TODO: Finish
+Take note that for both types of broadcasting, mechanisms are in place to
+punish misbehaving peers who take up bandwidth and computing resources by
+sending false information. If a peer gets a banscore above a threshold, he will
+be banned for a configurable number of seconds, which is *86,400* by default
+(24 hours).
 
 {% endautocrossref %}
 

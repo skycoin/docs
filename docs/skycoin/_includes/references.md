@@ -69,7 +69,7 @@ http://opensource.org/licenses/MIT.
 [skycoin-docs mailing list]: TODO: EMPTY
 [skycoin.go at master]: TODO: EMPTY
 [skycoin.go at testnet]: TODO: EMPTY
-[standard block relay]: REVIEW : /en/developer-guide#term-standard-block-relay "The regular block relay method: announcing a block with an inv message and waiting for a response"
+[standard block relay]: /en/developer-guide#term-standard-block-relay "The regular block relay method: announcing a block with an ANNB message and waiting for a response"
 [tor]: https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29
-[unsolicited block push]: REVIEW : /en/developer-guide#term-unsolicited-block-push "When a miner sends a block message without sending an inv message first"
+[unsolicited block push]: /en/developer-guide#term-unsolicited-block-push "When a master node sends a GIVB message without sending an ANNB message first"
 [well known public peers]: https://downloads.skycoin.net/blockchain/peers.txt "A public list of Skycoin nodes maintained by Skycoin community members. These are not trusted initial network seed nodes"
