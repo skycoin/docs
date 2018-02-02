@@ -4,11 +4,11 @@ It is a tool that allows you to scan N blocks of the blockchain to keep a record
 
 ## Addresses State
 
-Each public address of the crypto wallet, will contain three states, which are: min_scan_block, mid_scan_block, max_scan_block. Each one of them contains a number that is the blockheight or index of the block inside the blockchain, which represents the block id that has been scanned, in search of those TXs that belong to at least one address of the crypto wallet. These states are used in the following way.
+Each public address of the crypto wallet, will contain three states, which are: min_scan_block, mid_scan_block, max_scan_block. Each one of them contains a number that is the blockheight or index of the block inside the blockchain, which represents the block id that has been scanned, in search of those TXs that belong to at least one address of the crypto wallet. These states are the following.
 
-* **min_scan_block**, used as a record of the minimum or smallest block or blockheight index where a scan has been made, in search of TXs that belong to any of the crypto wallet addresses.
+* **min_scan_block**, used as a record of the minimum or smallest block index where a scan has been made, in search of TXs that belong to any of the crypto wallet addresses.
 
-* **max_scan_block**, used as a record of the block or maximum blockheight index where a scan has been made, in search of TXs that belong to any of the crypto wallet addresses.
+* **max_scan_block**, used as a record of the maximum block index where a scan has been made, in search of TXs that belong to any of the crypto wallet addresses.
 
 * **mid_scan_block**, this state is used as a control point, this allows scans in both directions of the main states (min_scan_block and max_scan_block). This state is updated when min_scan_block reaches it.
 
