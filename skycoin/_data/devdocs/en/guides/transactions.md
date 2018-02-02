@@ -11,7 +11,7 @@ http://opensource.org/licenses/MIT.
 
 Transactions over the Skycoin network allow users to transfer SKY among each other in a fast, secure and reliable way. Each transaction is constructed out of several elements. This section will describe each element and demonstrate how to use them together to build complete transactions.
 
-![skycoin-transaction-data-structure](skycoin-transaction-data-structure.png)
+![skycoin-transaction-data-structure](/skycoin/img/skycoin-transaction-data-structure.png)
 
 The figure above shows the elements of a Skycoin transacion. Computationally speaking, a Skycoin transaction is a data structure with the following elements:
 
@@ -40,7 +40,7 @@ To address this issue, Skycoin includes built-in support of Gmaxwell CoinJoin.
 
 CoinJoin is a protocol that combines multiple transactions into a single one, named CoinJoin transaction.
 
-![coinjoin](coinjoin.png)
+![coinjoin](/skycoin/img/coinjoin.png)
 
 Instead of broadcasting the transaction, the client can send it to a CoinJoin server, which will recieve multiple transaction from Skycoin clients and randomly include them into CoinJoin transactions. The CoinJoin server then requests the needed signatures from each client and broadcast the signed transaction onto the Skycoin network.
 
