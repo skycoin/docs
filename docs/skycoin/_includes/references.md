@@ -5,6 +5,7 @@ http://opensource.org/licenses/MIT.
 {% endcomment %}
 
 
+[annb message]: TODO: EMPTY
 [annt message]: TODO: EMPTY
 [bitcoin addr message]: https://bitcoin.org/en/developer-reference#addr "The P2P network message which relays IP addresses and port numbers of active nodes to other nodes and clients, allowing decentralized peer discovery."
 [bitcoin alert message]: https://bitcoin.org/en/developer-reference#alert "The P2P network message which sends alerts in case of major software problems."
@@ -36,17 +37,21 @@ http://opensource.org/licenses/MIT.
 [core executable]: /en/download
 [core git]: https://github.com/skycoin/skycoin
 [dev communities]: /en/development#devcommunities
+[direct headers announcement]: TODO: EMPTY
 [distribution addresses]: TODO: EMPTY
 [dns a records]: http://tools.ietf.org/html/rfc1035#section-3.2.2
 [docs issue]: https://github.com/skycoin/docs/issues
 [getb message]: TODO: EMPTY
+[getp messages]: TODO: EMPTY
 [gett message]: TODO: EMPTY
 [givb message]: TODO: EMPTY
 [givp message]: TODO: EMPTY
+[givp messages]: TODO: EMPTY
 [givt message]: TODO: EMPTY
 [head block]: TODO: EMPTY
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
 [intr message]: TODO: EMPTY
+[intr messages]: TODO: EMPTY
 [introduction handshake]: TODO: EMPTY
 [maximum message length]: TODO: EMPTY
 [miner]: TODO: EMPTY
@@ -64,5 +69,7 @@ http://opensource.org/licenses/MIT.
 [skycoin-docs mailing list]: TODO: EMPTY
 [skycoin.go at master]: TODO: EMPTY
 [skycoin.go at testnet]: TODO: EMPTY
+[standard block relay]: /en/developer-guide#term-standard-block-relay "The regular block relay method: announcing a block with an ANNB message and waiting for a response"
 [tor]: https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29
+[unsolicited block push]: /en/developer-guide#term-unsolicited-block-push "When a master node sends a GIVB message without sending an ANNB message first"
 [well known public peers]: https://downloads.skycoin.net/blockchain/peers.txt "A public list of Skycoin nodes maintained by Skycoin community members. These are not trusted initial network seed nodes"

@@ -76,10 +76,10 @@ The message header format is:
 | 4    | prefix        | char[4]   | ASCII string which identifies what message type is contained in the payload.  Followed by nulls (0x00) to pad out byte count; for example: `MSG\0`.
 
 The following example is an annotated hex dump of a mainnet message
-header from a `verack` message which has no payload.
+header from an [`GETP` message][getp message] which has no payload.
 
 {% highlight text %}
-TODO : Message hex dump
+TODO : GETP message hex dump
 {% endhighlight %}
 
 {% endautocrossref %}
@@ -89,6 +89,10 @@ TODO : Message hex dump
 
 {% autocrossref %}
 
+The following network messages all request or provide data related to
+transactions and blocks.
+
+![Overview Of P2P Protocol Data Request And Reply Messages](/img/dev/en-p2p-data-messages.svg)
 
 {% endautocrossref %}
 
@@ -108,6 +112,13 @@ different reasons:
 
 - Every time a new block is signed by a master node it broadcasts to its peers a `GIVB` messages including its contents.
 - A `GIVB` message should be sent in response to a `GETB` message. Block information must match requested hash ID.
+
+The following annotated hexdump shows a `GIVB` message.  (The
+message header has been omitted.)
+
+{% highlight text %}
+TODO : GIVB message hex dump
+{% endhighlight %}
 
 {% endautocrossref %}
 
@@ -136,7 +147,7 @@ The following annotated hexdump shows a `GETB` message.  (The
 message header has been omitted.)
 
 {% highlight text %}
-TODO : Message hex dump
+TODO : GETB message hex dump
 {% endhighlight %}
 
 {% endautocrossref %}
@@ -163,6 +174,13 @@ The format and maximum size limitations of the `GETT` message are
 identical to the [`ANNT` message][annt message]; only the message
 header differs.
 
+The following annotated hexdump shows a `GETT` message.  (The
+message header has been omitted.)
+
+{% highlight text %}
+TODO : GETT message hex dump
+{% endhighlight %}
+
 {% endautocrossref %}
 
 #### Announce Blocks
@@ -188,7 +206,7 @@ The following annotated hexdump shows an `ANNB` message with two
 inventory entries.  (The message header has been omitted.)
 
 {% highlight text %}
-TODO: Message hex dump
+TODO: ANNB message hex dump
 {% endhighlight %}
 
 {% endautocrossref %}
@@ -216,7 +234,7 @@ The following annotated hexdump shows an `ANNT` message with two
 inventory entries.  (The message header has been omitted.)
 
 {% highlight text %}
-Message hex dump
+ANNT message hex dump
 {% endhighlight %}
 
 
@@ -243,6 +261,13 @@ of the new transactions discovered by broadcasting an `ANNT` message.
 
 For an example hexdump of the raw transaction format, see the [raw
 transaction section][raw transaction format].
+
+The following annotated hexdump shows a `GIVT` message.  (The
+message header has been omitted.)
+
+{% highlight text %}
+TODO : GIVT message hex dump
+{% endhighlight %}
 
 {% endautocrossref %}
 
@@ -308,7 +333,7 @@ message header has been omitted and the actual IP address has been
 replaced with a [RFC5737][] reserved IP address.)
 
 {% highlight text %}
-Message hex dump
+GIVP message hex dump
 {% endhighlight %}
 
 {% endautocrossref %}
@@ -351,7 +376,9 @@ message (such as a connection timeout), the transmitting node can assume
 that the receiving node is disconnected. The response to a `PING`
 message is the `PONG` message.
 
-The `PING` message has no payload.
+There is no payload in a `PING` message.  See the
+[message header section][section message header] for an example of a
+message without a payload.
 
 {% endautocrossref %}
 
@@ -414,10 +441,13 @@ stored locally in its memory pool at this moment as well.
 
 TODO: `INTR` retries
 
-The following annotated hexdump shows a `version` message. (The
+The following annotated hexdump shows an `INTR` message. (The
 message header has been omitted and the actual IP addresses have been
 replaced with [RFC5737][] reserved IP addresses.)
 
+{% highlight text %}
+TODO : INTR message hex dump
+{% endhighlight %}
 
 {% endautocrossref %}
 
