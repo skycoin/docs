@@ -23,3 +23,8 @@ There are 4 scanning operations, which are used to scan N blocks of the blockcha
 * **update_short**, will find the address with the blockheight or block index that is between the state min_scan_block and the state mid_scan_block, to be able to find the block inside the blockchain, scan it and register those TXs that belong to the addresses of the crypto wallet.
 
 * **update_far**, will find the address with the blockheight or block index that is closer to the state mid_scan_block, to be able to find the block inside the blockchain, scan it and find those TXs that belong to the addresses of the crypto wallet.
+
+## Example
+Lets find a block within the blockchain with the following blockheight and scan it.
+
+![scanning wallet.jpg](scanning_wallet.jpg)
