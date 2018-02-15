@@ -1,0 +1,44 @@
+{{ partial "header.html" . }}
+<main class="post">
+  <div class="meta">
+    <h1 class="meta__title">{{ .Title }}</h1>
+    <div class="meta__information">
+      {{ if .Params.date }}
+        <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
+      {{ end }}
+
+      {{ range $i := (slice "categories" "tags") }}
+        {{ with ($.Param $i) }}
+          {{ range $k := . }}
+            <a class="meta__link" href="{{ relLangURL (print "/" $i "/" $k | urlize) }}">{{$k}}</a>
+            {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  <section class="post__content">
+  {{if .Params.image}}
+  <img  src="{{ .Params.image | absURL }}">
+  {{ else }}
+  
+  {{ end }}
+
+
+    {{ .Content }}
+    {{ if eq .Lang "en" }}
+      <wordcount class="wordcount">
+      {{ if .Params.bounty }}
+        <p>Translation bounty for Русский, 한국어, 日本語, 中文: {{ div .Params.bounty 2.0 }} SKY</p>
+        <p>Translation bounty for other languages: {{ div .Params.bounty 4.0 }} SKY</p>
+      {{ else }}
+        <p>No translation bounty</p>
+      {{ end }}
+      <p>Read about the <a href="https://www.skycoin.net/blog/statement/skycoin-bounty-program-1/">Skycoin Bounty Program</a></p>
+      </wordcount>
+    {{ end }}
+  </section>
+</main>
+
+{{ partial "telegram.html" . }}
+{{ partial "footer.html" . }}

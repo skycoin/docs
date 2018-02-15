@@ -1,0 +1,19 @@
+{
+  "name": "skycoin",
+  "version": "1.0.0",
+  "description": "Foundations for the new internet · Skycoin",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node-sass static/css/scss/main.scss static/css/main.css --watch",
+    "prebuild:css": "node-sass static/css/scss/main.scss static/css/main.css",
+    "build:css": "yarn prebuild:css && postcss static/css/main.css -o static/css/main.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.5.3",
+    "postcss": "^6.0.8",
+    "postcss-cli": "^4.1.0"
+  }
+}

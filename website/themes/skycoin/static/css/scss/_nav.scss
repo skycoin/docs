@@ -1,0 +1,21 @@
+.nav {
+  width: 100%;
+
+  &__item {
+    font-size: 0.9375rem;
+    color: $black;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-mono;
+    margin-right: 2.5rem;
+
+    &:hover,
+    &--active {
+      text-decoration: underline;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+
+<main class="list">
+    {{ if .Title }}
+      <h1 class="list__title">{{ .Title }}</h1>
+    {{ end }}
+
+    <ul class="list__list">
+      {{ range (where .Data.Pages "Section" "!=" "") }}
+        <li class="list__item">
+          <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
+          <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
+        </li>
+      {{ end }}
+    </ul>
+  </main>
+
+  {{ partial "footer.html" . }}

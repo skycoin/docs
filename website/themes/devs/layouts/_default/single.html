@@ -1,0 +1,39 @@
+{{ partial "header.html" . }}
+
+
+<div class="container">
+  <h1>{{ .Title }}</h1>
+  <div class="meta__information">
+    {{ if .Params.date }}
+    <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
+    {{ end }}
+
+    {{ range $i := (slice "guides" "references") }}
+    {{ with ($.Param $i) }}
+    {{ range $k := . }}
+    <a class="meta__link" href="{{ relLangURL (print "/" $i "/" $k | urlize) }}">{{$k}}</a>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </div>
+
+  <section class="post__content">
+    {{if .Params.image}}
+    <img  src="{{.Params.image}}">
+    {{ end }}
+
+    {{ .Content }}
+
+  </section>
+  <nav aria-label="...">
+    <ul class="pager">
+     {{ with .PrevInSection }}
+     <li class="previous"><a href="{{.Permalink}}"><span aria-hidden="true">&larr;</span> {{.Title}}</a></li>
+     {{end}}
+     {{ with .NextInSection }}
+     <li class="next"><a href="{{.Permalink}}">{{.Title}} <span aria-hidden="true">&rarr;</span></a></li>
+     {{ end }}
+   </ul>
+ </nav>
+
+ {{ partial "footer.html" . }}

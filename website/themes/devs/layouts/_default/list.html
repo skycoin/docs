@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+  {{ if .Title }}
+  <h1>{{ .Title }}</h1>
+  {{ end }}
+
+  <ul class="list-group">
+    {{ range (where .Data.Pages "Section" "!=" "") }}
+    <li class="list-group-item">
+      <a href="{{ .URL }}">{{ .Title }}</a>
+      <h7>{{ .Date.Format "Jan 2 2006" }}</h7>
+    </li>
+    {{ end }}
+  </ul>
+
+</div>
+
+{{ partial "footer.html" . }}

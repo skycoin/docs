@@ -1,0 +1,7 @@
+.container {
+  @include container($container-width-base);
+
+  &--large {
+    @include container($container-width-large);
+  }
+}

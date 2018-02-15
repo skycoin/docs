@@ -1,0 +1,37 @@
+.list {
+  @include container($container-width-base);
+  padding-top: 2.75rem;
+
+  &__title {
+    font-size: 1.5rem;
+    color: $black;
+    margin-top: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin-left: 0;
+    border-top: solid 2px $light-gray;
+  }
+
+  &__item {
+    border-bottom: solid 2px $light-gray;
+    padding-bottom: 1.75rem;
+    padding-top: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: 1.0625rem;
+  }
+
+  &__meta {
+    font-size: 0.9375rem;
+    color: $cool-gray;
+    white-space: nowrap;
+    padding-left: 0.5rem;
+  }
+}

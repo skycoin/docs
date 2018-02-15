@@ -1,0 +1,30 @@
+.telegram {
+  background-color: $pale-grey;
+
+  &__container {
+    @include container($container-width-base);
+    text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    @media (min-width: $breakpoint-sm) {
+      align-items: center;
+      min-height: 6.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    margin: 0;
+    padding-bottom: 1rem;
+
+    @media (min-width: $breakpoint-sm) {
+      padding-bottom: 0;
+    }
+  }
+}
