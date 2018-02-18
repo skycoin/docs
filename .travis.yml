@@ -1,0 +1,31 @@
+language: go
+
+go:
+- '1.8'
+
+install:
+- go get -v github.com/gohugoio/hugo
+- sudo pip install Pygments
+- sudo pip install s3cmd
+
+before_script:
+- hugo version
+- pygmentize -V
+- python --version
+- s3cmd --version
+
+script:
+- hugo --buildFuture --config config.toml --destination public -v
+
+after_success:
+- ls public/
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: s3cmd --access_key="${AWS_ACCESS_KEY_ID}" --secret_key="${AWS_SECRET_ACCESS_KEY}" --region=ap-southeast-1 sync --delete-removed --acl-public --guess-mime-type --no-mime-magic --recursive public/ s3://www.skycoin.net/devdocs/
+  on:
+    branch: master
+
+after_deploy:
+- s3cmd --access_key="${AWS_ACCESS_KEY_ID}" --secret_key="${AWS_SECRET_ACCESS_KEY}" --region=ap-southeast-1 ls s3://www.skycoin.net/devdocs/
