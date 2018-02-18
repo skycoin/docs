@@ -15,7 +15,7 @@ before_script:
 - s3cmd --version
 
 script:
-- hugo --buildFuture --config config.toml --destination public -v
+- hugo --buildFuture --config config.toml --destination public  -v
 
 after_success:
 - ls public/
