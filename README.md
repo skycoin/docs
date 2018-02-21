@@ -9,9 +9,7 @@ There are three types of documentation:
 2. Documentation of existing infrastructure and components (`docs` folder)
 3. RFCs, documentation and specifications for future infrastructure and components (`future` folder)
 
-# Blog
-
-This blog uses [hugo](https://gohugo.io/) to generate a static website from markdown files.
+In this repository [hugo](https://gohugo.io/) is used to generate a static website from markdown files.
 
 Refer to hugo documentation for full detail.
 
