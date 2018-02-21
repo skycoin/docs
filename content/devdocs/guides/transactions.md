@@ -83,6 +83,16 @@ It doesn't have to be that way. If each public key is used exactly twice---once 
 
 To enforce this behavior, CoinJoin server can can require that all created outputs must belong to unused addresses, as explained in [CoinJoin Hardening](#coinjoin-hardening) section.
 
+### UXTX & Transaction malleability
+
+Skycoin's UXTX model eliminates several defficiencies that allow Bitcoin transactions to be tampered with. Unlike Bitcoin UXTO, Skycoin transactions don't require signatures, but rather **inputs themselves**. In Bitcoin, the signature script contains the [secp256k1 signature](), which can't sign itself, allowing attackers to make non-functional modifications to a transaction without rendering it invalid. For example, an attacker can add some data to the signature script which will be dropped before the previous pubkey script is processed.
+
+Although the modifications are non-functional---so they do not change what inputs the transaction uses nor what outputs it pays---they do change the computed hash of the transaction. Since each transaction links to previous transactions using hashes as a transaction identifier (txid), a modified transaction will not have the txid its creator expected.
+
+This isn't a problem for most Bitcoin transactions which are designed to be added to the blockchain immediately. But it does become a problem when the output from a transaction is spent before that transaction is added to the block chain.
+
+In Skycoin, the fact that signatures are associated to UXTX inputs renders transaction malleability attacks useless.
+
 ### Final remarks
 
 - To the date, there is no equivalent to Bitcoin's Pay To Public Key Hash (PTPKH) nor to Pay To Script Hash (P2SH) transaction types in Skycoin, as there is no scripting language associated to Skycoin transactions.
