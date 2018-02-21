@@ -1,0 +1,101 @@
+.post {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  &__content {
+    @include container($container-width-base);
+  }
+
+  p {
+    line-height: 1.65;
+    font-size: 1.0625rem;
+    margin-bottom: 2rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  hr {
+    border: 0;
+    height: 2px;
+    background-color: $light-gray;
+    margin-bottom: 2rem;
+  }
+
+  li > ul {
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+  }
+
+  ul {
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  blockquote {
+    border-left: 5px solid $light-gray;
+    padding: 3px 1rem 3px;
+    margin-bottom: 2rem;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+.meta {
+  @include container($container-width-base);
+  margin-bottom: 2.5rem;
+
+  &__title {
+    font-size: 1.5rem;
+    color: $black;
+    margin-bottom: 1.75rem;
+  }
+
+  &__date {
+    color: $cool-gray;
+    font-size: 0.9375rem;
+    display: block;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: $breakpoint-sm) {
+      display: inline;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: $cool-gray;
+    font-size: 0.9375rem;
+    padding-left: 0.5rem;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content:"·";
+      left: 0;
+    }
+
+    @media (max-width: (#{$breakpoint-sm - 1px})){
+      &:first-of-type {
+        padding-left: 0;
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.header {
+  background-image: linear-gradient(280deg, $light-gray, $white);
+
+  &-dropdown {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-sm) {
+      margin-bottom: .8rem;
+    }
+  }
+
+  &__btn {
+    @media (max-width: $breakpoint-sm) {
+      margin: 0 auto;
+    }
+  }
+
+  &-dropdown__current {
+    color: $blue;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 6px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid;
+    }
+
+    &:hover {
+        color: $black;
+    }
+  }
+
+  &-dropdown__list {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid $light-gray;
+    background: $white;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    z-index: 1;
+
+    &_show {
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+
+  &-dropdown__item {
+    display: block;
+    padding: 0.5rem;
+    border-bottom: 1px solid $light-gray;
+    will-change: background-color;
+    transition: background-color .2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $light-gray;
+      text-decoration: none;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &_active {
+      background-color: darken($light-gray, 5%);
+
+      &:hover {
+        background-color: darken($light-gray, 5%);
+      }
+    }
+  }
+
+  &__wrapper {
+    @include container($container-width-base);
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    min-height: 16rem;
+  }
+
+  &__topnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__link {
+    font-size: 0.9375rem;
+    margin-right: 0.5rem;
+    padding-bottom: 1rem;
+
+    @media (min-width: $breakpoint-xs) {
+      padding-bottom: 0;
+    }
+  }
+}

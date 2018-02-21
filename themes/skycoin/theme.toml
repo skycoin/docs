@@ -1,0 +1,8 @@
+name = "Skycoin"
+description = "Foundations for the new internet · Skycoin"
+homepage = "https://www.skycoin.net/"
+min_version = "0.25.1"
+
+[author]
+  name = "Skycoin"
+  homepage = "https://www.skycoin.net/"

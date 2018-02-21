@@ -1,0 +1,108 @@
+baseURL = "https://www.skycoin.net/"
+languageCode = "en-us"
+title = "Skycoin Devs"
+defaultContentLanguage = "en"
+
+relativeURLs = true
+canonifyURLs = true
+
+
+googleAnalytics = ""
+disqusShortname = "comment"
+
+# hugo-xmin specific variables
+theme = "skycoin"
+
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+
+# enables ```lang ``` style syntax highlighted blocks
+pygmentsCodeFences = true
+pygmentsStyle = "murphy"
+pygmentsCodeFencesGuessSyntax = true
+
+[permalinks]
+# guides = "/guides/:year/:month/:day/:slug/"
+# references = "/references/:year/:month/:day/:slug/"
+# note = "/note/:year/:month/:day/:slug/"
+
+[[menu.main]]
+name = "User Guides"
+title= "User Guides"
+identifier = "user-guides"
+url = "/user-guides/"
+weight = 1
+
+[[menu.main]]
+name = "Developer docs"
+identifier = "devdocs"
+url = "/devdocs/"
+weight = 2
+
+[[menu.main]]
+name="Glossary"
+identifier="glossary"
+url = "/glossary/"
+weight = 3
+
+[[menu.main]]
+name="Future plans"
+identifier="future-plans"
+url = "/future-plans/"
+weight = 3
+
+[[menu.footer]]
+name = "skycoin.net"
+url = "https://www.skycoin.net/"
+weight = 1
+
+[[menu.footer]]
+name = "Github"
+url = "https://github.com/skycoin"
+weight = 2
+
+[[menu.footer]]
+name = "Twitter"
+url = "https://twitter.com/skycoinproject"
+weight = 3
+
+[[menu.footer]]
+name = "Reddit"
+url = "https://reddit.com/r/SkycoinProject"
+weight = 4
+
+[[menu.footer]]
+name = "Telegram"
+url = "https://t.me/Skycoin"
+weight = 5
+
+[[menu.footer]]
+name = "Blockchain Explorer"
+url = "https://explorer.skycoin.net/"
+weight = 6
+
+[author]
+name = "Skycoin"
+
+[params]
+keywords = "skycoin"
+rss = "/index.xml"
+telegram = "https://t.me/Skycoin"
+description = "Skycoin Project Updates"
+email = ""
+github = "skycoin"
+twitter = "skycoinproject"
+twitterAnalytics = "ny03t"
+urlGit = "https://github.com/skycoin/docs"
+
+[[menu.languages]]
+name = "English"
+weight = -1
+url = "/"
+
+[Languages]
+[Languages.en]
+weight = -1
+title = "Skycoin DevsDocs"
+languageName = "English"

@@ -1,0 +1,26 @@
+.footer {
+  min-height: 6.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  &__link {
+    margin-top: 0.5rem;
+    color: $cool-gray;
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: $breakpoint-sm) {
+      margin-left: 0;
+      margin-top: 0;
+      margin-right: 2.5rem;
+      width: auto;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

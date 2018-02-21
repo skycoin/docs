@@ -1,0 +1,41 @@
+{{ partial "header.html" . }}
+
+{{if .Params.devdocs }}
+
+<main class="post">
+  <div class="meta">
+    <h1> Developer Documentation </h1>
+
+    <p>Find useful resources, guides and reference material for developers.</p>
+    <div class="devdocs">
+      <a href="{{ "./devdocs/guides" | absURL }}">Guides</a>
+      <a href="{{ "./devdocs/references" | absURL }}">References</a>
+      <a href="{{ "./devdocs/examples" | absURL }}">Examples</a>
+    </div>
+  </div>
+
+</main>
+
+{{else}}
+
+<main class="list">
+  {{ if .Title }}
+  <h1 class="list__title">{{ .Name }}</h1>
+  {{ end }}
+
+
+
+  <ul class="list__list">
+    {{ range .Data.Pages.ByWeight }}
+    <li class="list__item">
+      <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
+      {{ if .Params.isdate }}
+      <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
+      {{end}}
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{end}}
+{{partial "telegram.html" .}}
+{{ partial "footer.html" . }}

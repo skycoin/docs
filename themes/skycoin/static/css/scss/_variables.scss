@@ -1,0 +1,36 @@
+// Breakpoints
+$breakpoint-xs: 330px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 832px;
+$breakpoint-lg: 1024px;
+
+// Typography
+$font-family-mono: "Inconsolata", monospace, sans-serif;
+$font-family-sans: "Montreal", sans-serif;
+
+$font-weight-base: 400;
+$font-weight-bold: 700;
+
+// Border radius
+$border-radius-base: 4px;
+$border-radius-pill: 1000px;
+
+// Box shadow
+$box-shadow-base: 0 1px 2px rgba(0, 0, 0, 0.25);
+$box-shadow-hover: 0 1px 4px rgba(0, 0, 0, 0.25);
+
+// Colors:
+$blue: #0072FF;
+$violet: #0072FF;
+$indigo: #00C3FF;
+$black: #1E2227;
+$dark-gray: #16191D;
+$cool-gray: #22262B;
+$gray: #292D32;
+$light-gray: #EFF0F0;
+$pale-grey: #F7F7F7;
+$white: #ffffff;
+
+// Container widths
+$container-width-base: 39rem;
+$container-width-large: 49rem;

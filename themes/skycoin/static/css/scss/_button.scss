@@ -1,0 +1,61 @@
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+  line-height: 1;
+  font-weight: 700;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-base;
+  font-family: $font-family-mono;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    box-shadow: $box-shadow-hover;
+  }
+
+  &--lg {
+    padding: 1rem 1.5rem;
+  }
+
+  &--outline {
+    border: 1px solid currentColor;
+
+    &, &:hover, &:active {
+      box-shadow: none;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &--pill {
+    border-radius: $border-radius-pill;
+  }
+
+  &--violet {
+    background-color: $violet;
+    color: $white;
+
+    &:hover {
+      background-color: darken($violet, 5%);
+    }
+
+    &:active {
+      background-color: darken($violet, 10%);
+    }
+  }
+
+  &--blue {
+    color: $blue;
+  }
+}
