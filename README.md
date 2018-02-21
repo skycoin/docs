@@ -1,7 +1,9 @@
-Skycoin DevsDocs
-============
+Skycoin documentation
+=====================
 
-# Docs
+![](https://user-images.githubusercontent.com/26845312/32426705-d95cb988-c281-11e7-9463-a3fce8076a72.png)
+
+Skycoin is a next-generation cryptocurrency. Contents in this repository document how Skycoin improves upon Bitcoin and what parts of the OP Redecentralize and OP Darknet Plan it is supposed to address.
 
 There are three types of documentation:
 
@@ -11,7 +13,7 @@ There are three types of documentation:
 
 In this repository [hugo](https://gohugo.io/) is used to generate a static website from markdown files.
 
-Refer to hugo documentation for full detail.
+Refer to [hugo documentation](https://gohugo.io) to [get started](https://gohugo.io/getting-started/quick-start/).
 
 Content: Create or Amend Posts
 ==============================
@@ -21,14 +23,16 @@ Look in the `content/` folder.  Posts are written in markdown.
 Locally, the blog can be previewed with:
 
 ```sh
-hugo serve
+hugo serve -D
 ```
 
-Make sure that your posts compile without error. Check the formatting.
+The web site will be available at `http://localhost:1313/` immediately after.
+
+To get started make sure that your posts compile without error. Check the formatting.
 
 Then, commit the changes and push.
 
-If there are no problems, then (url website) will automatically update in a few minutes.
+If there are no problems, then your pages at `http://localhost:1313/` will automatically updated in a few minutes.
 
 Themes: Layout and Styling
 ==========================
