@@ -6,8 +6,9 @@ defaultContentLanguage = "en"
 relativeURLs = true
 canonifyURLs = true
 
+
 googleAnalytics = ""
-#disqusShortname = ""
+disqusShortname = "comment"
 
 # hugo-xmin specific variables
 theme = "skycoin"
@@ -93,6 +94,7 @@ email = ""
 github = "skycoin"
 twitter = "skycoinproject"
 twitterAnalytics = "ny03t"
+urlGit = "https://github.com/skycoin/docs"
 
 [[menu.languages]]
 name = "English"

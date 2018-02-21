@@ -2,13 +2,20 @@
 title: "Introduction"
 isdate: false
 weight: 5
+filename: "/content/devdocs/references/intro.md"
 ---
+
+{{% comment %}}
+This file is licensed under the MIT License (MIT) available on
+http://opensource.org/licenses/MIT.
+{{% / comment %}}
+
 
 
 The Developer Reference aims to provide technical details and API information
 to help you start building Skycoin-based applications, but it is [not a specification][]. To make the best use of
 this documentation, you may want to install the current version of Skycoin core,
-either from ```core git``` or from a <code>core executable</code>.
+either from [source][core git] or from a [pre-compiled executable][core executable].
 
 Questions about Skycoin development are best asked in one of the
 [Skycoin community channels][dev communities].
@@ -23,7 +30,11 @@ links will be shown in blue.  If you hover over a cross-reference link, a brief
 definition of the term will be displayed in a tooltip.
 
 
+
 #### Not A Specification
+{:.no_toc}
+{{%subhead%}}
+
 
 The Skycoin.net Developer Documentation describes how Skycoin works to
 help educate new Skycoin developers, but it is not a specification---and

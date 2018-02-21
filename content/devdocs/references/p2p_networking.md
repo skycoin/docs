@@ -2,7 +2,11 @@
 title: "P2P Network"
 isdate: false
 weight: 6
+filename: "/content/devdocs/references/p2p_networking.md"
 ---
+
+### P2P Network
+ {{% subhead %}}
 
 This section describes the Skycoin P2P network protocol (but it is
 [not aspecification][]). All peer-to-peer communication occurs entirely over TCP.
@@ -11,8 +15,9 @@ This section describes the Skycoin P2P network protocol (but it is
 integers mentioned in this section are transmitted in little-endian order.
 
 
-### Constants And Defaults
 
+### Constants And Defaults
+ {{% subhead %}}
 
 The following constants and defaults are taken from Skycoin Core's
 [skycoin.go at master][] and [skycoin.go at testnet][] source code files.
@@ -36,7 +41,7 @@ for the different networks.
 
 
 ### Protocol Versions
-
+ {{% subhead %}}
 
 The table below lists some notable versions of the P2P network protocol,
 with the most recent versions listed first. (If you know of a protocol
@@ -49,8 +54,9 @@ As of Skycoin Core 0.21.1, the most recent protocol version is `2`.
 |---------|------------------------------------|--------------
 
 
-### Message Headers
 
+### Message Headers
+ {{% subhead %}}
 
 All messages in the network protocol use the same container format,
 which provides a required multi-field message header and an optional payload.
@@ -64,12 +70,16 @@ The message header format is:
 The following example is an annotated hex dump of a mainnet message
 header from an [`GETP` message][getp message] which has no payload.
 
-{{< highlight text >}}
+{{ <highlight text> }}
 TODO : GETP message hex dump
 {{ </highlight> }}
 
 
+
 ### Data Messages
+ {{% subhead %}}
+
+
 
 The following network messages all request or provide data related to
 transactions and blocks.
@@ -78,10 +88,12 @@ transactions and blocks.
 
 
 #### Give Blocks
+ {{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin GIVB messages are similar to [Bitcoin block message][].
-```
+{{% /comment %}}
+
 
 
 The `GIVB` message transmits one or many serialized block in the format
@@ -101,10 +113,11 @@ TODO : GIVB message hex dump
 
 
 #### Get Blocks
+ {{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin GETB messages are similar to [Bitcoin getblocks message][].
-```
+{{% /comment %}}
 
 
 The `GETB` message requests a `GIVB` message that provides block
@@ -128,6 +141,8 @@ TODO : GETB message hex dump
 
 
 #### Get Transactions
+ {{% subhead %}}
+
 
 The `GETT` message requests one or more transaction objects from another
 node. The transactions are requested by TXID hash, which the requesting
@@ -149,12 +164,14 @@ header differs.
 The following annotated hexdump shows a `GETT` message.  (The
 message header has been omitted.)
 
-{{ <highlight  text> }}
+{{ <highlight text> }}
 TODO : GETT message hex dump
-{{</highlight>}}
+{{ </highlight > }}
 
 
 #### Announce Blocks
+ {{% subhead %}}
+
 
 The `ANNB` message transmits the [block height][] of the [head block][]
 known to the transmitting peer.  It can be sent unsolicited to
@@ -173,12 +190,13 @@ and then use a follow-up `GETB` message to request unseen objects.
 The following annotated hexdump shows an `ANNB` message with two
 inventory entries.  (The message header has been omitted.)
 
-{{<highlight text>}}
+{{ <highlight text> }}
 TODO: ANNB message hex dump
-{{</highlight>}}
+{{ </highlight> }}
 
 
 #### Announce Transactions
+ {{% subhead %}}
 
 The `ANNT` message transmits one or more [TXID hashes][/en/glossary/txid]{:#term-txid}{:.term}
 of transaction objects known to the transmitting peer. It can be sent
@@ -199,19 +217,19 @@ then use a follow-up [GETT message][] to request unseen transactions.
 The following annotated hexdump shows an `ANNT` message with two
 inventory entries.  (The message header has been omitted.)
 
-{{<highlight text>}}
+{{ <highlight text> }}
 ANNT message hex dump
-{{</highlight>}}
+{{ </highlight > }}
 
 
 #### Give Transactions
- 
+ {{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin GIVT messages are similar to [Bitcoin tx message][].
-```
+{{% /comment %}}
 
- 
+
 
 The `GIVT` message transmits some transactions in the raw transaction
 format. It can be sent in a variety of situations;
@@ -231,17 +249,15 @@ transaction section][raw transaction format].
 The following annotated hexdump shows a `GIVT` message.  (The
 message header has been omitted.)
 
-{{<highlight text>}}
+{{ <highlight text> }}
 TODO : GIVT message hex dump
-{{</highlight>}}
+{{ </highlight > }}
 
- 
 
 
 ### Control Messages
- 
+ {{% subhead %}}
 
- 
 
 The following network messages all help control the connection between
 two peers or allow them to advise each other about the rest of the
@@ -255,16 +271,16 @@ information. In addition, this section does not yet cover P2P protocol
 operation over the [Tor network][tor]; if you would like to contribute
 information about Tor, please [open an issue][docs issue].
 
- 
+
 
 #### Give Peers
- 
+ {{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin GIVP messages are similar to [Bitcoin addr message][].
-```
+{{% /comment %}}
 
- 
+
 
 The `GIVP` message relays connection information
 for peers on the network. Each peer which wants to accept incoming
@@ -298,21 +314,18 @@ The following annotated hexdump shows part of an `addr` message. (The
 message header has been omitted and the actual IP address has been
 replaced with a [RFC5737][] reserved IP address.)
 
-{{<highlight text>}}
+{{ <highlight text> }}
 GIVP message hex dump
-{{</highlight>}}
-
- 
+{{ </highlight> }}
 
 
 #### Get Peers
- 
+ {{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin GETP messages are similar to [Bitcoin getaddr message][].
-```
+{{% /comment %}}
 
- 
 
 The `GETP` message requests a [`GIVP` message][givp message] from the receiving
 node, preferably one with lots of IP addresses of other receiving nodes.
@@ -324,17 +337,15 @@ There is no payload in a `GETP` message.  See the
 [message header section][section message header] for an example of a
 message without a payload.
 
- 
 
 
 #### Ping
- 
+{{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin PING messages are similar to [Bitcoin ping message][].
-```
+{{% /comment %}}
 
- 
 
 The `PING` message helps confirm that the receiving peer is still
 connected. If a TCP/IP error is encountered when sending the `PING`
@@ -346,25 +357,25 @@ There is no payload in a `PING` message.  See the
 [message header section][section message header] for an example of a
 message without a payload.
 
- 
+
 
 #### Pong
- 
+{{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin PONG messages are similar to [Bitcoin pong message][].
-```
+{{% /comment %}}
 
- 
+
 
 The `PONG` message replies to a `PING` message, proving to the pinging
 node that the ponging node is still alive. Skycoin Core will, by
 default, disconnect from any clients which have not responded to a
 `PING` message within 20 minutes.
 
-```
+{{% comment %}}
 TODO: Skycoin PING timeout
-```
+{{% /comment %}}
 
 To allow nodes to keep track of latency, the `PONG` message sends back
 the same nonce received in the `PING` message it is replying to.
@@ -372,17 +383,14 @@ the same nonce received in the `PING` message it is replying to.
 The format of the `PONG` message is identical to the `PING` message;
 only the message header differs.
 
- 
-
 
 #### Introduction
- 
+{{% subhead %}}
 
-```
+{{% comment %}}
 Skycoin INTR messages are similar to [Bitcoin version message][].
-```
+{{% /comment %}}
 
- 
 
 The `INTR` message provides information about the transmitting node
 to the receiving node at the beginning of a connection. Until both peers
@@ -411,17 +419,15 @@ The following annotated hexdump shows an `INTR` message. (The
 message header has been omitted and the actual IP addresses have been
 replaced with [RFC5737][] reserved IP addresses.)
 
-{{<highlight text>}}
+{{ <highlight text> }}
 TODO : INTR message hex dump
-{{</highlight>}}
+{{ </highlight > }}
 
- 
 
 
 #### Final remarks about the P2P network
- 
+{{% subhead %}}
 
- 
 
 Skycoin is a next generation blockchain ledger technology. Therefore
 some of their innovatve concepts do not map one-to-one to similar
@@ -455,7 +461,3 @@ so it does not offer equivalents to Bitcoin's
 Skycoin does not implement [NotFound][bitcoin notfound message],
 [Reject][bitcoin reject message],
 and [Alert][bitcoin alert message] message types either.
-
-
-
- 

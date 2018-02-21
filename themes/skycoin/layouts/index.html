@@ -12,11 +12,10 @@
   <section class="post__content">
     {{if .Params.image}}
     <img  src="{{ .Params.image | absURL }}">
-    
-    {{ end }}
 
+    {{ end }}
     {{ .Content }}
-    
+
   </section>
 </main>
 

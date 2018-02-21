@@ -2,9 +2,12 @@
 title: "Block Chain"
 isdate: false
 weight: 2
+filename: "/content/devdocs/guides/block_chain.md"
 ---
-## Block Chain
-
+{{% comment %}}
+This file is licensed under the MIT License (MIT) available on
+http://opensource.org/licenses/MIT.
+{{% /comment %}}
 
 The block chain provides Skycoin's public ledger, an ordered and timestamped record
 of transactions. This system is used to protect against double spending
@@ -13,13 +16,13 @@ and modification of previous transaction records.
 Each full node in the Skycoin network independently stores a block chain
 containing only blocks validated by that node. When several nodes all
 have the same blocks in their block chain, they are considered to be in
-[consensus][/glossary/consensus]{:#term-consensus}{:.term}. The validation rules these
+[consensus][/en/glossary/consensus]{:#term-consensus}{:.term}. The validation rules these
 nodes follow to maintain consensus are called [consensus
 rules][/en/glossary/consensus-rules]{:#term-consensus-rules}{:.term}. This section describes many of
 the consensus rules used by Skycoin Core.
 
-
 ### Block Chain Overview
+{{% subhead %}}
 
 ![Block Chain Overview](/img/dev/en-blockchain-overview.svg)
 
@@ -67,16 +70,21 @@ that's automatically [burned][proof of burn] by the Skycoin system ledger.
 For example, in the illustration above, each transaction spends 10,000 coins
 fewer than it receives from its combined inputs, effectively paying a 10,000
 coins transaction fee that can't be used any more.
-
-
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
 ### Design Decisions
+{{% comment%}}
+{% include helpers/subhead-links.md %}
 
-
+{% autocrossref %}
+{{% /comment%}}
 After thoughtful research of the state of the art in cryptocurrency technologies
 and analysis of results of simulations, the underlying principles of Skycoin
 are based on the following pilars.
 
 #### *Design decision #1* : Performant consensus algorithm
+{{% subhead %}}
 
 The objective of the Skycoin is to run an optimal set of rules for each node
 to follow during consensus trials, so that the final agreement between nodes
@@ -130,11 +138,15 @@ given opinion.
 The node is able to receive raw data (e.g. low-level, elementary events such as
 transactions) and produce an independent research that leads to a new opinion
 (e.g. block hash).
-
-
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
 ### Proof Of Burn
+{{% comment%}}
+{% include helpers/subhead-links.md %}
 
-
+{% autocrossref %}
+{{% /comment%}}
 The block chain is collaboratively maintained by anonymous peers on the network.
 Skycoin requires that each block resulted expensive enough for a node to create
 it and include it into the blockchain in consensus to others. Skycoin consensus
@@ -162,17 +174,25 @@ The [proof of burn][] used in Skycoin consists in the impossibility of spending
 transaction fees. Fees are paid in [coin hours][coin hour]. A transaction must
 spend at least one [coin hour][] to be valid, and half (rounded up) of the
 [coin hours][coin hour] being spent must be destroyed.
-
-
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
 ### Block Height And Forking
+{{% comment%}}
+{% include helpers/subhead-links.md %}
 
-
+{% autocrossref %}
+{{% /comment%}}
 TODO: Document block height and forking
-
-
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
 ### Transaction Data
+{{% comment%}}
+{% include helpers/subhead-links.md %}
 
-
+{% autocrossref %}
+{{% /comment%}}
 Every block must include one or more transactions. All transactions are encoded
 into blocks in binary rawtransaction format.
 
@@ -191,7 +211,9 @@ process repeats until only one hash remains, the merkle root.
 For example, if transactions were merely joined (not hashed), a
 five-transaction merkle tree would look like the following text diagram:
 
-
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
 ~~~
        ABCDEEEE .......Merkle root
       /        \
@@ -201,8 +223,9 @@ five-transaction merkle tree would look like the following text diagram:
 /  \  /  \  /
 A  B  C  D  E .........Transactions
 ~~~
-
-
+{{% comment%}}
+{% autocrossref %}
+{{% /comment%}}
 As discussed in the Simplified Payment Verification (SPV) subsection,
 the merkle tree allows clients to verify for
 themselves that a transaction was included in a block by obtaining the
@@ -218,23 +241,36 @@ other transactions. If the five transactions in this block were all at
 the maximum size, downloading the entire block would require over
 500,000 bytes---but downloading three hashes plus the block header
 requires only 140 bytes.
-
+{{% comment%}}}
 
 TODO: Sizes in bytes mentioned above are for Bitcoin. Update accordingly for Skycoin
 
+{{% /comment%}}
 
 Note: If identical txids are found within the same block, there is a possibility that the merkle tree may collide with a block with some or all duplicates removed due to how unbalanced merkle trees are implemented (duplicating the lone hash).
 Since it is impractical to have separate transactions with identical txids, this does not impose a burden on honest software, but must be checked if the invalid status of a block is to be cached;
 otherwise, a valid block with the duplicates eliminated could have the same merkle root and block hash, but be rejected by the cached invalid outcome, resulting in security bugs such as CVE-2012-2459.
-
-
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
 ### Consensus Rule Changes
+{{% comment%}}
+{% include helpers/subhead-links.md %}
 
-
+{% autocrossref %}
+{{% /comment%}}
 TODO: Document changes in consensus rules
-
-
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
 #### Detecting Forks
+{{% comment%}}
+{% include helpers/subhead-links.md %}
 
-
+{% autocrossref %}
+{{% /comment%}}
 TODO: Document fork detection
+{{% comment%}}
+{% endautocrossref %}
+{{% /comment%}}
+

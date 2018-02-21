@@ -2,7 +2,17 @@
 title: "P2P Network"
 isdate: false
 weight: 3
+filename: "/content/devdocs/en/guides/p2p_network.md"
 ---
+{{% comment %}}
+This file is licensed under the MIT License (MIT) available on
+http://opensource.org/licenses/MIT.
+{{% /comment %}}
+
+## P2P Network
+{{% subhead %}}
+
+
 
 The Skycoin network protocol allows full nodes
 (peers) to collaboratively maintain a
@@ -10,7 +20,7 @@ The Skycoin network protocol allows full nodes
 transaction exchange. Full nodes download and verify every block and transaction
 prior to relaying them to other nodes. Archival nodes are full nodes which
 store the entire blockchain and can serve historical blocks to other nodes.
-Pruned nodes are full nodes which do not store the entire blockchain. Many SPV
+Pruned nodes are full nodes which do not store the entire blockchain. Many SPV 
 clients also use the Skycoin network protocol to connect to full nodes.
 
 Consensus rules do not cover networking, so Skycoin programs may use
@@ -25,7 +35,10 @@ in the example output below have been replaced with [RFC5737][] reserved
 IP addresses.
 
 
+
 ### Peer Discovery
+{{% subhead %}}
+
 
 
 When started for the first time, programs don't know the IP
@@ -70,6 +83,13 @@ significant delay to the amount of time it takes to connect to the
 network, forcing a user to wait before sending a transaction or checking
 the status of payment.
 
+{{% comment %}}
+
+TODO: Look for equivalents of Bitcoin's 11 seconds rule in Skycoin Core
+<!-- reference for "Bitcoin Core...11 seconds" below:
+     https://github.com/bitcoin/bitcoin/pull/4559 -->
+
+{{% /comment %}}
 
 <!-- reference for Skycoin Core behavior described below: search for
 "DefaultConnections" in cmd/skycoin/skycoin.go; Skycoin has IPv4 seeds
@@ -88,7 +108,10 @@ details.  Other Skycoin client software should be programmed to do
 the same thing.
 
 
+
 ### Connecting To Peers
+{{% subhead %}}
+
 
 
 Connecting to a peer is done by sending an
@@ -110,7 +133,10 @@ If 90 minutes pass without a message being received by a peer,
 the client will assume that connection has closed.
 
 
+
 ### Initial Block Download
+{{% subhead %}}
+
 
 
 Before a full node can validate unconfirmed transactions and
@@ -125,7 +151,11 @@ downloaded, such as when a previously-caught-up node has been offline
 for a long time. In this case, a node can use the IBD method to download
 all the blocks which were produced since the last time it was online.
 
+
+
 #### Blocks-First
+{{% subhead %}}
+
 
 
 Skycoin Core uses a
@@ -136,7 +166,7 @@ The goal is to download the blocks from the best block chain in sequence.
 
 The first time a node is started, it only has a single block in its
 local best block chain---the hardcoded genesis block (block 0).  When this
-node chooses a remote peer, called the sync node, both nodes should
+node chooses a remote peer, called the sync node, both nodes should 
 automatically exchange `GETB` messages.
 
 ![First GETB Message Sent During IBD](/img/dev/en-ibd-getb.svg)
@@ -179,7 +209,9 @@ Following block validation and immediately after broadcasting
 `ANNB` message to its peers the node also broadcasts a second
 `GETB` message, now containing its updated block height.
 
+{{% comment %}}
 TODO: At this point forks might become evident, include in docs
+{{% /comment %}}
 
 ![Second GETB Message Sent During IBD](/img/dev/en-ibd-getb2.svg)
 
@@ -201,8 +233,13 @@ the tip of the longest block chain. At that point, the node
 will accept blocks sent through the regular block broadcasting described
 in a later subsection.
 
+
+
 ##### Blocks-First Advantages & Disadvantages
 {:.no_toc}
+{{% subhead %}}
+
+
 
 The primary advantage of blocks-first IBD is its simplicity.
 It also has disadvantages with several implications:
@@ -215,6 +252,7 @@ It also has disadvantages with several implications:
   the cost of repeated reception of blocks stored by multiple peers that
   synchronized their block chains prior to the IBD.
 
+{{% comment %}}
 * **Download Restarts:** The sync node can send a non-best (but
   otherwise valid) block chain to the IBD node. The IBD node won't be
   able to identify it as non-best until the initial block download nears
@@ -229,6 +267,7 @@ It also has disadvantages with several implications:
   the sync node sends a non-best (but otherwise valid) block chain, the
   chain will be stored on disk, wasting space and possibly filling up
   the disk drive with useless data.
+{{% /comment %}}
 
 * **High Memory Use:** Whether maliciously or by accident, blocks sent by
   the sync node can arrive in out of order, creating orphan blocks which
@@ -248,7 +287,10 @@ to the reference page for that message.
 | **Payload** | Local block height     | Local block height and local block cache size   | An array of serialized blocks
 
 
+
 ### Block Broadcasting
+{{% subhead %}}
+
 
 
 When a node discovers a new block, it broadcasts the new block to its
@@ -284,7 +326,15 @@ will accept blocks sent using any of the methods described above.
 Full nodes validate received blocks. On success they advertise it to their
 peers using the standard block relay method described above.
 
+{{% comment %}}
+TODO: Table : messages for block broadcasting
+{{% /comment %}}
+
+
+
 #### Orphan Blocks
+{{% subhead %}}
+
 
 
 Blocks-first nodes may download orphan blocks---blocks whose previous
@@ -300,7 +350,7 @@ reject it. Blocks are processed in sequence.
 This is particularly true when a *slow* node is a few blocks behind
 the master at the moment the later discovers a new block. The master will
 broadcast an unsolicited [`GIVB` message][givb message] and this slow
-node will discard it because its header’s `PrevBlockHash`
+node will discard it because its header’s `PrevBlockHash` 
 will not match the hash ID of the block at the tip of the chain.
 Orphan blocks discarded this way will be retrasmitted and eventually
 synchronized at a later time by following [standard block relay][]
@@ -309,7 +359,11 @@ the block chain will be smaller than the sequence number of the
 orphan block.
 
 
+
 ### Transaction Broadcasting
+{{% subhead %}}
+
+
 
 Transaction broadcasting starts since the very same moment a successful
 introduction handshake is established.  At that time nodes at both sides
@@ -319,6 +373,9 @@ Transactons are announced by packaging each group in
 [`ANNT` messages][annt message] which will be boadcast to the peers
 of both nodes.
 
+{{% comment %}}
+TODO: Broadcasting vs direct message
+{{% /comment %}}
 
 Each network node should reply to an [`ANNT` message][annt message]
 with a [`GETT` message][gett message] including the TXID hashes of the
@@ -333,14 +390,17 @@ During the transaction broadcasting process invalid transactions
 are filtered out.
 
 
+
 #### Memory Pool
+{{% subhead %}}
+
 
 
 Full peers may keep track of unconfirmed transactions which are eligible to
 be included in the next block. This is essential for master nodes actually
 discovering new blocks including some or all of those transactions,
-but it's also useful for any peer who wants to keep track
-of unconfirmed transactions, such as peers serving unconfirmed transaction
+but it's also useful for any peer who wants to keep track 
+of unconfirmed transactions, such as peers serving unconfirmed transaction 
 information to SPV clients.
 
 Because unconfirmed transactions have no permanent status in Skycoin,
@@ -354,6 +414,7 @@ for others.
 As each new block is added, any transactions it confirms are removed
 from the memory pool.
 
+{{% comment %}}
 TODO: Come back to this when we have consensus
 
 Transactions included in signed blocks that later become stale blocks may be
@@ -364,6 +425,7 @@ blocks from the chain one by one, starting with the tip (highest block).
 As each block is removed, its transactions are added back to the memory
 pool. After all of the stale blocks are removed, the replacement
 blocks are added to the chain one by one, ending with the new tip. As
+{{% /comment %}}
 
 SPV clients don't have a memory pool for the same reason they don't
 relay transactions. They can't independently verify that a transaction
@@ -372,7 +434,10 @@ they can't know which transactions are eligible to be included in the
 next block.
 
 
+
 ### Misbehaving Nodes
+{{% subhead %}}
+
 
 
 Take note that for both types of broadcasting, mechanisms are in place to
@@ -382,7 +447,14 @@ be banned for a configurable number of seconds, which is *86,400* by default
 (24 hours).
 
 
+
 ### Final remarks
+{{% subhead %}}
+
 
 
 Skycoin Core does not implement an alerts system.
+
+
+
+
