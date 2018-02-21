@@ -95,8 +95,10 @@ In Skycoin, the fact that signatures are associated to UXTX inputs renders trans
 
 ### Final remarks
 
-- To the date, there is no equivalent to Bitcoin's Pay To Public Key Hash (PTPKH) nor to Pay To Script Hash (P2SH) transaction types in Skycoin, as there is no scripting language associated to Skycoin transactions.
+- To the date, there is no equivalent to Bitcoin's Pay To [Public Key Hash (PTPKH)]() nor to [Pay To Script Hash (P2SH)]() transaction types in Skycoin, as there is no scripting language associated to Skycoin transactions.
 
 - Unlike Bitcoin, Skycoin doesn't implement any standard template for transactions to prevent known bugs. This occurs due to the simplicity derived from not implementing special types of transactions.
 
 - In Skycoin transactions, a signature hash is required for every UTXT consumed as input.
+
+- Skycoin transactions don't include the concept of [locktime]().
