@@ -40,7 +40,7 @@ Bitcoin transactions are not fully anonymous, but pseudo-anonymous. Yet, several
 
 To address this issue, Skycoin includes built-in support of Gmaxwell CoinJoin.
 
-#### ¿What is CoinJoin?
+#### What is CoinJoin?
 
 CoinJoin is a protocol that combines multiple transactions into a single one, named CoinJoin transaction.
 
@@ -85,7 +85,7 @@ To enforce this behavior, CoinJoin server can can require that all created outpu
 
 ### UXTX & Transaction malleability
 
-Skycoin's UXTX model eliminates several defficiencies that allow Bitcoin transactions to be tampered with. Unlike Bitcoin UXTO, Skycoin transactions don't require signatures, but rather **inputs themselves**. In Bitcoin, the signature script contains the [secp256k1 signature](), which can't sign itself, allowing attackers to make non-functional modifications to a transaction without rendering it invalid. For example, an attacker can add some data to the signature script which will be dropped before the previous pubkey script is processed.
+Skycoin's UXTX model eliminates several defficiencies that allow Bitcoin transactions to be tampered with. Unlike Bitcoin UXTO, Skycoin transactions don't require signatures, but rather **inputs themselves**. In Bitcoin, the signature script contains the [secp256k1 signature][secp256k1 signature], which can't sign itself, allowing attackers to make non-functional modifications to a transaction without rendering it invalid. For example, an attacker can add some data to the signature script which will be dropped before the previous pubkey script is processed.
 
 Although the modifications are non-functional---so they do not change what inputs the transaction uses nor what outputs it pays---they do change the computed hash of the transaction. Since each transaction links to previous transactions using hashes as a transaction identifier (txid), a modified transaction will not have the txid its creator expected.
 
@@ -95,10 +95,10 @@ In Skycoin, the fact that signatures are associated to UXTX inputs renders trans
 
 ### Final remarks
 
-- To the date, there is no equivalent to Bitcoin's Pay To [Public Key Hash (PTPKH)]() nor to [Pay To Script Hash (P2SH)]() transaction types in Skycoin, as there is no scripting language associated to Skycoin transactions.
+- To the date, there is no equivalent to Bitcoin's Pay To [Public Key Hash (P2PKH)](/content/glossary/p2pkh-address.yaml) nor to [Pay To Script Hash (P2SH)](/content/glossary/p2sh-address.yaml) transaction types in Skycoin, as there is no scripting language associated to Skycoin transactions.
 
-- Unlike Bitcoin, Skycoin doesn't implement any standard template for transactions to prevent known bugs. This occurs due to the simplicity derived from not implementing special types of transactions.
+- Unlike Bitcoin, Skycoin doesn't implement any [standard template for transactions](/content/glossary/standard-transaction.yaml) to prevent known bugs. This occurs due to the simplicity derived from not implementing special types of transactions.
 
 - In Skycoin transactions, a signature hash is required for every UTXT consumed as input.
 
-- Skycoin transactions don't include the concept of [locktime]().
+- Skycoin transactions don't include the concept of [locktime](/content/glossary/locktime.yaml).
