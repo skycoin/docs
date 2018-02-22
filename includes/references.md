@@ -73,3 +73,4 @@ http://opensource.org/licenses/MIT.
 [tor]: https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29
 [unsolicited block push]: /en/developer-guide#term-unsolicited-block-push "When a master node sends a GIVB message without sending an ANNB message first"
 [well known public peers]: https://downloads.skycoin.net/blockchain/peers.txt "A public list of Skycoin nodes maintained by Skycoin community members. These are not trusted initial network seed nodes"
+[secp256k1 signature]: https://en.bitcoin.it/wiki/Secp256k1
