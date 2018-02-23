@@ -3,15 +3,13 @@ title: "Transactions"
 isdate: false
 weight: 4
 filename: "/content/devdocs/guides/transactions.md"
+subhead: true
 ---
 
 {{% comment %}}
 This file is licensed under the MIT License (MIT) available on
 http://opensource.org/licenses/MIT.
 {{% /comment %}}
-
-## Transactions
-{{% subhead %}}
 
 Transactions over the Skycoin network allow users to transfer SKY among each other in a fast, secure and reliable way. Each transaction is constructed out of several elements. This section will describe each element and demonstrate how to use them together to build complete transactions.
 
