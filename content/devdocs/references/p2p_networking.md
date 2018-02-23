@@ -3,10 +3,8 @@ title: "P2P Network"
 isdate: false
 weight: 6
 filename: "/content/devdocs/references/p2p_networking.md"
+subhead: true
 ---
-
-### P2P Network
- {{% subhead %}}
 
 This section describes the Skycoin P2P network protocol (but it is
 [not aspecification][]). All peer-to-peer communication occurs entirely over TCP.

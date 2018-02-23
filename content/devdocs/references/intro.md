@@ -10,8 +10,6 @@ This file is licensed under the MIT License (MIT) available on
 http://opensource.org/licenses/MIT.
 {{% / comment %}}
 
-
-
 The Developer Reference aims to provide technical details and API information
 to help you start building Skycoin-based applications, but it is [not a specification][]. To make the best use of
 this documentation, you may want to install the current version of Skycoin core,

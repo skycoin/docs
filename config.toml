@@ -8,7 +8,7 @@ canonifyURLs = true
 
 
 googleAnalytics = ""
-disqusShortname = "comment"
+disqusShortname = ""
 
 # hugo-xmin specific variables
 theme = "skycoin"
