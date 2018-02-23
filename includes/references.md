@@ -37,15 +37,17 @@ http://opensource.org/licenses/MIT.
 [distribution addresses]: TODO: EMPTY
 [dns a records]: http://tools.ietf.org/html/rfc1035#section-3.2.2
 [docs issue]: https://github.com/skycoin/docs/issues
-[getb message]: TODO: EMPTY
-[gett message]: TODO: EMPTY
-[givb message]: TODO: EMPTY
-[givp message]: TODO: EMPTY
-[givt message]: TODO: EMPTY
-[annt message]: TODO: EMPTY
+[getb message]: /content/devdocs/references/p2p_networking#get-blocks
+[gett message]: /content/devdocs/references/p2p_networking#get-transactions
+[getp message]: /content/devdocs/references/p2p_networking#get-peers
+[givb message]: /content/devdocs/references/p2p_networking#give-blocks
+[givp message]: /content/devdocs/references/p2p_networking#give-peers
+[givt message]: /content/devdocs/references/p2p_networking#give-transactions
+[annt message]: /content/devdocs/references/p2p_networking#announce-transactions
+[annb message]: /content/devdocs/references/p2p_networking#announce-blocks
 [head block]: TODO: EMPTY
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
-[intr message]: TODO: EMPTY
+[intr message]: /content/devdocs/references/p2p_networking#introduction
 [introduction handshake]:  https://en.wikipedia.org/wiki/Handshaking "A handshake is an automated process of negotiation between two communicating participants that establishes the protocols of a communications channel, at the start of the communication, before full communication begins. It follows the physical establishment of the channel and precedes normal information transfer."
 [maximum message length]: TODO: EMPTY
 [miner]: TODO: EMPTY
