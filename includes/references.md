@@ -4,8 +4,6 @@ This file is licensed under the MIT License (MIT) available on
 http://opensource.org/licenses/MIT.
 {% endcomment %}
 
-
-[annt message]: TODO: EMPTY
 [bitcoin addr message]: https://bitcoin.org/en/developer-reference#addr "The P2P network message which relays IP addresses and port numbers of active nodes to other nodes and clients, allowing decentralized peer discovery."
 [bitcoin alert message]: https://bitcoin.org/en/developer-reference#alert "The P2P network message which sends alerts in case of major software problems."
 [bitcoin block message]: https://bitcoin.org/en/developer-reference#block "The P2P network message which sends a serialized block"
@@ -44,6 +42,7 @@ http://opensource.org/licenses/MIT.
 [givb message]: TODO: EMPTY
 [givp message]: TODO: EMPTY
 [givt message]: TODO: EMPTY
+[annt message]: TODO: EMPTY
 [head block]: TODO: EMPTY
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
 [intr message]: TODO: EMPTY
