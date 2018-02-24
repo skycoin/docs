@@ -2,11 +2,11 @@
 <!-- http://opensource.org/licenses/MIT. -->
 
 {{if .Page.Params.filename }}
-<div class="subhead-links sourcefile" data-sourcefile=" {{ .Page.Params.filename }} ">
-	<a href="{{ .Site.Params.urlGit }}/edit/master{{ .Page.Params.filename }}">Edit</a>
-	<a href="{{ .Site.Params.urlGit }}/commits/master{{ .Page.Params.filename }}">History</a>
-  <a href="{{ .Site.Params.urlGit }}/issues/new?body=Source%20File%3A%20%0A%0A{{ .Page.Params.filename }}">Report issue</a>
-  <a href="https://t.me/Skycoin">Discuss</a>
+<div class="nav subhead-links sourcefile" data-sourcefile=" {{ .Page.Params.filename }} ">
+  <a class="nav__item" href="{{ .Site.Params.urlGit }}/edit/master{{ .Page.Params.filename }}">Edit</a>
+  <a class="nav__item" href="{{ .Site.Params.urlGit }}/commits/master{{ .Page.Params.filename }}">History</a>
+  <a class="nav__item" href="{{ .Site.Params.urlGit }}/issues/new?body=Source%20File%3A%20%0A%0A{{ .Page.Params.filename }}">Report issue</a>
+  <a class="nav__item" href="https://t.me/Skycoin">Discuss</a>
 </div>
 {{else}}
 <div>source filename not set</div>

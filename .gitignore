@@ -8,3 +8,9 @@ yarn.lock
 .DS_Store
 .vscode
 .gitignore
+
+# Temp files
+
+*.swp
+*.swo
+

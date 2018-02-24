@@ -7,7 +7,7 @@ subhead: true
 ---
 
 This section describes the Skycoin P2P network protocol (but it is
-[not aspecification][]). All peer-to-peer communication occurs entirely over TCP.
+[not a specification][]). All peer-to-peer communication occurs entirely over TCP.
 
 **Note:** unless their description says otherwise, all multi-byte
 integers mentioned in this section are transmitted in little-endian order.
