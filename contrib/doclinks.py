@@ -107,9 +107,12 @@ for dirpath, subdirs, subfiles, dir_fd in os.fwalk(sky_base_path, 'content'):
                         # Increment reference count
                         sky_refs[key][3] += 1
                     else:
-                        source, lineno, text = (btc_refs.get(key) or (None, None, None))[:3]
-                        sky_refs[key] = [source, None, 'REVIEW : ' + text \
-                                if key in btc_refs else 'TODO: EMPTY', 1]
+                        source, lineno, text = (btc_refs.get(key) or (None, None, ""))[:3]
+                        text = text.strip()
+                        text = (text + './# "' if text == "" else
+                                text + ' "' if text[-1] != '"' else text[:-1])
+                        sky_refs[key] = [source, None,  text + 'TODO: REVIEW"'\
+                                if key in btc_refs else text + 'TODO: EMPTY"', 1]
 
 print("""
 {% comment %}
