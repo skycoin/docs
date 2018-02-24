@@ -111,7 +111,7 @@ the same thing.
 
 
 Connecting to a peer is done by sending an
-[`INTR` message][intr messages], which
+[`INTR` message][intr message], which
 contains your version number to the remote
 node. The remote node responds with its own `INTR` message. No further
 acknowledgement message is sent to the other node to indicate the

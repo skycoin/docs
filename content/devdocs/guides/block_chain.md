@@ -4,6 +4,7 @@ isdate: false
 weight: 2
 filename: "/content/devdocs/guides/block_chain.md"
 ---
+
 {{% comment %}}
 This file is licensed under the MIT License (MIT) available on
 http://opensource.org/licenses/MIT.
@@ -70,21 +71,23 @@ that's automatically [burned][proof of burn] by the Skycoin system ledger.
 For example, in the illustration above, each transaction spends 10,000 coins
 fewer than it receives from its combined inputs, effectively paying a 10,000
 coins transaction fee that can't be used any more.
+
 {{% comment%}}
 {% endautocrossref %}
 {{% /comment%}}
-### Design Decisions
-{{% comment%}}
-{% include helpers/subhead-links.md %}
 
+### Design Decisions
+{{% subhead %}}
+
+{{% comment%}}
 {% autocrossref %}
 {{% /comment%}}
+
 After thoughtful research of the state of the art in cryptocurrency technologies
 and analysis of results of simulations, the underlying principles of Skycoin
 are based on the following pilars.
 
 #### *Design decision #1* : Performant consensus algorithm
-{{% subhead %}}
 
 The objective of the Skycoin is to run an optimal set of rules for each node
 to follow during consensus trials, so that the final agreement between nodes
@@ -142,8 +145,9 @@ transactions) and produce an independent research that leads to a new opinion
 {% endautocrossref %}
 {{% /comment%}}
 ### Proof Of Burn
+{{% subhead %}}
+
 {{% comment%}}
-{% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 {{% /comment%}}
@@ -177,9 +181,11 @@ spend at least one [coin hour][] to be valid, and half (rounded up) of the
 {{% comment%}}
 {% endautocrossref %}
 {{% /comment%}}
+
 ### Block Height And Forking
+{{% subhead %}}
+
 {{% comment%}}
-{% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 {{% /comment%}}
@@ -187,9 +193,11 @@ TODO: Document block height and forking
 {{% comment%}}
 {% endautocrossref %}
 {{% /comment%}}
+
 ### Transaction Data
+{{% subhead %}}
+
 {{% comment%}}
-{% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 {{% /comment%}}
@@ -253,9 +261,11 @@ otherwise, a valid block with the duplicates eliminated could have the same merk
 {{% comment%}}
 {% endautocrossref %}
 {{% /comment%}}
+
 ### Consensus Rule Changes
+{{% subhead %}}
+
 {{% comment%}}
-{% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 {{% /comment%}}
@@ -263,9 +273,11 @@ TODO: Document changes in consensus rules
 {{% comment%}}
 {% endautocrossref %}
 {{% /comment%}}
+
 #### Detecting Forks
+{{% subhead %}}
+
 {{% comment%}}
-{% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 {{% /comment%}}
