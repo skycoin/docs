@@ -2,7 +2,7 @@ ico/
 node_modules
 # Hugo output directory
 /public
-
+content/*
 yarn.lock
 
 .DS_Store
