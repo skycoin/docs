@@ -499,10 +499,6 @@ node that the ponging node is still alive. Skycoin Core will, by
 default, disconnect from any clients which have not responded to a
 `PING` message within 20 minutes.
 
-{{% comment %}}
-TODO: Skycoin PING timeout
-{{% /comment %}}
-
 To allow nodes to keep track of latency, the `PONG` message sends back
 the same nonce received in the `PING` message it is replying to.
 
