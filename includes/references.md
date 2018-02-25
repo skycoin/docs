@@ -52,7 +52,7 @@ http://opensource.org/licenses/MIT.
 [maximum message length]: TODO: EMPTY
 [miner]: TODO: EMPTY
 [network]: /en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks"
-[not a specification]: /en/developer-reference#not-a-specification
+[not a specification]: /content/devdocs/references/intro#not-a-specification
 [proof of burn]: TODO: EMPTY
 [proof of work]: https://en.wikipedia.org/wiki/Proof-of-work_system "A proof-of-work (POW) system (or protocol, or function) is an economic measure to deter denial of service attacks and other service abuses such as spam on a network by requiring some work from the service requester, usually meaning processing time by a computer."
 [rfc5737]: http://tools.ietf.org/html/rfc5737
