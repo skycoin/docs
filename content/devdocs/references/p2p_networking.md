@@ -535,7 +535,8 @@ node should [request blocks][getb message] from its peer. It is at the
 discretion of each node to [announce unconfirmed transactions][annt message]
 stored locally in its memory pool at this moment as well.
 
-TODO: `INTR` retries
+By default, Skycoin Core will send an `INTR` message every 30 seconds until an
+introduction handshake is performed.
 
 The following annotated hexdump shows an `INTR` message. (The
 message header has been omitted and the actual IP addresses have been
