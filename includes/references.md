@@ -50,7 +50,7 @@ http://opensource.org/licenses/MIT.
 [intr message]: /content/devdocs/references/p2p_networking#introduction
 [introduction handshake]:  https://en.wikipedia.org/wiki/Handshaking "A handshake is an automated process of negotiation between two communicating participants that establishes the protocols of a communications channel, at the start of the communication, before full communication begins. It follows the physical establishment of the channel and precedes normal information transfer."
 [maximum message length]: /content/glossary/maximum-message-length.yaml
-[miner]: TODO: EMPTY
+[miner]: https://bitcoin.org/en/developer-guide#mining
 [network]: /en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks"
 [not a specification]: /content/devdocs/references/intro#not-a-specification
 [proof of burn]: TODO: EMPTY
