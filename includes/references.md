@@ -45,7 +45,7 @@ http://opensource.org/licenses/MIT.
 [givt message]: /content/devdocs/references/p2p_networking#give-transactions
 [annt message]: /content/devdocs/references/p2p_networking#announce-transactions
 [annb message]: /content/devdocs/references/p2p_networking#announce-blocks
-[head block]: TODO: EMPTY
+[head block]: /content/glossary/head-block.yaml 
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
 [intr message]: /content/devdocs/references/p2p_networking#introduction
 [introduction handshake]:  https://en.wikipedia.org/wiki/Handshaking "A handshake is an automated process of negotiation between two communicating participants that establishes the protocols of a communications channel, at the start of the communication, before full communication begins. It follows the physical establishment of the channel and precedes normal information transfer."
