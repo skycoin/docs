@@ -53,7 +53,7 @@ http://opensource.org/licenses/MIT.
 [miner]: https://bitcoin.org/en/developer-guide#mining
 [network]: /en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks"
 [not a specification]: /content/devdocs/references/intro#not-a-specification
-[proof of burn]: TODO: EMPTY
+[proof of burn]: /content/devdocs/guides/block_chain#proof-of-burn
 [proof of work]: https://en.wikipedia.org/wiki/Proof-of-work_system "A proof-of-work (POW) system (or protocol, or function) is an economic measure to deter denial of service attacks and other service abuses such as spam on a network by requiring some work from the service requester, usually meaning processing time by a computer."
 [rfc5737]: http://tools.ietf.org/html/rfc5737
 [section creating a bloom filter]: /en/developer-examples#creating-a-bloom-filter
