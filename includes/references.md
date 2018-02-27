@@ -29,7 +29,7 @@ http://opensource.org/licenses/MIT.
 [bitcoin version message]: https://bitcoin.org/en/developer-reference#version "A P2P network message sent at the begining of a connection to allow protocol version negotiation"
 [block height]: /docs/skycoin/_data/glossary/en/block-height.yaml
 [block sequence number]: TODO: EMPTY
-[blocks-first]: TODO: EMPTY
+[blocks-first]: /content/devdocs/guides/p2p_network#blocks-first
 [coin hour]: /content/devdocs/guides/transactions#coin-hours
 [core executable]: /en/download
 [core git]: https://github.com/skycoin/skycoin
