@@ -28,7 +28,7 @@ http://opensource.org/licenses/MIT.
 [bitcoin verack message]: https://bitcoin.org/en/developer-reference#verack "A P2P network message sent in reply to a version message to confirm a connection has been established"
 [bitcoin version message]: https://bitcoin.org/en/developer-reference#version "A P2P network message sent at the begining of a connection to allow protocol version negotiation"
 [block height]: /docs/skycoin/_data/glossary/en/block-height.yaml
-[block sequence number]: TODO: EMPTY
+[block sequence number]: /content/glossary/block-sequence-number.yaml
 [blocks-first]: /content/devdocs/guides/p2p_network#blocks-first
 [coin hour]: /content/devdocs/guides/transactions#coin-hours
 [core executable]: /en/download
@@ -49,7 +49,7 @@ http://opensource.org/licenses/MIT.
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
 [intr message]: /content/devdocs/references/p2p_networking#introduction
 [introduction handshake]:  https://en.wikipedia.org/wiki/Handshaking "A handshake is an automated process of negotiation between two communicating participants that establishes the protocols of a communications channel, at the start of the communication, before full communication begins. It follows the physical establishment of the channel and precedes normal information transfer."
-[maximum message length]: TODO: EMPTY
+[maximum message length]: /content/glossary/maximum-message-length.yaml
 [miner]: TODO: EMPTY
 [network]: /en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks"
 [not a specification]: /content/devdocs/references/intro#not-a-specification

@@ -1,0 +1,13 @@
+---
+# This file is licensed under the MIT License (MIT) available on
+# http://opensource.org/licenses/MIT.
+
+required:
+                                           #-------------40 characters-------------#
+    title_max_40_characters_no_formatting: Block Sequence Number
+
+    summary_max_255_characters_no_formatting: >
+        Integer that denotes the position of a given block within the collection of blocks that form of the blockchain
+
+    synonyms_shown_in_glossary_capitalize_first_letter:
+        - Bkseq number
