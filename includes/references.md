@@ -68,3 +68,4 @@ http://opensource.org/licenses/MIT.
 [well known public peers]: https://downloads.skycoin.net/blockchain/peers.txt "A public list of Skycoin nodes maintained by Skycoin community members. These are not trusted initial network seed nodes"
 [unsolicited block push]: /en/developer-guide#term-unsolicited-block-push "When a master node sends a GIVB message without sending an ANNB message first"
 [secp256k1 signature]: https://en.bitcoin.it/wiki/Secp256k1
+[direct headers announcement]: https://bitcoin.org/en/developer-guide#block-broadcasting
