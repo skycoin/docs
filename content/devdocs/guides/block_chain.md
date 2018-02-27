@@ -238,9 +238,8 @@ For example, to verify transaction D was added to the
 block, an SPV client only needs a copy of the C, AB, and EEEE hashes in addition to the
 merkle root; the client doesn't need to know anything about any of the
 other transactions. If the five transactions in this block were all at
-the maximum size, downloading the entire block would require over
-500,000 bytes---but downloading three hashes plus the block header
-requires only 140 bytes.
+the maximum size, downloading the entire block would require 448 bytes---but downloading three hashes plus the block header
+requires only 220 bytes.
 {{% comment%}}}
 
 TODO: Sizes in bytes mentioned above are for Bitcoin. Update accordingly for Skycoin
