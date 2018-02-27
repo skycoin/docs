@@ -1,0 +1,13 @@
+---
+# This file is licensed under the MIT License (MIT) available on
+# http://opensource.org/licenses/MIT.
+
+required:
+                                           #-------------40 characters-------------#
+    title_max_40_characters_no_formatting: Maximum Message Length
+
+    summary_max_255_characters_no_formatting: >
+        Maximum size allowed for P2P messages in the Skycoin network. In Skycoin Core, it is set to 256KB.
+
+    synonyms_shown_in_glossary_capitalize_first_letter:
+        - Maximum message length
