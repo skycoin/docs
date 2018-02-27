@@ -30,7 +30,7 @@ http://opensource.org/licenses/MIT.
 [block height]: /docs/skycoin/_data/glossary/en/block-height.yaml
 [block sequence number]: TODO: EMPTY
 [blocks-first]: TODO: EMPTY
-[coin hour]: TODO: EMPTY
+[coin hour]: /content/devdocs/guides/transactions#coin-hours
 [core executable]: /en/download
 [core git]: https://github.com/skycoin/skycoin
 [dev communities]: /en/development#devcommunities
