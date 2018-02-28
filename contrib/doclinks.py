@@ -33,7 +33,7 @@ import os
 import re
 import sys
 
-skc_base_path = os.path.join(os.path.dirname(sys.argv[0]), '..')
+sky_base_path = os.path.join(os.path.dirname(sys.argv[0]), '..')
 
 parser = argparse.ArgumentParser(
         description="Synchronize Bitcoin.org -> Skycoin.net doc link references")
@@ -46,7 +46,7 @@ args = parser.parse_args()
 btc_base_path = args.path[0]
 
 btc_refs = {}
-skc_refs = {}
+sky_refs = {}
 
 RE_MDLINK = re.compile(r'\[([^\[\]]*)\]\[([^\[\]]*)\]')
 
@@ -57,8 +57,8 @@ REPOS_DATA = [
         'path': btc_base_path},
     {
         'caption': 'Skycoin.net',
-        'refs': skc_refs,
-        'path': skc_base_path}]
+        'refs': sky_refs,
+        'path': sky_base_path}]
 
 doc_folders = [('_includes',)]
 paths = [os.path.join(*base_path, filename)
@@ -90,7 +90,7 @@ for path in paths:
 
 import pprint
 
-for dirpath, subdirs, subfiles, dir_fd in os.fwalk(skc_base_path, '_data'):
+for dirpath, subdirs, subfiles, dir_fd in os.fwalk(sky_base_path, 'content'):
     for filename in subfiles:
         if not filename.endswith('.md'):
             continue
@@ -103,13 +103,16 @@ for dirpath, subdirs, subfiles, dir_fd in os.fwalk(skc_base_path, '_data'):
                     key = key.lower()
                     if key.startswith('/'):
                         pass
-                    elif key in skc_refs:
+                    elif key in sky_refs:
                         # Increment reference count
-                        skc_refs[key][3] += 1
+                        sky_refs[key][3] += 1
                     else:
-                        source, lineno, text = (btc_refs.get(key) or (None, None, None))[:3]
-                        skc_refs[key] = [source, None, 'REVIEW : ' + text \
-                                if key in btc_refs else 'TODO: EMPTY', 1]
+                        source, lineno, text = (btc_refs.get(key) or (None, None, ""))[:3]
+                        text = text.strip()
+                        text = (text + './# "' if text == "" else
+                                text + ' "' if text[-1] != '"' else text[:-1])
+                        sky_refs[key] = [source, None,  text + 'TODO: REVIEW"'\
+                                if key in btc_refs else text + 'TODO: EMPTY"', 1]
 
 print("""
 {% comment %}
@@ -119,8 +122,8 @@ http://opensource.org/licenses/MIT.
 
 """)
 
-for key in sorted(skc_refs.keys()):
-    value = skc_refs[key]
+for key in sorted(sky_refs.keys()):
+    value = sky_refs[key]
     if value[3] == 0:
         value[2] = 'TODO: NOUSE ' + value[2]
     print('[{key}]: {value}'.format(key=key, value=value[2]))

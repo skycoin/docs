@@ -2,17 +2,13 @@
 title: "P2P Network"
 isdate: false
 weight: 3
-filename: "/content/devdocs/en/guides/p2p_network.md"
+filename: "/content/devdocs/guides/p2p_network.md"
+subhead: true
 ---
 {{% comment %}}
 This file is licensed under the MIT License (MIT) available on
 http://opensource.org/licenses/MIT.
 {{% /comment %}}
-
-## P2P Network
-{{% subhead %}}
-
-
 
 The Skycoin network protocol allows full nodes
 (peers) to collaboratively maintain a
@@ -115,7 +111,7 @@ the same thing.
 
 
 Connecting to a peer is done by sending an
-[`INTR` message][intr messages], which
+[`INTR` message][intr message], which
 contains your version number to the remote
 node. The remote node responds with its own `INTR` message. No further
 acknowledgement message is sent to the other node to indicate the
