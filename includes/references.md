@@ -60,7 +60,7 @@ http://opensource.org/licenses/MIT.
 [section message header]: /en/developer-reference#message-headers
 [section protocol versions]: /en/developer-reference#protocol-versions
 [section serialized blocks]: /en/developer-reference#serialized-blocks
-[skycoin web wallet]: TODO: EMPTY
+[skycoin web wallet]: https://github.com/skycoin/skycoin-web
 [skycoin-docs mailing list]: TODO: EMPTY
 [skycoin.go at master]: https://github.com/skycoin/skycoin/tree/master/cmd/skycoin
 [skycoin.go at testnet]: https://github.com/skycoin/skycoin/tree/testnet/cmd/skycoin
