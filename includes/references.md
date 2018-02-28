@@ -61,7 +61,7 @@ http://opensource.org/licenses/MIT.
 [section protocol versions]: /en/developer-reference#protocol-versions
 [section serialized blocks]: /en/developer-reference#serialized-blocks
 [skycoin web wallet]: https://github.com/skycoin/skycoin-web
-[skycoin-docs mailing list]: TODO: EMPTY
+[skycoin-docs mailing list]: https://www.skycoin.net/mailing-list/
 [skycoin.go at master]: https://github.com/skycoin/skycoin/tree/master/cmd/skycoin
 [skycoin.go at testnet]: https://github.com/skycoin/skycoin/tree/testnet/cmd/skycoin
 [tor]: https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29
