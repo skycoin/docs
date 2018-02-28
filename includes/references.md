@@ -34,7 +34,7 @@ http://opensource.org/licenses/MIT.
 [core executable]: /en/download
 [core git]: https://github.com/skycoin/skycoin
 [dev communities]: /en/development#devcommunities
-[distribution addresses]: TODO: EMPTY
+[distribution addresses]: /content/glossary/distribution-addresses.yaml
 [dns a records]: http://tools.ietf.org/html/rfc1035#section-3.2.2
 [docs issue]: https://github.com/skycoin/docs/issues
 [getb message]: /content/devdocs/references/p2p_networking#get-blocks
