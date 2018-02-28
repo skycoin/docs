@@ -299,8 +299,8 @@ When a node discovers a new block, it broadcasts the new block to its
 peers using one of the following methods:
 
 * **[Unsolicited Block Push][]{:#term-unsolicited-block-push}{:.term}:**
-  the node sends to each of its full node peers a `GIVP` message with
-  the new block. The miner can reasonably bypass the standard relay
+  the node sends to each of its full node peers a `GIVB` message with
+  the new block. The node can reasonably bypass the standard relay
   method in this way because it knows none of its peers already have the
   just-discovered block.
 
@@ -332,6 +332,9 @@ peers using the standard block relay method described above.
 TODO: Table : messages for block broadcasting
 {{% /comment %}}
 
+| **Message** | [`GIVB`][givb message] |[`ANNB`][annb message]
+| **From→To** |      First Discoverer Node → Full Node       |  Relay → Any  
+| **Payload** | An array of serialized blocks   |  Local block height 
 
 
 #### Orphan Blocks
