@@ -3,14 +3,13 @@
   <div class="meta">
     <h1 class="meta__title">{{ .Title }}</h1>
 {{if .Params.subhead }}
-<div class="subhead-links sourcefile" data-sourcefile=" {{ .Params.filename }} ">
-  <a href="{{ .Site.Params.urlGit }}/edit/master{{  .Params.filename }}">Edit</a>
-  <a href="{{ .Site.Params.urlGit }}/commits/master{{ .Params.filename }}">History</a>
-  <a href="{{ .Site.Params.urlGit }}/issues/new?body=Source%20File%3A%20%0A%0A{{ .Params.filename }}">Report issue</a>
-  <a href="https://t.me/Skycoin">Discuss</a>
+<div class="nav subhead-links sourcefile" data-sourcefile=" {{ .Params.filename }} ">
+  <a  class="nav__item" href="{{ .Site.Params.urlGit }}/edit/master{{  .Params.filename }}">Edit</a>
+  <a  class="nav__item" href="{{ .Site.Params.urlGit }}/commits/master{{ .Params.filename }}">History</a>
+  <a  class="nav__item" href="{{ .Site.Params.urlGit }}/issues/new?body=Source%20File%3A%20%0A%0A{{ .Params.filename }}">Report issue</a>
+  <a class="nav__item" href="https://t.me/Skycoin">Discuss</a>
 </div>
 {{end}}
-
     <div class="meta__information">
       {{ if .Params.isdate }}
       <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
