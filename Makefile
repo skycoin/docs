@@ -8,6 +8,6 @@ build:       ## Build skycoin docs in ./content/ folder
 	touch content/.gitkeep
 	find content/* -type f -name "*.md" -exec sh -c 'cat _includes/references.md >> "{}" ' \;
 
-run: build   ## Run the skycoin node. To add arguments, do 'make ARGS="--foo" run'.
+run: build   ## Run docs web site with hugo
 	hugo serve -D
 

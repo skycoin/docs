@@ -26,7 +26,7 @@ Locally, the web site can be previewed with:
 make run
 ```
 
-The web site will be available at `http://localhost:1313/` immediately after. Notice that the port may be different is another service is bound to `1313`.
+The web site will be available at `http://localhost:1313/` immediately after. Notice that the port may be different if another service is bound to `1313`.
 
 To get started make sure that your posts compile without error. Check the formatting.
 
