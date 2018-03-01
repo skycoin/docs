@@ -497,10 +497,6 @@ node that the ponging node is still alive. Skycoin Core will, by
 default, disconnect from any clients which have not responded to a
 `PING` message within 20 minutes.
 
-{{% comment %}}
-TODO: Skycoin PING timeout
-{{% /comment %}}
-
 To allow nodes to keep track of latency, the `PONG` message sends back
 the same nonce received in the `PING` message it is replying to.
 
@@ -537,7 +533,8 @@ node should [request blocks][getb message] from its peer. It is at the
 discretion of each node to [announce unconfirmed transactions][annt message]
 stored locally in its memory pool at this moment as well.
 
-TODO: `INTR` retries
+By default, Skycoin Core will send an `INTR` message every 30 seconds until an
+introduction handshake is performed.
 
 The following annotated hexdump shows an `INTR` message. (The
 message header has been omitted and the actual IP addresses have been

@@ -1,0 +1,15 @@
+---
+# This file is licensed under the MIT License (MIT) available on
+# http://opensource.org/licenses/MIT.
+
+required:
+                                           #-------------40 characters-------------#
+    title_max_40_characters_no_formatting: Distribution Addresses
+
+    summary_max_255_characters_no_formatting: >
+        The genesis block of 100 million coins is split up to 100 addresses of 1m each.  The recipient addresses of these 100m are called distribution addresses.
+
+    synonyms_shown_in_glossary_capitalize_first_letter:
+        - Distribution addresses
+
+---
