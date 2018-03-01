@@ -13,3 +13,7 @@
 .meta .devdocs {
     text-align: center;
 }
+
+.space{
+	display: inline-block;
+}
