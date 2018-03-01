@@ -20,13 +20,13 @@ Content: Create or Amend Posts
 
 Look in the `content/` folder.  Posts are written in markdown.
 
-Locally, the blog can be previewed with:
+Locally, the web site can be previewed with:
 
 ```sh
-hugo serve -D
+make run
 ```
 
-The web site will be available at `http://localhost:1313/` immediately after.
+The web site will be available at `http://localhost:1313/` immediately after. Notice that the port may be different is another service is bound to `1313`.
 
 To get started make sure that your posts compile without error. Check the formatting.
 
