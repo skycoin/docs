@@ -1,7 +1,7 @@
 language: go
 
 go:
-- '1.8'
+- '1.10'
 
 install:
 - go get -v github.com/gohugoio/hugo
@@ -15,18 +15,17 @@ before_script:
 - s3cmd --version
 
 script:
-- sh includes.sh  
-- hugo --buildFuture --config config.toml --destination public  -v
+- make build
 
 after_success:
-- ls public/
+- ls content/
 
 deploy:
   skip_cleanup: true
   provider: script
-  script: s3cmd --access_key="${AWS_ACCESS_KEY_ID}" --secret_key="${AWS_SECRET_ACCESS_KEY}" --region=ap-southeast-1 sync --delete-removed --acl-public --guess-mime-type --no-mime-magic --recursive public/ s3://www.skycoin.net/devdocs/
+  script: s3cmd --access_key="${AWS_ACCESS_KEY_ID}" --secret_key="${AWS_SECRET_ACCESS_KEY}" --region=ap-southeast-1 sync --delete-removed --acl-public --guess-mime-type --no-mime-magic --recursive content/ s3://www.skycoin.net/docs/
   on:
     branch: master
 
 after_deploy:
-- s3cmd --access_key="${AWS_ACCESS_KEY_ID}" --secret_key="${AWS_SECRET_ACCESS_KEY}" --region=ap-southeast-1 ls s3://www.skycoin.net/devdocs/
+- s3cmd --access_key="${AWS_ACCESS_KEY_ID}" --secret_key="${AWS_SECRET_ACCESS_KEY}" --region=ap-southeast-1 ls s3://www.skycoin.net/docs/
