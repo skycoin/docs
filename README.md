@@ -3,6 +3,8 @@ Skycoin documentation
 
 ![](https://user-images.githubusercontent.com/26845312/32426705-d95cb988-c281-11e7-9463-a3fce8076a72.png)
 
+[![Build Status](https://travis-ci.org/skycoin/docs.svg?branch=master)](https://travis-ci.org/skycoin/docs)
+
 Skycoin is a next-generation cryptocurrency. Contents in this repository document how Skycoin improves upon Bitcoin and what parts of the OP Redecentralize and OP Darknet Plan it is supposed to address.
 
 There are three types of documentation:
