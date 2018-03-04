@@ -4,7 +4,7 @@
 
 build:       ## Build skycoin docs in ./content/ folder
 	rm -rf content/*
-	cp -rv _data/* content/
+	cp -Rv _data/* content/
 	touch content/.gitkeep
 	find content/* -type f -name "*.md" -exec sh -c 'cat _includes/references.md >> "{}" ' \;
 
