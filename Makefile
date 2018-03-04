@@ -2,13 +2,16 @@
 .PHONY: run build help
 
 
-build: ## Build skycoin docs in ./content/ folder
+build-content: ## Build skycoin docs in ./content/ folder
 	rm -rf content/
 	mkdir -p content/
 	cp -rv _data/* content/
 	find content/* -type f -name "*.md" -exec sh -c 'cat _includes/references.md >> "{}" ' \;
 
-run: build ## Run docs web site with hugo
+build: build-content ## Build docs website
+	hugo
+
+run: build-content ## Run docs web site with hugo
 	hugo serve -D
 
 help:
