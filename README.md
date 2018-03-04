@@ -20,7 +20,7 @@ Refer to [hugo documentation](https://gohugo.io) to [get started](https://gohugo
 Content: Create or Amend Posts
 ==============================
 
-Look in the `content/` folder.  Posts are written in markdown.
+Look in the `_data/` folder.  Articles are written in markdown.
 
 Locally, the web site can be previewed with:
 
@@ -39,7 +39,7 @@ If there are no problems, then your pages at `http://localhost:1313/` will autom
 Themes: Layout and Styling
 ==========================
 
-Skycoin Blog uses a custom hugo theme with styling produced using SCSS, when editing any styles you **must** edit the `.scss` files only. If any changes are made to the SCSS partials within `static/css/scss/`, you must re-compile with the following commands.
+Skycoin Documantation web site uses a custom hugo theme with styling produced using SCSS, when editing any styles you **must** edit the `.scss` files only. If any changes are made to the SCSS partials within `static/css/scss/`, you must re-compile with the following commands.
 
 Move into the theme directory
 ```sh
