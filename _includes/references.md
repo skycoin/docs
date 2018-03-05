@@ -61,7 +61,7 @@ http://opensource.org/licenses/MIT.
 [section protocol versions]: /en/developer-reference#protocol-versions
 [section serialized blocks]: /en/developer-reference#serialized-blocks
 [skycoin web wallet]: https://github.com/skycoin/skycoin-web
-[skycoin-docs mailing list]: https://www.skycoin.net/mailing-list/
+[skycoindev discussion channel]: https://t.me/skycoindev
 [skycoin.go at master]: https://github.com/skycoin/skycoin/tree/master/cmd/skycoin
 [skycoin.go at testnet]: https://github.com/skycoin/skycoin/tree/testnet/cmd/skycoin
 [standard block relay]: /en/developer-guide#term-standard-block-relay "The regular block relay method: announcing a block with an inv message and waiting for a response TODO: REVIEW"
