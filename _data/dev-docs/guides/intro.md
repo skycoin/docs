@@ -19,7 +19,7 @@ Questions about Skycoin development are best asked in one of the
 [Skycoin community channels][dev communities].
 Errors or suggestions related to
 documentation on Skycoin.net can be [submitted as an issue][docs issue]
-or posted to the [skycoin-docs mailing list][].
+or posted to the [skycoindev discussion channel][].
 
 In the following documentation, some strings have been shortened or wrapped: "[...]"
 indicates extra data was removed, and lines ending in a single backslash "\\"
