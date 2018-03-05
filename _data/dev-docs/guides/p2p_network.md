@@ -2,7 +2,7 @@
 title: "P2P Network"
 isdate: false
 weight: 3
-filename: "/content/devdocs/guides/p2p_network.md"
+filename: "/content/dev-docs/guides/p2p_network.md"
 subhead: true
 ---
 {{% comment %}}
@@ -16,7 +16,7 @@ The Skycoin network protocol allows full nodes
 transaction exchange. Full nodes download and verify every block and transaction
 prior to relaying them to other nodes. Archival nodes are full nodes which
 store the entire blockchain and can serve historical blocks to other nodes.
-Pruned nodes are full nodes which do not store the entire blockchain. Many SPV 
+Pruned nodes are full nodes which do not store the entire blockchain. Many SPV
 clients also use the Skycoin network protocol to connect to full nodes.
 
 Consensus rules do not cover networking, so Skycoin programs may use
@@ -162,7 +162,7 @@ The goal is to download the blocks from the best block chain in sequence.
 
 The first time a node is started, it only has a single block in its
 local best block chain---the hardcoded genesis block (block 0).  When this
-node chooses a remote peer, called the sync node, both nodes should 
+node chooses a remote peer, called the sync node, both nodes should
 automatically exchange `GETB` messages.
 
 ![First GETB Message Sent During IBD](/img/dev/en-ibd-getb.svg)
@@ -329,8 +329,8 @@ TODO: Table : messages for block broadcasting
 {{% /comment %}}
 
 | **Message** | [`GIVB`][givb message] |[`ANNB`][annb message]
-| **From→To** |      First Discoverer Node → Full Node       |  Relay → Any  
-| **Payload** | An array of serialized blocks   |  Local block height 
+| **From→To** |      First Discoverer Node → Full Node       |  Relay → Any
+| **Payload** | An array of serialized blocks   |  Local block height
 
 
 #### Orphan Blocks
@@ -351,7 +351,7 @@ reject it. Blocks are processed in sequence.
 This is particularly true when a *slow* node is a few blocks behind
 the master at the moment the later discovers a new block. The master will
 broadcast an unsolicited [`GIVB` message][givb message] and this slow
-node will discard it because its header’s `PrevBlockHash` 
+node will discard it because its header’s `PrevBlockHash`
 will not match the hash ID of the block at the tip of the chain.
 Orphan blocks discarded this way will be retrasmitted and eventually
 synchronized at a later time by following [standard block relay][]
@@ -400,8 +400,8 @@ are filtered out.
 Full peers may keep track of unconfirmed transactions which are eligible to
 be included in the next block. This is essential for master nodes actually
 discovering new blocks including some or all of those transactions,
-but it's also useful for any peer who wants to keep track 
-of unconfirmed transactions, such as peers serving unconfirmed transaction 
+but it's also useful for any peer who wants to keep track
+of unconfirmed transactions, such as peers serving unconfirmed transaction
 information to SPV clients.
 
 Because unconfirmed transactions have no permanent status in Skycoin,

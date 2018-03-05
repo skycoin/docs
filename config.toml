@@ -1,13 +1,13 @@
 baseURL = "https://www.skycoin.net/docs"
 languageCode = "en-us"
-title = "Skycoin Devs"
+title = "Skycoin Documentation"
 defaultContentLanguage = "en"
 
 relativeURLs = true
 canonifyURLs = true
 
 
-googleAnalytics = ""
+googleAnalytics = "UA-105234182-1"
 disqusShortname = ""
 
 # hugo-xmin specific variables
@@ -37,7 +37,7 @@ weight = 1
 [[menu.main]]
 name = "Developer docs"
 identifier = "devdocs"
-url = "/devdocs/"
+url = "/dev-docs/"
 weight = 2
 
 [[menu.main]]
@@ -69,7 +69,7 @@ weight = 3
 
 [[menu.footer]]
 name = "Reddit"
-url = "https://reddit.com/r/SkycoinProject"
+url = "https://reddit.com/r/Skycoin"
 weight = 4
 
 [[menu.footer]]
