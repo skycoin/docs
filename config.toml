@@ -1,4 +1,4 @@
-baseURL = "https://www.skycoin.net/"
+baseURL = "https://www.skycoin.net/docs"
 languageCode = "en-us"
 title = "Skycoin Devs"
 defaultContentLanguage = "en"
