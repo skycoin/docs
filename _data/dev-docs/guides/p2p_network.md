@@ -12,7 +12,7 @@ http://opensource.org/licenses/MIT.
 
 The Skycoin network protocol allows full nodes
 (peers) to collaboratively maintain a
-[peer-to-peer network][network]{:#term-network}{:.term} for block and
+[peer-to-peer network][network] for block and
 transaction exchange. Full nodes download and verify every block and transaction
 prior to relaying them to other nodes. Archival nodes are full nodes which
 store the entire blockchain and can serve historical blocks to other nodes.
@@ -39,7 +39,7 @@ IP addresses.
 
 When started for the first time, programs don't know the IP
 addresses of any active full nodes. In order to discover some IP
-addresses, they query one or more IP names (called [network seeds][/en/glossary/network-seed]{:#term-network-seed}{:.term})
+addresses, they query one or more IP names (called [network seeds][/en/glossary/network-seed])
 hardcoded into Skycoin Core and SPV clients. There is no lookup of any
 [DNS A records][] to determine the IP addresses of full nodes that may accept new
 incoming connections.
@@ -65,8 +65,8 @@ from the Internet a community-maintained list of
 [well known public peers][] .
 
 Once a program has connected to the [gnet network][network],
-its peers can begin to send it [`GIVP` messages][givp messages]
-(give peers<!--noref-->) messages with the IP addresses and port numbers of
+its peers can begin to send it [`GIVP` messages][givp message]
+with the IP addresses and port numbers of
 other peers on the network, providing a fully decentralized method of
 peer discovery. Skycoin Core keeps a record of known peers in a
 persistent on-disk database which usually allows it to connect directly
@@ -120,8 +120,8 @@ connection has been established.
 Failure to meet the **exact** protocol version will lead to
 disconnection.
 
-Once connected, the client can send to the remote node [`GETP`][getp messages]
-and [`GIVP`][givp messages] messages to gather additional peers.
+Once connected, the client can send to the remote node [`GETP` messages][getp message]
+and [`GIVP` messages][givp message] to gather additional peers.
 
 In order to maintain a connection with a peer, nodes by default will
 send a message to peers before 30 minutes of inactivity.
@@ -294,13 +294,13 @@ to the reference page for that message.
 When a node discovers a new block, it broadcasts the new block to its
 peers using one of the following methods:
 
-* **[Unsolicited Block Push][]{:#term-unsolicited-block-push}{:.term}:**
+* **[Unsolicited Block Push][]:**
   the node sends to each of its full node peers a `GIVB` message with
   the new block. The node can reasonably bypass the standard relay
   method in this way because it knows none of its peers already have the
   just-discovered block.
 
-* **[Standard Block Relay][]{:#term-standard-block-relay}{:.term}:**
+* **[Standard Block Relay][]:**
   the node, acting as a standard relay node, sends an `ANNB` message to
   each of its peers (both full node and SPV) with the updated block height
   of its local blockchain after discovering the new block. The most
