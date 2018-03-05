@@ -29,31 +29,31 @@ http://opensource.org/licenses/MIT.
 [bitcoin version message]: https://bitcoin.org/en/developer-reference#version "A P2P network message sent at the begining of a connection to allow protocol version negotiation"
 [block height]: /docs/skycoin/_data/glossary/en/block-height.yaml
 [block sequence number]: /content/glossary/block-sequence-number.yaml
-[blocks-first]: /content/devdocs/guides/p2p_network#blocks-first
-[coin hour]: /content/devdocs/guides/transactions#coin-hours
+[blocks-first]: /content/dev-docs/guides/p2p_network#blocks-first
+[coin hour]: /content/dev-docs/guides/transactions#coin-hours
 [core executable]: /en/download
 [core git]: https://github.com/skycoin/skycoin
 [dev communities]: /en/development#devcommunities
 [distribution addresses]: /content/glossary/distribution-addresses.yaml
 [dns a records]: http://tools.ietf.org/html/rfc1035#section-3.2.2
 [docs issue]: https://github.com/skycoin/docs/issues
-[getb message]: /content/devdocs/references/p2p_networking#get-blocks
-[gett message]: /content/devdocs/references/p2p_networking#get-transactions
-[getp message]: /content/devdocs/references/p2p_networking#get-peers
-[givb message]: /content/devdocs/references/p2p_networking#give-blocks
-[givp message]: /content/devdocs/references/p2p_networking#give-peers
-[givt message]: /content/devdocs/references/p2p_networking#give-transactions
-[annt message]: /content/devdocs/references/p2p_networking#announce-transactions
-[annb message]: /content/devdocs/references/p2p_networking#announce-blocks
+[getb message]: /content/dev-docs/references/p2p_networking#get-blocks
+[gett message]: /content/dev-docs/references/p2p_networking#get-transactions
+[getp message]: /content/dev-docs/references/p2p_networking#get-peers
+[givb message]: /content/dev-docs/references/p2p_networking#give-blocks
+[givp message]: /content/dev-docs/references/p2p_networking#give-peers
+[givt message]: /content/dev-docs/references/p2p_networking#give-transactions
+[annt message]: /content/dev-docs/references/p2p_networking#announce-transactions
+[annb message]: /content/dev-docs/references/p2p_networking#announce-blocks
 [head block]: /content/glossary/head-block.yaml
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
-[intr message]: /content/devdocs/references/p2p_networking#introduction
+[intr message]: /content/dev-docs/references/p2p_networking#introduction
 [introduction handshake]:  https://en.wikipedia.org/wiki/Handshaking "A handshake is an automated process of negotiation between two communicating participants that establishes the protocols of a communications channel, at the start of the communication, before full communication begins. It follows the physical establishment of the channel and precedes normal information transfer."
 [maximum message length]: /content/glossary/maximum-message-length.yaml
 [miner]: https://bitcoin.org/en/developer-guide#mining
 [network]: /en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks"
-[not a specification]: /content/devdocs/references/intro#not-a-specification
-[proof of burn]: /content/devdocs/guides/block_chain#proof-of-burn
+[not a specification]: /content/dev-docs/references/intro#not-a-specification
+[proof of burn]: /content/dev-docs/guides/block_chain#proof-of-burn
 [proof of work]: https://en.wikipedia.org/wiki/Proof-of-work_system "A proof-of-work (POW) system (or protocol, or function) is an economic measure to deter denial of service attacks and other service abuses such as spam on a network by requiring some work from the service requester, usually meaning processing time by a computer."
 [rfc5737]: http://tools.ietf.org/html/rfc5737
 [section creating a bloom filter]: /en/developer-examples#creating-a-bloom-filter

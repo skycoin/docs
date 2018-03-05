@@ -2,7 +2,7 @@
 title: "Block Chain"
 isdate: false
 weight: 2
-filename: "/content/devdocs/guides/block_chain.md"
+filename: "/content/dev-docs/guides/block_chain.md"
 ---
 
 {{% comment %}}

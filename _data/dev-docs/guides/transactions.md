@@ -2,7 +2,7 @@
 title: "Transactions"
 isdate: false
 weight: 4
-filename: "/content/devdocs/guides/transactions.md"
+filename: "/content/dev-docs/guides/transactions.md"
 subhead: true
 ---
 
