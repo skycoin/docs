@@ -2,7 +2,7 @@
 title: "Introduction"
 isdate: false
 weight: 5
-filename: "/content/dev-docs/references/intro.md"
+filename: "/_data/dev-docs/references/intro.md"
 ---
 
 {{% comment %}}

@@ -2,7 +2,7 @@
 title: "Block Chain"
 isdate: false
 weight: 2
-filename: "/content/dev-docs/guides/block_chain.md"
+filename: "/_data/dev-docs/guides/block_chain.md"
 ---
 
 {{% comment %}}
@@ -25,7 +25,7 @@ the consensus rules used by Skycoin Core.
 ### Block Chain Overview
 {{% subhead %}}
 
-![Block Chain Overview](/img/dev/en-blockchain-overview.svg)
+![Block Chain Overview](/img/en-blockchain-overview.svg)
 
 The illustration above shows a simplified version of a block chain.
 A [block][/en/glossary/block]{:#term-block}{:.term} of one or more new transactions
@@ -46,7 +46,7 @@ transaction spends the coins previously received in one or more earlier
 transactions, so the input of one transaction is the output of a
 previous transaction.
 
-![Transaction Propagation](/img/dev/en-transaction-propagation.svg)
+![Transaction Propagation](/img/en-transaction-propagation.svg)
 
 A single transaction can create multiple outputs, as would be
 the case when sending to multiple addresses, but each output of
