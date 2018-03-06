@@ -31,7 +31,7 @@ http://opensource.org/licenses/MIT.
 [block sequence number]: /glossary/block-sequence-number.yaml
 [blocks-first]: /dev-docs/guides/p2p_network#blocks-first
 [coin hour]: /dev-docs/guides/transactions#coin-hours
-[core executable]: https://github.com/skycoin/skycoin/release
+[core executable]: https://github.com/skycoin/skycoin/releases
 [core git]: https://github.com/skycoin/skycoin
 [dev communities]: /en/development#devcommunities
 [distribution addresses]: /glossary/distribution-addresses.yaml
