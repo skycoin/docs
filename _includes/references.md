@@ -31,7 +31,7 @@ http://opensource.org/licenses/MIT.
 [block sequence number]: /glossary/block-sequence-number.yaml
 [blocks-first]: /dev-docs/guides/p2p_network#blocks-first
 [coin hour]: /dev-docs/guides/transactions#coin-hours
-[core executable]: https://www.skycoin.net/downloads/
+[core executable]: https://github.com/skycoin/skycoin/release
 [core git]: https://github.com/skycoin/skycoin
 [dev communities]: /en/development#devcommunities
 [distribution addresses]: /glossary/distribution-addresses.yaml
@@ -48,7 +48,7 @@ http://opensource.org/licenses/MIT.
 [head block]: /glossary/head-block.yaml
 [high-speed block relay network]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html
 [intr message]: /dev-docs/references/p2p_networking#introduction
-[introduction handshake]:  https://en.wikipedia.org/wiki/Handshaking "A handshake is an automated process of negotiation between two communicating participants that establishes the protocols of a communications channel, at the start of the communication, before full communication begins. It follows the physical establishment of the channel and precedes normal information transfer."
+[introduction handshake]: https://en.wikipedia.org/wiki/Handshaking "A handshake is an automated process of negotiation between two communicating participants that establishes the protocols of a communications channel, at the start of the communication, before full communication begins. It follows the physical establishment of the channel and precedes normal information transfer."
 [maximum message length]: /glossary/maximum-message-length.yaml
 [miner]: https://bitcoin.org/en/developer-guide#mining
 [network]: /en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks"

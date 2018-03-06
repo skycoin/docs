@@ -111,7 +111,7 @@ the same thing.
 
 
 Connecting to a peer is done by sending an
-[`INTR` message][intr message], which
+[<code>INTR</code> message](/dev-docs/references/p2p_networking#introduction), which
 contains your version number to the remote
 node. The remote node responds with its own `INTR` message. No further
 acknowledgement message is sent to the other node to indicate the
@@ -158,14 +158,14 @@ Skycoin Core uses a
 simple initial block download (IBD) method we'll call *blocks-first*.
 The goal is to download the blocks from the best block chain in sequence.
 
-![Overview Of Blocks-First Method](/dev-docs/img/dev/en-blocks-first-flowchart.svg)
+![Overview Of Blocks-First Method](/img/en-blocks-first-flowchart.svg)
 
 The first time a node is started, it only has a single block in its
 local best block chain---the hardcoded genesis block (block 0).  When this
 node chooses a remote peer, called the sync node, both nodes should
 automatically exchange `GETB` messages.
 
-![First GETB Message Sent During IBD](/dev-docs/img/dev/en-ibd-getb.svg)
+![First GETB Message Sent During IBD](/img/en-ibd-getb.svg)
 
 Starting node includes the local block height (i.e. `0`) in the
 message it sends to its peer sync node.
@@ -179,7 +179,7 @@ from block 1. The number of messages depends on the length of
 the best block chain stored by peers as well as the buffering
 capacity of nodes.
 
-![First GIVB Message Sent During IBD](/dev-docs/img/dev/en-ibd-givb.svg)
+![First GIVB Message Sent During IBD](/img/en-ibd-givb.svg)
 
 It's important to blocks-first nodes that the blocks be requested and
 sent in order because the whole synchronization process relies on block
@@ -199,7 +199,7 @@ they detect they are behind the longest block chain subsequent
 `GETB` messages will be sent back. The repetition of this workflow
 ensures message propagation across the [gnet network][network].
 
-![First ANNB Message Sent During IBD](/dev-docs/img/dev/en-ibd-annb.svg)
+![First ANNB Message Sent During IBD](/img/en-ibd-annb.svg)
 
 Following block validation and immediately after broadcasting
 `ANNB` message to its peers the node also broadcasts a second
@@ -211,20 +211,20 @@ This allows the IBD node to detect potential forks in its network, by validating
 TODO: Explain conflict resolution after finding a fork
 {/{% comment %}}
 
-![Second GETB Message Sent During IBD](/dev-docs/img/dev/en-ibd-getb2.svg)
+![Second GETB Message Sent During IBD](/img/en-ibd-getb2.svg)
 
 If one peer has a longer block chain it will reply with another `GIVB`
 message. The repetition of this workflow ensures that the IDB
 node will extend its local block chain until it eventually
 reaches the longest path shared by its peers.
 
-![Second GIVB Message Sent During IBD](/dev-docs/img/dev/en-ibd-givb2.svg)
+![Second GIVB Message Sent During IBD](/img/en-ibd-givb2.svg)
 
 Message propagation across the [gnet network][network] continues
 while IBD node validates subsequent blocks and continues sending
 `ANNB` messages to its peers.
 
-![Second ANNB Message Sent During IBD](/dev-docs/img/dev/en-ibd-annb2.svg)
+![Second ANNB Message Sent During IBD](/img/en-ibd-annb2.svg)
 
 The cycle will repeat until the IBD node is synced to
 the tip of the longest block chain. At that point, the node
@@ -344,7 +344,7 @@ hasn't seen yet. In other words, orphan blocks have no known parent
 (unlike stale blocks, which have known parents but which aren't part of
 the best block chain).
 
-![Difference Between Orphan And Stale Blocks](/dev-docs/img/dev/en-orphan-stale-definition.svg)
+![Difference Between Orphan And Stale Blocks](/img/en-orphan-stale-definition.svg)
 
 When a blocks-first node downloads an orphan block, it will silently
 reject it. Blocks are processed in sequence.
@@ -455,7 +455,3 @@ be banned for a configurable number of seconds, which is *86,400* by default
 
 
 Skycoin Core does not implement an alerts system.
-
-
-
-

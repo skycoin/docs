@@ -87,7 +87,7 @@ GetPeersMessage:
 The following network messages all request or provide data related to
 transactions and blocks.
 
-![Overview Of P2P Protocol Data Request And Reply Messages](/dev-docs/img/en-p2p-data-messages.svg)
+![Overview Of P2P Protocol Data Request And Reply Messages](/img/en-p2p-data-messages.svg)
 
 
 #### Give Blocks
@@ -378,7 +378,7 @@ The following network messages all help control the connection between
 two peers or allow them to advise each other about the rest of the
 network.
 
-![Overview Of P2P Protocol Control And Advisory Messages](/dev-docs/img/en-p2p-control-messages.svg)
+![Overview Of P2P Protocol Control And Advisory Messages](/img/en-p2p-control-messages.svg)
 
 Note that almost none of the control messages are authenticated in any
 way, meaning they can contain incorrect or intentionally harmful
