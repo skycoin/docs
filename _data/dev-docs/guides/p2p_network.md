@@ -21,13 +21,13 @@ clients also use the Skycoin network protocol to connect to full nodes.
 
 Consensus rules do not cover networking, so Skycoin programs may use
 alternative networks and protocols, such as the
-[high-speed block relay network][] used by some [Bitcoin miners][miner].
+[high-speed block relay network](https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html) used by some [Bitcoin miners](https://bitcoin.org/en/developer-guide#mining).
 
 To provide practical examples of the Skycoin peer-to-peer network, this
-section uses Skycoin Core as a representative full node and [Skycoin web wallet][]
+section uses Skycoin Core as a representative full node and [Skycoin web wallet](https://github.com/skycoin/skycoin-web)
 as a representative SPV client. Both programs are flexible, so only
 default behavior is described. Also, for privacy, actual IP addresses
-in the example output below have been replaced with [RFC5737][] reserved
+in the example output below have been replaced with [RFC5737](http://tools.ietf.org/html/rfc5737) reserved
 IP addresses.
 
 
@@ -41,7 +41,7 @@ When started for the first time, programs don't know the IP
 addresses of any active full nodes. In order to discover some IP
 addresses, they query one or more IP names (called [network seeds][/en/glossary/network-seed])
 hardcoded into Skycoin Core and SPV clients. There is no lookup of any
-[DNS A records][] to determine the IP addresses of full nodes that may accept new
+[DNS A records](http://tools.ietf.org/html/rfc1035#section-3.2.2) to determine the IP addresses of full nodes that may accept new
 incoming connections.
 
 The network seeds are maintained by Skycoin community members
@@ -62,10 +62,11 @@ blocks.
 Beyond this first step for discovering peers, Skycoin also looks for a peers
 database stored in the local file system. Next , Skycoin retrieves
 from the Internet a community-maintained list of
-[well known public peers][] .
+[well known public peers](https://downloads.skycoin.net/blockchain/peers.txt "A public list of Skycoin nodes maintained by Skycoin community members. These are not trusted initial network seed nodes") .
 
-Once a program has connected to the [gnet network][network],
-its peers can begin to send it [`GIVP` messages][givp message]
+
+Once a program has connected to the [gnet network](/en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks"),
+its peers can begin to send it [`GIVP` messages](/dev-docs/references/p2p_networking#give-peers)
 with the IP addresses and port numbers of
 other peers on the network, providing a fully decentralized method of
 peer discovery. Skycoin Core keeps a record of known peers in a
@@ -120,8 +121,8 @@ connection has been established.
 Failure to meet the **exact** protocol version will lead to
 disconnection.
 
-Once connected, the client can send to the remote node [`GETP` messages][getp message]
-and [`GIVP` messages][givp message] to gather additional peers.
+Once connected, the client can send to the remote node [`GETP`](/dev-docs/references/p2p_networking#get-peers)
+and [`GIVP`](/dev-docs/references/p2p_networking#give-peers) messages to gather additional peers.
 
 In order to maintain a connection with a peer, nodes by default will
 send a message to peers before 30 minutes of inactivity.
@@ -197,7 +198,7 @@ Upon receipt of this message, peers will follow a similar process
 and compare announced block height with its local height. Once
 they detect they are behind the longest block chain subsequent
 `GETB` messages will be sent back. The repetition of this workflow
-ensures message propagation across the [gnet network][network].
+ensures message propagation across the [gnet network](/en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks").
 
 ![First ANNB Message Sent During IBD](/img/en-ibd-annb.svg)
 
@@ -274,13 +275,13 @@ It also has disadvantages with several implications:
   which may lead to high memory use.
 
 Even if all of these problems could be addressed in part or in full by a
-headers-first IBD method, this is not supported by Skycoin [gnet][network].
+headers-first IBD method, this is not supported by Skycoin [gnet](/en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks").
 
 **Resources:** The table below summarizes the messages mentioned
 throughout this subsection. The links in the message field will take you
 to the reference page for that message.
 
-| **Message** | [`ANNB`][annb message] | [`GETB`][getb message]  | [`GIVB`][givb message]
+| **Message** | [`ANNB`](/dev-docs/references/p2p_networking#announce-transactions) | [`GETB`](/dev-docs/references/p2p_networking#get-blocks)  | [`GIVB`](/dev-docs/references/p2p_networking#give-blocks)
 | **From→To** | IBD→Peers              | IBD→Sync                | Sync→IBD
 | **Payload** | Local block height     | Local block height and local block cache size   | An array of serialized blocks
 
@@ -310,7 +311,7 @@ peers using one of the following methods:
 
 **Note:**: Since Skycoin does not implement block header messages it
 does not support neither sending headers only during standard block relay
-nor [direct headers announcement][] method.
+nor [direct headers announcement](https://bitcoin.org/en/developer-guide#block-broadcasting) method.
 
 **Note:**: Since Skycoin does not implement Merkle tree messages it
 does not provide SPV clients with Merkle block and transactions during
@@ -328,7 +329,7 @@ peers using the standard block relay method described above.
 TODO: Table : messages for block broadcasting
 {{% /comment %}}
 
-| **Message** | [`GIVB`][givb message] |[`ANNB`][annb message]
+| **Message** | [`GIVB`](/dev-docs/references/p2p_networking#give-blocks) |[`ANNB`](/dev-docs/references/p2p_networking#announce-blocks)
 | **From→To** |      First Discoverer Node → Full Node       |  Relay → Any
 | **Payload** | An array of serialized blocks   |  Local block height
 
@@ -350,11 +351,11 @@ When a blocks-first node downloads an orphan block, it will silently
 reject it. Blocks are processed in sequence.
 This is particularly true when a *slow* node is a few blocks behind
 the master at the moment the later discovers a new block. The master will
-broadcast an unsolicited [`GIVB` message][givb message] and this slow
+broadcast an unsolicited [`GIVB` message](/dev-docs/references/p2p_networking#give-blocks) and this slow
 node will discard it because its header’s `PrevBlockHash`
 will not match the hash ID of the block at the tip of the chain.
 Orphan blocks discarded this way will be retrasmitted and eventually
-synchronized at a later time by following [standard block relay][]
+synchronized at a later time by following [standard block relay](/en/developer-guide#term-standard-block-relay "The regular block relay method: announcing a block with an inv message and waiting for a response TODO: REVIEW")
 given the fact that local block length for the node synchronizing with
 the block chain will be smaller than the sequence number of the
 orphan block.
@@ -371,18 +372,18 @@ introduction handshake is established.  At that time nodes at both sides
 of the connection gather TXID's of all valid unconfirmed transactions
 in their respective memory pool and split the whole set in groups.
 Transactons are announced by packaging each group in
-[`ANNT` messages][annt message] which will be boadcast to the peers
+[`ANNT` messages](/dev-docs/references/p2p_networking#announce-transactions) which will be boadcast to the peers
 of both nodes.
 
 {{% comment %}}
 TODO: Broadcasting vs direct message
 {{% /comment %}}
 
-Each network node should reply to an [`ANNT` message][annt message]
-with a [`GETT` message][gett message] including the TXID hashes of the
+Each network node should reply to an [`ANNT` message](/dev-docs/references/p2p_networking#announce-transactions)
+with a [`GETT` message](/dev-docs/references/p2p_networking#get-transactions) including the TXID hashes of the
 transactions which are neither found in the node's memory pool nor
 previously confirmed. The peer receiving the `GETT` message should reply
-with a [`GIVT` message][givt message] including the signatures, inputs,
+with a [`GIVT` message](/dev-docs/references/p2p_networking#give-transactions) including the signatures, inputs,
 outputs and all other data related to the TXID hashes included in
 previous `GETT` message as long as they are still unconfimed in the
 node's memory pool.
