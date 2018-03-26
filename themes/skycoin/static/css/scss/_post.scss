@@ -1,100 +1,115 @@
-.post {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-
-  &__content {
-    @include container($container-width-base);
-  }
-
-  p {
-    line-height: 1.65;
-    font-size: 1.0625rem;
-    margin-bottom: 2rem;
-  }
-
+.back_link {
+  font-size: 12px;
+  line-height: 13px;
+  vertical-align: middle;
+  margin-bottom: 22px;
+  display: inline-block;
   img {
-    display: block;
-    width: 100%;
-    margin-bottom: 2.5rem;
-  }
-
-  hr {
-    border: 0;
-    height: 2px;
-    background-color: $light-gray;
-    margin-bottom: 2rem;
-  }
-
-  li > ul {
-    margin-bottom: 0;
-    margin-top: 0.5rem;
-  }
-
-  ul {
-    padding-left: 1rem;
-    margin-bottom: 2rem;
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  blockquote {
-    border-left: 5px solid $light-gray;
-    padding: 3px 1rem 3px;
-    margin-bottom: 2rem;
-
-    p {
-      margin: 0;
-    }
+    width: 14px;
+    margin-right: 10px;
   }
 }
 
-
-.meta {
+.post {
   @include container($container-width-base);
-  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 -2rem;
+    flex-wrap: wrap;
+  }
 
   &__title {
-    font-size: 1.5rem;
-    color: $black;
-    margin-bottom: 1.75rem;
+    font-size: 30px;
+    color: $dark-gray;
+    font-weight: bold;    
   }
 
-  &__date {
-    color: $cool-gray;
-    font-size: 0.9375rem;
-    display: block;
-    margin-bottom: 0.5rem;
+  .meta {
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: row;
 
-    @media (min-width: $breakpoint-sm) {
-      display: inline;
+    &__date {
+      color: $gray;
+      font-size: 12px;
+      line-height: 26px;
+      height: 26px;
+      margin-right: 30px;
+    }
+
+    &__link {
+      color: $gray;
+      font-size: 12px;
+      line-height: 24px;
+      border: 1px solid $gray;	
+      border-radius: 13px;
+      padding: 0 20px;
+      margin: 0 10px 10px 0;
+      height: 26px;
+
+      &:hover {
+        background: $gray;
+        color: $white;
+      }
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    line-height: 26px;
+    color: $dark-gray;
+    width: 100%;
+    padding: 0 2rem;
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin-bottom: 44px;
+      border-radius: 4px;
+    }
+
+    hr {
+      border: 0;
+      height: 2px;
+      background-color: $light-gray;
+      margin-bottom: 44px;
+    }
+
+    li > ul {
       margin-bottom: 0;
-    }
-  }
-
-  &__link {
-    color: $cool-gray;
-    font-size: 0.9375rem;
-    padding-left: 0.5rem;
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content:"·";
-      left: 0;
+      margin-top: 0.5rem;
     }
 
-    @media (max-width: (#{$breakpoint-sm - 1px})){
-      &:first-of-type {
-        padding-left: 0;
-        &:before {
-          content: "";
-        }
+    dd, ol, ul {
+      list-style-type: unset;
+    }   
+
+    ul {
+      padding-left: 1rem;
+      margin-bottom: 44px;
+      line
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    nav ul {
+      display: none;
+    }
+
+    blockquote {
+      border-left: 5px solid $light-gray;
+      padding: 3px 1rem 3px;
+      margin-bottom: 44px;
+
+      p {
+        margin: 0;
       }
     }
   }

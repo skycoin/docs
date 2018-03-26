@@ -28,59 +28,59 @@ pygmentsCodeFencesGuessSyntax = true
 # note = "/note/:year/:month/:day/:slug/"
 
 [[menu.main]]
+    name = "Blog"
+    identifier = "blog"
+    url = "/blog/"
+    weight = 1
+[[menu.main]]
+    name = "Explorer"
+    identifier = "explorer"
+    url = "//explorer.skycoin.net"
+    weight = 2
+[[menu.main]]
+    name = "Wallet"
+    identifier = "wallet"
+    url = "/downloads/"
+    weight = 3
+[[menu.main]]
+    name = "Team"
+    identifier = "team"
+    url = "/team/"
+    weight = 4
+[[menu.main]]
+    name = "Ecosystem"
+    identifier = "ecosystem"
+    url = "/ecosystem/"
+    weight = 5
+[[menu.main]]
+    name = "Documents"
+    identifier = "docs"
+    url = "/docs/"
+    weight = 6
+
+[[menu.docs]]
 name = "User Guides"
-title= "User Guides"
 identifier = "user-guides"
 url = "/user-guides/"
 weight = 1
 
-[[menu.main]]
+[[menu.docs]]
 name = "Developer docs"
 identifier = "devdocs"
 url = "/dev-docs/"
 weight = 2
 
-[[menu.main]]
+[[menu.docs]]
 name="Glossary"
 identifier="glossary"
 url = "/glossary/"
 weight = 3
 
-[[menu.main]]
+[[menu.docs]]
 name="Future plans"
 identifier="future-plans"
 url = "/future-plans/"
 weight = 3
-
-[[menu.footer]]
-name = "skycoin.net"
-url = "https://www.skycoin.net/"
-weight = 1
-
-[[menu.footer]]
-name = "Github"
-url = "https://github.com/skycoin"
-weight = 2
-
-[[menu.footer]]
-name = "Twitter"
-url = "https://twitter.com/skycoinproject"
-weight = 3
-
-[[menu.footer]]
-name = "Reddit"
-url = "https://reddit.com/r/Skycoin"
-weight = 4
-
-[[menu.footer]]
-name = "Telegram"
-url = "https://t.me/Skycoin"
-weight = 5
-
-[[menu.footer]]
-name = "Blockchain Explorer"
-url = "https://explorer.skycoin.net/"
-weight = 6
 
 [author]
 name = "Skycoin"
@@ -89,12 +89,54 @@ name = "Skycoin"
 keywords = "skycoin"
 rss = "/index.xml"
 telegram = "https://t.me/Skycoin"
+discord = "https://discord.gg/EgBenrW"
 description = "Skycoin Project Updates"
 email = ""
 github = "skycoin"
 twitter = "skycoinproject"
 twitterAnalytics = "ny03t"
 urlGit = "https://github.com/skycoin/docs"
+
+[[params.social]]
+  name = "Medium"
+  url = "/"
+  image = "images/medium.svg"
+[[params.social]]
+  name = "Twitter"
+  url = "https://twitter.com/skycoinproject"
+  image = "images/twitter.svg"
+[[params.social]]
+  name = "Facebook"
+  url = "https://www.facebook.com/skycoinproject"
+  image = "images/facebook.svg"
+[[params.social]]
+  name = "Instagram"
+  url = "https://www.instagram.com/skycoinproject/"
+  image = "images/instagram.svg"
+[[params.social]]
+  name = "Github"
+  url = "https://github.com/skycoin/skycoin"
+  image = "images/github.svg"
+[[params.social]]
+  name = "Youtube"
+  url = "https://www.youtube.com/c/Skycoin"
+  image = "images/youtube.svg"
+[[params.social]]
+  name = "Reddit"
+  url = "https://www.reddit.com/r/SkycoinProject"
+  image = "images/reddit.svg"
+[[params.social]]
+  name = "Apple"
+  url = "https://itunes.apple.com/nl/podcast/skycoin/id1348472259?l=en"
+  image = "images/apple.svg"  
+[[params.social]]
+  name = "Discord"
+  url = "https://discord.gg/EgBenrW"
+  image = "images/discord.svg" 
+[[params.social]]
+  name = "Telegram"
+  url = "https://t.me/Skycoin"
+  image = "images/telegram.svg" 
 
 [[menu.languages]]
 name = "English"

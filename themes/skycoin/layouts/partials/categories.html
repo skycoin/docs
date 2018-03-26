@@ -1,0 +1,36 @@
+<section class="categories-container">
+  <div class="categories">
+    <button class="arrow"
+      onmousedown="startScroll(-10)" onmouseout="stopScroll()" onmouseup="stopScroll()"
+      ontouchstart="startScroll(-10)" ontouchend="stopScroll()" oncontextmenu="return false" >
+      <i class="prev"></i>
+    </button>
+    <ul class="categories__list">
+      {{ range .Site.Menus.docs }}
+      <li class="categories__item">
+        <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <button class="arrow"
+      onmousedown="startScroll(10)" onmouseout="stopScroll()" onmouseup="stopScroll()"
+      ontouchstart="startScroll(10)" ontouchend="stopScroll()" oncontextmenu="return false">
+      <i class="next"></i>
+    </button>
+  </div>
+</section>
+<script type="text/javascript">
+  var scrollInterval;
+  function startScroll(offset) {
+    if (scrollInterval) {
+      stopScroll();
+    }
+    scrollInterval = setInterval(function () { 
+      document.getElementsByClassName('categories__list')[0].scrollLeft += offset; 
+    }, 50);
+  }
+  function stopScroll() {
+    clearInterval(scrollInterval);
+    scrollInterval = null;
+  }
+</script>

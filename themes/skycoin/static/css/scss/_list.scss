@@ -1,37 +1,91 @@
 .list {
   @include container($container-width-base);
-  padding-top: 2.75rem;
+  padding-top: 40px;
 
+  &__posts {
+    width: 100%;
+    padding: 0 2rem;
+  }
   &__title {
-    font-size: 1.5rem;
-    color: $black;
-    margin-top: 1rem;
-    margin-bottom: 2.75rem;
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: bold;
+    color: $dark-gray;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 -2rem;
+    flex-wrap: wrap;
   }
 
   &__list {
-    list-style-type: none;
-    margin-left: 0;
-    border-top: solid 2px $light-gray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: -16px;
   }
 
   &__item {
-    border-bottom: solid 2px $light-gray;
-    padding-bottom: 1.75rem;
-    padding-top: 1.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 16px;
+    width: 100%;
+
+    @include tablet {
+      width: 33.3333%;
+    }
+
+    &-inner {
+      border-radius: 4px;
+      box-shadow: 0 0 18px 0 rgba(223,233,244,0.52);
+      padding: 0 0 24px;
+    }
+
+    &-image {
+      width: 100%;
+      position: relative;
+      padding-top: 66.666666%;
+      height: 0;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+
+    &-placeholder {
+      position: absolute;
+      width: auto;
+      min-width: 50%;
+      max-width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
   }
 
   &__link {
-    font-size: 1.0625rem;
+    display: block;
+    height: 48px;
+    margin: 12px 24px 0 24px;
+    font-size: 18px;
+    line-height: 24px;
+    color: black;
+    text-decoration: none;
+    overflow: hidden;
   }
 
   &__meta {
-    font-size: 0.9375rem;
-    color: $cool-gray;
+    font-size: 12px;
+    line-height: 18px;
+    color: $gray;
     white-space: nowrap;
-    padding-left: 0.5rem;
+    display: block;
+    margin: 18px 24px 0 24px;
   }
 }

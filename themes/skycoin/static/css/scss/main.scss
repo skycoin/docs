@@ -4,23 +4,19 @@
 @import "mixins";
 
 // Resets and normalization
-@import "normalize";
 @import "reset";
 @import "typography";
 
 // Components
 @import "button";
-@import "container";
 @import "header";
-@import "wordcount";
 @import "footer";
-@import "nav";
 @import "logo";
-
-// Sections
-@import "calltoaction";
+@import "tags";
+@import "pagination";
+@import "categories";
+@import "signup";
 
 // Pages
 @import "post";
 @import "list";
-@import "notfound";

@@ -4,8 +4,35 @@
   max-width: $max-width;
 
   @if $padding {
-    max-width: 1rem + $max-width + 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    max-width: 2rem + $max-width + 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
   }
 }

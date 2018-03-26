@@ -1,15 +1,12 @@
 // Breakpoints
 $breakpoint-xs: 330px;
-$breakpoint-sm: 640px;
-$breakpoint-md: 832px;
-$breakpoint-lg: 1024px;
+$breakpoint-sm: 40rem;
+$breakpoint-md: 52rem;
+$breakpoint-lg: 64rem;
 
 // Typography
 $font-family-mono: "Inconsolata", monospace, sans-serif;
-$font-family-sans: "Montreal", sans-serif;
-
-$font-weight-base: 400;
-$font-weight-bold: 700;
+$font-family-sans: "Skycoin", sans-serif;
 
 // Border radius
 $border-radius-base: 4px;
@@ -21,16 +18,13 @@ $box-shadow-hover: 0 1px 4px rgba(0, 0, 0, 0.25);
 
 // Colors:
 $blue: #0072FF;
-$violet: #0072FF;
-$indigo: #00C3FF;
-$black: #1E2227;
-$dark-gray: #16191D;
-$cool-gray: #22262B;
-$gray: #292D32;
+$dark-gray: #07172E;
+$gray: #92A4BA;
 $light-gray: #EFF0F0;
 $pale-grey: #F7F7F7;
-$white: #ffffff;
+$dark: #101F34;
+$white: #fff;
 
 // Container widths
-$container-width-base: 39rem;
-$container-width-large: 49rem;
+$container-width-base: 70rem;
+$main-content-width: 47rem;

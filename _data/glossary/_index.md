@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Glossary"
 isdate: false
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

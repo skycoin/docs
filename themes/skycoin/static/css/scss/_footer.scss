@@ -1,26 +1,101 @@
 .footer {
-  min-height: 6.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  background-color: $dark;
 
-  &__link {
-    margin-top: 0.5rem;
-    color: $cool-gray;
-    width: 100%;
-    text-align: center;
+  &__container {
+    @include container($container-width-base, true);
+  }
 
-    @media (min-width: $breakpoint-sm) {
-      margin-left: 0;
-      margin-top: 0;
-      margin-right: 2.5rem;
-      width: auto;
+  &__menu {
+    padding-bottom: 40px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-      &:last-of-type {
-        margin-right: 0;
+    @media (max-width: $breakpoint-sm) {
+      padding-top: 40px;          
+    }
+
+    .footer-links {
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      
+      @media (max-width: $breakpoint-sm) {
+        width: 100%;          
+      }
+
+      .nav-link {
+        color: white;
+        margin-left: 2rem;
+        padding: 0.25rem;
+        
+        @media (max-width: $breakpoint-sm) {
+          margin-left: 0;
+          width: 100%;          
+        } 
+  
+        &:hover {
+          color: $gray;
+        }
       }
     }
   }
+
+  &__social {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    padding: 24px 0;
+    @media (max-width: $breakpoint-sm) {
+      padding: 8px 0;
+    } 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    a {
+      padding: 16px 0;
+      width: 10%;
+      text-align: center;
+
+      @media (max-width: $breakpoint-sm) {
+        width: 20%;
+        padding: 8px 0;
+      }      
+    }
+  }
+
+  &__copyright {
+    padding: 40px 0;
+    @media (max-width: $breakpoint-sm) {
+      padding-top: 24px;          
+    }    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    font-size: 13px;
+    color: #616d7c;
+
+    & > * {
+      line-height: 1.5rem;
+      @media (max-width: $breakpoint-sm) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    a {
+      font-size: 13px;
+      color: #616d7c;
+    }
+  }
+
+  .languages {
+    & a:not(:first-of-type):before {
+      content: ' · '
+    }
+  }
+
 }

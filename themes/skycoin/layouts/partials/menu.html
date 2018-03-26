@@ -1,0 +1,7 @@
+{{ range .Site.Menus.main }}
+<a
+  class="nav-link {{if eq .Identifier "docs" }}active{{end}}" 
+  href="{{ if hasPrefix .URL "//"}} {{ .URL }} {{ else }} //www.skycoin.net{{ .URL | relLangURL }} {{ end }}">
+    {{ .Name }}
+</a>
+{{ end }}

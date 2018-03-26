@@ -2,8 +2,8 @@
 
 body {
   font-family: $font-family-sans;
-  font-weight: $font-weight-base;
-  color: $black;
+  color: $dark-gray;
+  font-size: 0.875rem;
 }
 
 h1,
@@ -12,8 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $font-weight-base;
-  font-family: $font-family-mono;
+  font-weight: bold;
 }
 
 button,
@@ -26,7 +25,7 @@ select {
 
 strong,
 b {
-  font-weight: $font-weight-bold;
+  font-weight: bold;
 }
 
 a {

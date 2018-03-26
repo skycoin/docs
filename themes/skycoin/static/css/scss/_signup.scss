@@ -1,0 +1,119 @@
+.signup {
+  margin-top: 60px;
+  background-image: url(../images/bg-signup.png);
+  background-size: cover;
+  color: white;
+  padding: 20px 0;
+
+  &__container {
+    @include container($container-width-base);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  &__wrapper {
+    width: 100%;
+    min-height: 122px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__form {
+    width: 100%;
+
+    @include desktop {
+      width: 50%;
+    }
+
+    &-image {
+      display: none;
+      text-align: right;
+
+      @include desktop {
+        display: block;
+        width: 15%;
+      }
+    }
+
+    &-label {
+      width: 100%;
+      text-align: center;
+
+      @include desktop {
+        width: 35%;
+      }
+    }
+
+    &-group {
+      position: relative;
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .btn {
+    width: 100%;
+    height: 44px;
+    margin-left: 0;
+    margin-top: 20px;
+    font-family: $font-family-sans;
+
+    @include tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 0;
+      width: 8.7rem;
+    }
+  }
+
+  .mc-field-group {
+    font-family: $font-family-sans;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .mce_inline_error, .response {
+    padding-left: 1rem;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .email {
+    height: 44px;
+    border-radius: 1000px;
+    width: 100%;
+    color: white;
+    background: transparent;
+    border: solid 1px white;
+    margin-top: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: $font-family-sans;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include placeholder {
+      font-family: $font-family-sans;
+      color: $white;
+    }
+
+    @include tablet {
+      margin-top: 0;
+      padding-right: 8.7rem;
+    }
+  }
+}

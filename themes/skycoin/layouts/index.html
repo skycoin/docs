@@ -1,23 +1,20 @@
 {{ partial "header.html" . }}
+
 <main class="post">
-  <div class="meta">
-    <h1 class="meta__title">{{ .Title }}</h1>
-    <div class="meta__information">
-      {{ if .Params.isdate }}
-      <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
+  <div class="post__container">
+    <section class="post__content">
+      {{if .Params.image }}
+        <img  src="{{ .Params.image | relURL }}">
       {{ end }}
-    </div>
+      <div class="meta">
+        {{ if .Params.isdate }}
+          <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
+        {{ end }}
+      </div>        
+      <h1 class="post__title">{{ .Title }}</h1>
+      {{ .Content }}
+    </section>
   </div>
-
-  <section class="post__content">
-    {{if .Params.image}}
-    <img  src="{{ .Params.image | absURL }}">
-
-    {{ end }}
-    {{ .Content }}
-
-  </section>
 </main>
 
-{{ partial "telegram.html" . }}
 {{ partial "footer.html" . }}

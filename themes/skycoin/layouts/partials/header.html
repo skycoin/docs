@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-<head>
   {{ $baseurl := .Site.BaseURL }}
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Start of Open Graph -->
-  <meta property="og:title" content="{{ .Title }}">
-  {{ if .IsPage }}
-  <meta property="og:type" content="article">
-  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}">
-  {{ else }}
-  <meta property="og:type" content="{{.Type}}">
-  {{ end }}
-  <meta property="og:description" content="{{ .Description }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:site_name" content="{{ .Site.Title }}">
-  {{ $currentLang := .Site.Language }}
-  <meta property="og:locale" content="{{ $currentLang }}" />
-  {{ range .Site.Languages }}
-  <meta property="og:locale:alernative" content="{{ string . }}" />
-  {{ end }}
-  {{ if .Params.image }}
-  <meta property="og:image" content="{{$baseurl}}{{ .Params.image }}">
-  {{ end }}
-  {{ range .Params.tags }}
-  <meta property="og:tags" content="{{ . }}">
-  {{ end }}
-  <!-- End of Open Graph -->
   <title>{{ .Title }} | {{ .Site.Title }}</title>
   <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
+  <!-- Start of Open Graph -->
+    <meta property="og:title" content="{{ .Title }}">
+    {{ if .IsPage }}
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}">
+    {{ else }}
+    <meta property="og:type" content="website">
+    {{ end }}
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ if .Params.image }}
+    <meta property="og:image" content="{{ .Params.image | absURL }}">
+    {{ end }}
+    {{ range .Params.tags }}
+    <meta property="og:tags" content="{{ . }}">
+    {{ end }}
+  <!-- End of Open Graph -->
   {{ if .Site.GoogleAnalytics }}
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -39,36 +34,58 @@
     ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
     ga('send', 'pageview');
     </script>
-    {{ end }}
+  {{ end }}
+</head>
 
-  </head>
-
-  <body>
-    <header class="header">
-      <div class="header__wrapper">
-        <div class="header__topnav">
-          <a href="https://www.skycoin.net" class="header__link">&larr; skycoin.net</a>
-          <div class="js-dropdown header-dropdown">
-            {{ $currentLang := .Site.Language.LanguageName }}
-            <div class="js-dropdown-current header-dropdown__current">{{ $currentLang }}</div>
-            <div class="js-dropdown-list header-dropdown__list">
-              {{ range .Site.Menus.languages }}
-              <a class="js-dropdown-item header-dropdown__item {{ if eq $currentLang .Name }} header-dropdown__item_active {{ end }}" href="{{ .URL }}">{{ string .Name }}</a>
-              {{ end }}
+<body>
+  <header class="page-header">
+    <div class="header-container">
+      <div class="nav-wrapper">
+        <div class="header-inner">
+          <a href="//www.skycoin.net/" class="logo">
+            <img src="{{ "/images/logo-outlined.svg" | relURL }}" alt="Skycoin">
+          </a>
+          <div>
+            <button class="menu-toggle-btn menu-show-btn" onclick="toggleMenu(true)"></button>
+            <div class="menu-overlay" style="display:none"></div>
+            <div class="nav">
+              <div class="nav-inner">
+                <button class="menu-toggle-btn menu-hide-btn" onclick="toggleMenu(false)"></button>
+                <div class="nav-group">
+                  {{ partial "menu.html" . }}
+                </div>
+                <div class="nav-group mobile">
+                  <a href="{{ .Site.Params.telegram }}" target="_blank" class="nav-link">
+                    <img src="{{ "images/telegram.svg" | relURL }}" alt="Telegram">
+                    Telegram
+                  </a>
+                  <a href="{{ .Site.Params.discord }}" target="_blank" class="nav-link">
+                    <img src="{{ "images/discord.svg" | relURL }}" alt="Discord">
+                    Discord
+                  </a>
+                </div>
+                <div class="nav-group">
+                  <a href="//www.skycoin.net{{ "/downloads" | relLangURL }}" class="nav-button">BUY SKYCOIN</a>
+                </div>
+              </div>
             </div>
           </div>
-          <a href="https://github.com/skycoin/docs" target="_blank" class="btn btn--pill btn--outline btn--blue header__btn">View in GitHub</a>
         </div>
-
-        <a href="/">
-          <img class="logo" alt="Skycoin Blog" src="{{ "/images/logo-outlined.svg" | relURL }}" />
-        </a>
-
-        <nav class="nav">
-          {{ $currentPage := . }}
-          {{ range .Site.Menus.main }}
-          <a class="nav__item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}nav__item--active{{end}}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-          {{ end }}
-        </nav>
       </div>
-    </header>
+    </div>
+    <script type="text/javascript">
+      function toggleMenu(menuVisible)
+      {
+        if (menuVisible) {
+          $('.menu-overlay').show();
+          $('.nav-inner').addClass('visible');
+          $('body').css('overflow', 'hidden');
+        } else {
+          $('.menu-overlay').hide();
+          $('.nav-inner').removeClass('visible');
+          $('body').css('overflow', 'auto');
+        }
+      }
+    </script>
+  </header>
+  {{ partial "categories.html" . }}

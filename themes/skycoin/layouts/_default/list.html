@@ -1,41 +1,43 @@
 {{ partial "header.html" . }}
 
-{{if .Params.devdocs }}
-
-<main class="post">
-  <div class="meta">
-    <h1> Developer Documentation </h1>
-
-    <p>Find useful resources, guides and reference material for developers.</p>
-    <div class="devdocs">
-      <a href="{{ "./dev-docs/guides" | absURL }}">Guides</a>
-      <a href="{{ "./dev-docs/references" | absURL }}">References</a>
-      <a href="{{ "./dev-docs/examples" | absURL }}">Examples</a>
-    </div>
-  </div>
-
-</main>
-
-{{else}}
-
 <main class="list">
-  {{ if .Title }}
-  <h1 class="list__title">{{ .Name }}</h1>
-  {{ end }}
-
-
-
-  <ul class="list__list">
-    {{ range .Data.Pages.ByWeight }}
-    <li class="list__item">
-      <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
-      {{ if .Params.isdate }}
-      <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
-      {{end}}
-    </li>
+    {{ if .Title }}
+      <h1 class="list__title">{{ .Title }}</h1>
     {{ end }}
-  </ul>
-</main>
-{{end}}
-{{partial "telegram.html" .}}
+    {{ if gt (len .Data.Pages) 0}}  
+      <div class="list__container">
+        <section class="list__posts">
+          {{ $paginator := .Paginate (.Data.Pages.ByWeight) 9 }}
+          <ul class="list__list">
+            {{ range $paginator.Pages }}      
+              <li class="list__item">
+                  <div class="list__item-inner">
+                    {{ if .Params.image }}
+                      <div class="list__item-image">
+                        <img src="{{ .Params.image | relURL }}" class="list__image">
+                      </div>
+                    {{ else }}
+                      <div class="list__item-image">
+                        <img src="{{ "images/placeholder.svg" | relURL }}" class="list__image list__image-placeholder">
+                      </div>
+                    {{ end }}
+                    {{ if .Params.isdate }}
+                      <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
+                    {{ end }}
+                    <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
+                  </div>
+              </li>
+            {{ end }}
+          </ul>
+          {{ partial "pagination.html" . }}
+        </section>
+      </div>
+    {{ else }}
+      <div class="post__container">
+        <section class="post__content">
+          {{ .Content }}
+        </section>
+      </div>
+    {{ end }}
+  </main>
 {{ partial "footer.html" . }}

@@ -1,38 +1,44 @@
+  {{ partial "signup.html" . }}
   <footer class="footer">
-    <div>
-      {{ range .Site.Menus.footer }}
-      <a class="footer__link" href="{{ .URL }}">{{ .Name }}</a>
-      {{ end }}
+    <div class="footer__container">
+      <div class="footer__menu">
+        <a href="https://www.skycoin.net">
+          <img class="logo" alt="Skycoin" src="{{ "/images/logoBlueWhite.svg" | relURL }}" />
+        </a>
+        <div class="footer-links">
+          {{ partial "menu.html" . }}
+        </div>
+      </div>
+      <div class="footer__social">
+        {{ range .Site.Params.social}}
+          <a href="{{ .url | absURL }}" target="blank">
+            <img src="{{ .image | relURL }}">
+          </a>
+        {{ end }}
+      </div>
+      <div class="footer__copyright">
+        <span>© Skycoin.net 2018</span>
+        <a href="mailto:contact@skycoin.net">contact@skycoin.net</a>
+        <div class="languages">
+            {{ range .Site.Menus.languages}}
+              <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+            {{ end }}
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    var dropdown = document.querySelector('.js-dropdown'),
-    list = dropdown.querySelector('.js-dropdown-list'),
-    current = dropdown.querySelector('.js-dropdown-current');
-
-    current.addEventListener('click', function(e) {
-      list.classList.toggle('header-dropdown__list_show');
-
-      document.addEventListener('click', function(e) {
-        if(!dropdown.contains(e.target)) {
-          list.classList.remove('header-dropdown__list_show');
-        }
-      });
-    }, false)
-  </script>
-
   {{ if .Site.Params.TwitterAnalytics }}
-  <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
-  <script type="text/javascript">
+    <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+    <script type="text/javascript">
     if (window.twttr) {
       twttr.conversion.trackPid('{{ .Site.Params.TwitterAnalytics }}', { tw_sale_amount: 0, tw_order_quantity: 0 });
     } </script>
     <noscript>
-      <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id={{ .Site.Params.TwitterAnalytics }}&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
-      <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id={{ .Site.Params.TwitterAnalytics }}&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+    <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id={{ .Site.Params.TwitterAnalytics }}&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id={{ .Site.Params.TwitterAnalytics }}&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
     </noscript>
-    {{ end }}
+  {{ end }}
 
-  </body>
-  </html>
+</body>
+</html>
