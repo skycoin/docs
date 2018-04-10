@@ -41,6 +41,31 @@
   }
 }
 
+.btn-transparent {
+  border-color: $white;
+  color: $white;
+  background: transparent;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  &:hover,
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.btn-xl {
+  font-size: 15px;
+  line-height: 15px;
+  min-width: 200px;
+
+  @include tablet {
+    padding: 1rem;
+
+  }
+}
+
 .arrow {
   border: 0 !important;
   background: none;

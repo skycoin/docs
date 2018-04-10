@@ -1,43 +1,51 @@
 {{ partial "header.html" . }}
-
-<main class="list">
-    {{ if .Title }}
-      <h1 class="list__title">{{ .Title }}</h1>
-    {{ end }}
-    {{ if gt (len .Data.Pages) 0}}  
-      <div class="list__container">
-        <section class="list__posts">
-          {{ $paginator := .Paginate (.Data.Pages.ByWeight) 9 }}
-          <ul class="list__list">
-            {{ range $paginator.Pages }}      
-              <li class="list__item">
-                  <div class="list__item-inner">
-                    {{ if .Params.image }}
-                      <div class="list__item-image">
-                        <img src="{{ .Params.image | relURL }}" class="list__image">
-                      </div>
-                    {{ else }}
-                      <div class="list__item-image">
-                        <img src="{{ "images/placeholder.svg" | relURL }}" class="list__image list__image-placeholder">
-                      </div>
-                    {{ end }}
-                    {{ if .Params.isdate }}
-                      <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
-                    {{ end }}
-                    <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
-                  </div>
-              </li>
+<div class="page-content">
+  <div class="content-container">
+    <div class="content-inner">
+      {{ partial "categories.html" . }}
+      <main class="content">
+        <div class="list">
+            {{ if .Title }}
+              <h1 class="list__title">{{ .Title }}</h1>
             {{ end }}
-          </ul>
-          {{ partial "pagination.html" . }}
-        </section>
-      </div>
-    {{ else }}
-      <div class="post__container">
-        <section class="post__content">
-          {{ .Content }}
-        </section>
-      </div>
-    {{ end }}
-  </main>
+            {{ if gt (len .Data.Pages) 0}}
+              <div class="list__container">
+                <section class="list__posts">
+                  {{ $paginator := .Paginate (.Data.Pages.ByWeight) 9 }}
+                  <ul class="list__list">
+                    {{ range $paginator.Pages }}
+                      <li class="list__item">
+                          <div class="list__item-inner">
+                            {{ if .Params.image }}
+                              <div class="list__item-image">
+                                <img src="{{ .Params.image | relURL }}" class="list__image">
+                              </div>
+                            {{ else }}
+                              <div class="list__item-image">
+                                <img src="{{ "images/placeholder.svg" | relURL }}" class="list__image list__image-placeholder">
+                              </div>
+                            {{ end }}
+                            {{ if .Params.isdate }}
+                              <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
+                            {{ end }}
+                            <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
+                          </div>
+                      </li>
+                    {{ end }}
+                  </ul>
+                  {{ partial "pagination.html" . }}
+                </section>
+              </div>
+            {{ else }}
+              <div class="post__container">
+                <section class="post__content">
+                  {{ .Content }}
+                </section>
+              </div>
+            {{ end }}
+          </div>
+      </main>
+    </div>
+  </div>
+</div>
 {{ partial "footer.html" . }}

@@ -1,20 +1,27 @@
 {{ partial "header.html" . }}
 
-<main class="post">
-  <div class="post__container">
-    <section class="post__content">
-      {{if .Params.image }}
-        <img  src="{{ .Params.image | relURL }}">
-      {{ end }}
-      <div class="meta">
-        {{ if .Params.isdate }}
-          <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
-        {{ end }}
-      </div>        
-      <h1 class="post__title">{{ .Title }}</h1>
-      {{ .Content }}
-    </section>
+<div class="page-content">
+  <div class="content-container">
+    <div class="content-inner">
+      {{ partial "categories.html" . }}
+      <main class="content">
+        <div class="post__container">
+          <section class="post__content">
+            {{if .Params.image }}
+            <img  src="{{ .Params.image | relURL }}">
+            {{ end }}
+            <div class="meta">
+              {{ if .Params.isdate }}
+              <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
+              {{ end }}
+            </div>
+            <h1 class="post__title">{{ .Title }}</h1>
+            {{ .Content }}
+          </section>
+        </div>
+      </main>
+    </div>
   </div>
-</main>
+</div>
 
 {{ partial "footer.html" . }}

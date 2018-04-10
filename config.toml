@@ -52,11 +52,11 @@ pygmentsCodeFencesGuessSyntax = true
     identifier = "ecosystem"
     url = "/ecosystem/"
     weight = 5
-[[menu.main]]
-    name = "Documents"
-    identifier = "docs"
-    url = "/docs/"
-    weight = 6
+#[[menu.main]]
+#    name = "Documents"
+#    identifier = "docs"
+#    url = "/docs/"
+#    weight = 6
 
 [[menu.docs]]
 name = "User Guides"
@@ -80,6 +80,24 @@ weight = 3
 name="Future plans"
 identifier="future-plans"
 url = "/future-plans/"
+weight = 3
+
+[[menu.devdocs]]
+name="Guides"
+identifier="guides"
+url = "/guides/"
+weight = 1
+
+[[menu.devdocs]]
+name="References"
+identifier="references"
+url = "/references/"
+weight = 2
+
+[[menu.devdocs]]
+name="Example"
+identifier="example"
+url = "/example/"
 weight = 3
 
 [author]
