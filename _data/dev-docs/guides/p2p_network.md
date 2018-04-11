@@ -99,7 +99,7 @@ released. Skycoin Core will start attempting to connect to these nodes
 if none of the cached seed servers have responded to a query within
 60 seconds, providing an automatic fallback option.
 
-As a manual fallback option, Bitcoin Core also provides several
+As a manual fallback option, Skycoin also provides several
 command-line connection options.  See the `-help` text for
 details.  Other Skycoin client software should be programmed to do
 the same thing.
