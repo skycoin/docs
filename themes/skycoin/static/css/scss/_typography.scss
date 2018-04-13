@@ -31,3 +31,8 @@ b {
 a {
   color: $blue;
 }
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}

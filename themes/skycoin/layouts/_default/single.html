@@ -2,12 +2,13 @@
 
 <div class="page-content">
   <div class="content-container">
+    <a class="back_link" href="javascript: history.back()">
+      <img src="{{ "images/icArrow_2x.png" | absURL }}" /> Back to list
+    </a>
     <div class="content-inner">
       {{ partial "categories.html" . }}
       <main class="content">
-        <!--<a class="back_link" href="javascript: history.back()">-->
-        <!--<img src="{{ "images/icArrow_2x.png" | absURL }}" /> Back to list-->
-        <!--</a>-->
+
         <div class="post__container">
           <section class="post__content">
             {{if .Params.image }}

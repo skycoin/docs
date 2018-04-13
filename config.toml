@@ -31,27 +31,27 @@ pygmentsCodeFencesGuessSyntax = true
     name = "Blog"
     identifier = "blog"
     url = "/blog/"
-    weight = 1
+    weight = 4
 [[menu.main]]
     name = "Explorer"
     identifier = "explorer"
     url = "//explorer.skycoin.net"
-    weight = 2
+    weight = 5
 [[menu.main]]
-    name = "Wallet"
+    name = "Downloads"
     identifier = "wallet"
     url = "/downloads/"
-    weight = 3
+    weight = 1
 [[menu.main]]
     name = "Team"
     identifier = "team"
     url = "/team/"
-    weight = 4
+    weight = 3
 [[menu.main]]
     name = "Ecosystem"
     identifier = "ecosystem"
     url = "/ecosystem/"
-    weight = 5
+    weight = 2
 #[[menu.main]]
 #    name = "Documents"
 #    identifier = "docs"
@@ -85,19 +85,19 @@ weight = 3
 [[menu.devdocs]]
 name="Guides"
 identifier="guides"
-url = "/guides/"
+url = "/dev-docs/guides/"
 weight = 1
 
 [[menu.devdocs]]
 name="References"
 identifier="references"
-url = "/references/"
+url = "/dev-docs/references/"
 weight = 2
 
 [[menu.devdocs]]
-name="Example"
+name="Examples"
 identifier="example"
-url = "/example/"
+url = "/dev-docs/examples/"
 weight = 3
 
 [author]

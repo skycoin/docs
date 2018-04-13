@@ -96,6 +96,10 @@ b {
 a {
   color: #0072FF; }
 
+pre {
+  max-width: 100%;
+  overflow-x: auto; }
+
 .btn {
   display: inline-block;
   border: 1px solid transparent;
@@ -707,16 +711,16 @@ a {
 
 .banner {
   width: 100%;
-  margin-bottom: 4rem; }
+  margin-bottom: 2.5rem; }
   .banner img {
     display: block;
-    max-width: 100%; }
+    width: 100%; }
 
 .back_link {
   font-size: 12px;
   line-height: 13px;
   vertical-align: middle;
-  margin-bottom: 22px;
+  margin-bottom: 2.5rem;
   display: inline-block; }
   .back_link img {
     width: 14px;
@@ -799,76 +803,29 @@ li {
       .post__content blockquote p {
         margin: 0; }
 
-.list {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 70rem;
-  max-width: 74rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 40px; }
-  .list__posts {
-    width: 100%;
-    padding: 0 2rem; }
-  .list__title {
-    font-size: 30px;
-    line-height: 42px;
-    font-weight: bold;
-    color: #07172E; }
-  .list__container {
-    display: flex;
-    flex-direction: row;
-    margin: 0 -2rem;
-    flex-wrap: wrap; }
-  .list__list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: -16px; }
-  .list__item {
-    padding: 16px;
-    width: 100%; }
-    @media screen and (min-width: 40rem) {
-      .list__item {
-        width: 33.3333%; } }
-    .list__item-inner {
-      border-radius: 4px;
-      box-shadow: 0 0 18px 0 rgba(223, 233, 244, 0.52);
-      padding: 0 0 24px; }
-    .list__item-image {
-      width: 100%;
-      position: relative;
-      padding-top: 66.666666%;
-      height: 0;
-      border-radius: 4px 4px 0 0;
-      overflow: hidden; }
-  .list__image {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 4px 4px 0 0; }
-    .list__image-placeholder {
-      position: absolute;
-      width: auto;
-      min-width: 50%;
-      max-width: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%); }
-  .list__link {
-    display: block;
-    height: 48px;
-    margin: 12px 24px 0 24px;
-    font-size: 18px;
-    line-height: 24px;
-    color: black;
-    text-decoration: none;
-    overflow: hidden; }
-  .list__meta {
-    font-size: 12px;
-    line-height: 18px;
-    color: #92A4BA;
-    white-space: nowrap;
-    display: block;
-    margin: 18px 24px 0 24px; }
+.list__title {
+  font-size: 1.5rem;
+  color: #07172E;
+  margin-bottom: 2.75rem; }
+
+.list__list {
+  list-style-type: none;
+  margin-left: 0;
+  border-top: solid 2px #EFF0F0; }
+
+.list__item {
+  border-bottom: solid 2px #EFF0F0;
+  padding-bottom: 1.75rem;
+  padding-top: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.list__link {
+  font-size: 1.0625rem; }
+
+.list__meta {
+  font-size: 0.9375rem;
+  color: #EFF0F0;
+  white-space: nowrap;
+  padding-left: 0.5rem; }

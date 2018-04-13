@@ -16,15 +16,6 @@
                     {{ range $paginator.Pages }}
                       <li class="list__item">
                           <div class="list__item-inner">
-                            {{ if .Params.image }}
-                              <div class="list__item-image">
-                                <img src="{{ .Params.image | relURL }}" class="list__image">
-                              </div>
-                            {{ else }}
-                              <div class="list__item-image">
-                                <img src="{{ "images/placeholder.svg" | relURL }}" class="list__image list__image-placeholder">
-                              </div>
-                            {{ end }}
                             {{ if .Params.isdate }}
                               <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
                             {{ end }}

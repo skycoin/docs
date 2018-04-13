@@ -6,18 +6,20 @@
         <a class="category__item-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
         {{ if eq .Identifier "devdocs" }}
         <ul class="post__list">
-          {{ range where $.Data.Pages "Section" "dev-docs" }}
+          {{ range $.Site.Menus.devdocs }}
           <li class="post__item">
-            <a class="post__item-link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
+            <a class="post__item-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
           </li>
           {{ end }}
         </ul>
         {{ else if eq .Identifier "user-guides" }}
         <ul class="post__list">
           {{ range where $.Site.Pages "Section" .Identifier }}
+          {{ if .IsPage }}
           <li class="post__item">
             <a class="post__item-link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
           </li>
+          {{ end }}
           {{ end }}
         </ul>
         {{ end }}
