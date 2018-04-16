@@ -1,0 +1,55 @@
+.promo {
+  background-image: url("../images/bg-get-started_2x.png");
+  background-size: cover;
+
+  &__container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 70rem;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    @include desktop {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+  }
+  &__heading {
+    color: $white;
+    font-size: 1.0625rem;
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
+
+    @include desktop {
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+    }
+  }
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    .btn {
+      font-size: 13px;
+      margin-top: 1.25rem;
+
+      @include tablet {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        font-size: 15px;
+      }
+    }
+  }
+}

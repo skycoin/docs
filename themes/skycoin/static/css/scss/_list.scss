@@ -1,11 +1,8 @@
 .list {
-  @include container($container-width-base);
-  padding-top: 2.75rem;
 
   &__title {
     font-size: 1.5rem;
-    color: $black;
-    margin-top: 1rem;
+    color: $dark-gray;
     margin-bottom: 2.75rem;
   }
 
@@ -30,7 +27,7 @@
 
   &__meta {
     font-size: 0.9375rem;
-    color: $cool-gray;
+    color: $light-gray;
     white-space: nowrap;
     padding-left: 0.5rem;
   }

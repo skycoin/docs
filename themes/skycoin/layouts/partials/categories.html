@@ -1,0 +1,30 @@
+<aside class="categories">
+  <div class="categories__container">
+    <ul class="category__list">
+      {{ range .Site.Menus.docs }}
+      <li class="category__item">
+        <a class="category__item-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        {{ if eq .Identifier "devdocs" }}
+        <ul class="post__list">
+          {{ range $.Site.Menus.devdocs }}
+          <li class="post__item">
+            <a class="post__item-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ else if eq .Identifier "user-guides" }}
+        <ul class="post__list">
+          {{ range where $.Site.Pages "Section" .Identifier }}
+          {{ if .IsPage }}
+          <li class="post__item">
+            <a class="post__item-link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</aside>

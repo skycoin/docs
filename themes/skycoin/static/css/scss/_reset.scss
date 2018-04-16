@@ -47,9 +47,13 @@ figure,
 hr,
 table,
 fieldset {
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
 }
 
 dd, ol, ul {
-  margin-left: 1rem;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }

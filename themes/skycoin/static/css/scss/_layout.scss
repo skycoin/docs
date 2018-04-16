@@ -1,0 +1,23 @@
+.content-container {
+  @include container($container-width-base);
+}
+
+.content-inner {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  @include tablet {
+    margin: 0 -1rem;
+  }
+}
+
+.content {
+  width: 100%;
+
+  @include desktop {
+    width: 66.6666%;
+    padding: 0 1rem;
+  }
+}

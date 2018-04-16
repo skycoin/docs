@@ -1,0 +1,30 @@
+.pagination {
+  @include container($container-width-base, false);
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+
+  li {
+    font-size: 14px;
+    color: $blue;
+    border-color: $blue;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 16px;
+  }
+  
+  li.active a, li.disabled a {
+    color: $gray;
+    border-color: $gray;
+  }
+
+  a {
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: solid 1px;
+    display: block;
+    line-height: 28px;
+  }
+}

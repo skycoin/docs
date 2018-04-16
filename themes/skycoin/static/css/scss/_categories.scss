@@ -1,0 +1,67 @@
+.categories {
+  width: 100%;
+
+  @include desktop {
+    width: 33.3333%;
+    padding: 0 1rem;
+  }
+
+
+  &__container {
+    background: $pale-grey;
+  }
+}
+
+.category {
+  
+  a, button  {
+    color: $gray;
+    cursor: pointer;
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__item {
+    position: relative;
+    padding: 24px 0;
+
+    & + &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 32px;
+      border-top: 2px solid rgba(#92A4BA, 0.2);
+    }
+  }
+
+  &__item-link {
+    padding: 0 32px;
+    font-size: 14px;
+    line-height: 16px;    
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $dark-gray;
+  }
+}
+
+.post {
+  &__list {
+    margin-top: 16px;
+  }
+
+  &__item {
+
+  }
+
+  &__item-link {
+    display: block;
+    font-size: 14px;
+    padding: 6px 32px;
+    color: $blue;
+  }
+}
