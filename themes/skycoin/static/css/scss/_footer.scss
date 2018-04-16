@@ -6,15 +6,16 @@
   }
 
   &__menu {
-    padding-bottom: 40px;
-    padding-top: 80px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 24px;
 
-    @media (max-width: $breakpoint-sm) {
-      padding-top: 40px;          
+    @include tablet {
+      padding-bottom: 80px;
+      padding-top: 80px;
     }
 
     .footer-links {
@@ -22,21 +23,29 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      
-      @media (max-width: $breakpoint-sm) {
-        width: 100%;          
+      width: 100%;
+      margin-top: 24px;
+
+      @include tablet {
+        width: auto;
+        margin-top: 0;
       }
 
       .nav-link {
         color: white;
-        margin-left: 2rem;
-        padding: 0.25rem;
-        
-        @media (max-width: $breakpoint-sm) {
-          margin-left: 0;
-          width: 100%;          
-        } 
-  
+        padding: 0.25rem 0;
+        width: 33.3333%;
+
+        @include tablet {
+          width: auto;
+          margin-left: 2rem;
+          padding: 0.25rem;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+
         &:hover {
           color: $gray;
         }

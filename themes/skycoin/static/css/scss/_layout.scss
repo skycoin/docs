@@ -3,11 +3,14 @@
 }
 
 .content-inner {
-  margin: 0 -1rem;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+
+  @include tablet {
+    margin: 0 -1rem;
+  }
 }
 
 .content {
