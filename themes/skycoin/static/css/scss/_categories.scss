@@ -1,7 +1,8 @@
 .categories {
   width: 100%;
+  margin-bottom: 3rem;
 
-  @include desktop {
+  @include tablet {
     width: 33.3333%;
     padding: 0 1rem;
   }
@@ -21,6 +22,7 @@
 
   &__list {
     width: 100%;
+    margin: 0;
   }
 
   &__item {
@@ -61,7 +63,15 @@
   &__item-link {
     display: block;
     font-size: 14px;
-    padding: 6px 32px;
+    padding: 0.375rem 2rem;
     color: $blue;
+
+    @include tablet {
+      padding: 0.375rem 1rem;
+    }
+
+    @include desktop {
+      padding: 0.375rem 2rem;
+    }
   }
 }
