@@ -75,17 +75,17 @@ identifier = "devdocs"
 url = "/dev-docs/"
 weight = 2
 
-[[menu.docs]]
-name="Glossary"
-identifier="glossary"
-url = "/glossary/"
-weight = 3
+#[[menu.docs]]
+#name="Glossary"
+#identifier="glossary"
+#url = "/glossary/"
+#weight = 3
 
-[[menu.docs]]
-name="Future plans"
-identifier="future-plans"
-url = "/future-plans/"
-weight = 3
+#[[menu.docs]]
+#name="Future plans"
+#identifier="future-plans"
+#url = "/future-plans/"
+#weight = 3
 
 [[menu.devdocs]]
 name="Guides"
