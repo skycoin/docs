@@ -31,9 +31,11 @@ The function `DeserializeAtomic(in []byte, data interface{})` deserializes `in` 
 
 ### DeserializeRaw
 
-The function `DeserializeRaw(in []byte, data interface{}) error` deserializes `in` buffer into `data` parameter. If `data` is not either a Pointer type, a Slice type or a Struct type, error message `fmt.Errorf("Invalid type %s", reflect.TypeOf(v).String())` is returned. If `in` buffer can't be deserialized, error `errors.New("Deserialization failed")` is returned.
+The function `DeserializeRaw(in []byte, data interface{}) error` deserializes `in` buffer into return parameter. If `data` is not either a Pointer type, a Slice type or a Struct type, error message `fmt.Errorf("Invalid type %s", reflect.TypeOf(v).String())` is returned. If `in` buffer can't be deserialized, error `errors.New("Deserialization failed")` is returned.
 
 ### Deserialize
+
+The function `Deserialize((r io.Reader, dsize int, data interface{}) error` reads `dsize` bytes from `r` and deserializes the resulting buffer buffer into return parameter. If `data` is not either a Pointer type, a Slice type or a Struct type, error `errors.New("binary.Read: invalid type " + reflect.TypeOf(d).String())` is returned. If `in` buffer can't be deserialized, error `errors.New("Deserialization failed")` is returned.
 
 ### CanDeserialize
 
