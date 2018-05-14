@@ -2,7 +2,7 @@
 title: "Encoder"
 isdate: false
 weight: 5
-filename: "/_data/dev-docs/references//encoder.md"
+filename: "/_data/dev-docs/references/encoder.md"
 ---
 {{% comment %}}
 This file is licensed under the MIT License (MIT) available on
