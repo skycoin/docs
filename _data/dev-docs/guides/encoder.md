@@ -51,6 +51,8 @@ Function `(r io.Reader, dsize int, dst reflect.Value) error` reads `dsize` bytes
 
 ### SerializeAtomic
 
+Function `SerializeAtomic(data interface{}) []byte` returns serialization of `data` parameter. If `data` is not an atomic type, error message `log.Panic("type not atomic")` is logged.
+
 ### Serialize
 
 ### Size
