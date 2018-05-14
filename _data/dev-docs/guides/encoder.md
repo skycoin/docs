@@ -22,9 +22,12 @@ The function `EncodeInt(b []byte, data interface{})` encodes an Integer type con
 ### DecodeInt
 
 The function `DecodeInt(in []byte, data interface{})` decodes `in` buffer into `data` parameter. If `data` is not an Integer type, error message `log.Panic("PushAtomic, case not handled")` is logged.
-<!--This function doesn't check whether `in` param is a valid in. Must be fixed and updated accordingly. -->
+<!--This function doesn't check whether `in` param is a valid integer. Must be fixed and updated accordingly. -->
 
 ### DeserializeAtomic
+
+The function `DeserializeAtomic(in []byte, data interface{})` deserializes `in` buffer into `data` parameter. If `data` is not an atomic type (i.e., Integer type or Boolean type), error message `log.Panic("type not atomic")` is logged.
+<!--This function doesn't check whether `in` param is a valid atomic type. Must be fixed and updated accordingly. -->
 
 ### DeserializeRaw
 
