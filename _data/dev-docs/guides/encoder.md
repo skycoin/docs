@@ -39,6 +39,8 @@ The function `Deserialize((r io.Reader, dsize int, data interface{}) error` read
 
 ### CanDeserialize
 
+The function `CanDeserialize(in []byte, dst reflect.Value) bool` returns true if `in` buffer can be deserialized into `dst`'s type. Returns false in any other case.
+
 ### DeserializeRawToValue
 
 ### DeserializeToValue
