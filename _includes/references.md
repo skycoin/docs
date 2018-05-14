@@ -71,3 +71,5 @@ http://opensource.org/licenses/MIT.
 [unsolicited block push]: /en/developer-guide#term-unsolicited-block-push "When a master node sends a GIVB message without sending an ANNB message first"
 [secp256k1 signature]: https://en.bitcoin.it/wiki/Secp256k1
 [direct headers announcement]: https://bitcoin.org/en/developer-guide#block-broadcasting
+[varint]: http://code.google.com/apis/protocolbuffers/docs/encoding.html "Varints are a method of encoding integers using one or more bytes; numbers with smaller absolute value take a smaller number of bytes."
+.
