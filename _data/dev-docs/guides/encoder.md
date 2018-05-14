@@ -59,5 +59,6 @@ Function `Serialize(data interface{}) []byte` returns serialized basic type-base
 
 ### Size
 
+Function `Size(v interface{}) int` returns how many bytes would it take to encode the value v, which must be a fixed-size value (struct) or a slice of fixed-size values, or a pointer to such data. Reflect-based encoding is used.
 
 {{% subhead %}}
