@@ -55,6 +55,8 @@ Function `SerializeAtomic(data interface{}) []byte` returns serialization of `da
 
 ### Serialize
 
+Function `Serialize(data interface{}) []byte` returns serialized basic type-based `data` parameter. Encoding is reflect-based.
+
 ### Size
 
 
