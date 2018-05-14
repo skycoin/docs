@@ -43,6 +43,8 @@ The function `CanDeserialize(in []byte, dst reflect.Value) bool` returns true if
 
 ### DeserializeRawToValue
 
+The function `DeserializeRawToValue(in []byte, dst reflect.Value) (int, error)` deserializes `in` buffer into `dst`'s type and returns the number of bytes used and the value of the buffer. If `data` is not either a Pointer type, a Slice type or a Struct type, 0 and error `errors.New("binary.Read: invalid type " + reflect.TypeOf(dst).String())` are returned. If `in` buffer can't be deserialized, 0 and error `errors.New("Deserialization failed")` are returned.
+
 ### DeserializeToValue
 
 ### SerializeAtomic
