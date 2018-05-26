@@ -15,50 +15,45 @@ Numbers are translated by reading and writing fixed-size values.
 
 A fixed-size value is either a fixed-size arithmetic type (int8, uint8, int16, float32, complex64, ...) or an array or struct containing only fixed-size values.
 
-### EncodeInt
+### Numeric types
 
-Function `EncodeInt(b []byte, data interface{})` encodes an Integer type contained in `data` into buffer `b`. If `data` is not an Integer type, error message `log.Panic("PushAtomic, case not handled")` is logged.
+Integers, both `Int` types (`Int8`,`Int16`,`Int32`,`Int64`) and `Uint` types (`Uint8`,`Uint16`,`Uint32`,`Uint64`) are encoded in big-endian format.
 
-### DecodeInt
+Floats, both `Float32` and `Float64`, are encoded in IEEE 754 binary representation.
 
-Function `DecodeInt(in []byte, data interface{})` decodes `in` buffer into `data` parameter. If `data` is not an Integer type, error message `log.Panic("PushAtomic, case not handled")` is logged.
-<!--This function doesn't check whether `in` param is a valid integer. Must be fixed and updated accordingly. -->
+### Strings
 
-### DeserializeAtomic
+For a string with `n` characters:
 
-Function `DeserializeAtomic(in []byte, data interface{})` deserializes `in` buffer into `data` parameter. If `data` is not an atomic type (i.e., Integer type or Boolean type), error message `log.Panic("type not atomic")` is logged.
-<!--This function doesn't check whether `in` param is a valid atomic type. Must be fixed and updated accordingly. -->
+Bytes `0` - `3`: Integer `n` encoded in `Uint32` format.
+Bytes `3` - `3+n`: Characters encoded in `Uint8` format.
 
-### DeserializeRaw
+### Booleans
 
-Function `DeserializeRaw(in []byte, data interface{}) error` deserializes `in` buffer into return parameter. If `data` is not either a Pointer type, a Slice type or a Struct type, error message `fmt.Errorf("Invalid type %s", reflect.TypeOf(v).String())` is returned. If `in` buffer can't be deserialized, error `errors.New("Deserialization failed")` is returned.
+Booleans are encoded as a byte, with `1` for `true` and `0` for `false`.
 
-### Deserialize
+### Arrays
 
-Function `Deserialize((r io.Reader, dsize int, data interface{}) error` reads `dsize` bytes from `r` and deserializes the resulting buffer into return parameter. If `data` is not either a Pointer type, a Slice type or a Struct type, error `errors.New("binary.Read: invalid type " + reflect.TypeOf(d).String())` is returned. If `in` buffer can't be deserialized, error `errors.New("Deserialization failed")` is returned.
+For an array of size `n`:
 
-### CanDeserialize
+Bytes `0` - `n-1`: Encoded fixed-size elements.
 
-Function `CanDeserialize(in []byte, dst reflect.Value) bool` returns true if `in` buffer can be deserialized into `dst`'s type. Returns false in any other case.
+### Slices
 
-### DeserializeRawToValue
+For a slice with `n` elements of size `s`:
 
-Function `DeserializeRawToValue(in []byte, dst reflect.Value) (int, error)` deserializes `in` buffer into `dst`'s type and returns the number of bytes used and the value of the buffer. If `data` is not either a Pointer type, a Slice type or a Struct type, 0 and error `errors.New("binary.Read: invalid type " + reflect.TypeOf(dst).String())` are returned. If `in` buffer can't be deserialized, 0 and error `errors.New("Deserialization failed")` are returned.
+Bytes `0` - `3`: Integer `n` encoded in `Uint32` format.
+Bytes `3` - `3(s*n)`: Encoded fixed-size elements.
 
-### DeserializeToValue
+### Maps
 
-Function `(r io.Reader, dsize int, dst reflect.Value) error` reads `dsize` bytes from `r`, deserializes the resulting buffer into `dst`'s type and returns the value of the buffer. If `data` is not either a Pointer type, a Slice type or a Struct type, error `errors.New("binary.Read: invalid type " + reflect.TypeOf(dst).String())` is returned. If `in` buffer can't be deserialized, an error is returned.
+For a map with `n` key-value pairs, with values of size `s`:
 
-### SerializeAtomic
+Bytes `0` - `3`: Integer `n` encoded in `Uint32` format.
+Bytes `3` - `3(s*n)`: Encoded fixed-size values.
 
-Function `SerializeAtomic(data interface{}) []byte` returns serialization of `data` parameter. If `data` is not an atomic type, error message `log.Panic("type not atomic")` is logged.
+### Struct
 
-### Serialize
-
-Function `Serialize(data interface{}) []byte` returns serialized basic type-based `data` parameter. Encoding is reflect-based.
-
-### Size
-
-Function `Size(v interface{}) int` returns how many bytes would it take to encode the value v, which must be a fixed-size value (struct) or a slice of fixed-size values, or a pointer to such data. Reflect-based encoding is used.
+Each field that can be setted, is not named `"_"`, and whose `"enc"` tag is not set as `"-"`, is encoded in order.
 
 {{% subhead %}}
