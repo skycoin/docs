@@ -130,7 +130,7 @@ urlGit = "https://github.com/skycoin/docs"
   image = "images/twitter.svg"
 [[params.social]]
   name = "Facebook"
-  url = "https://www.facebook.com/skycoinproject"
+  url = "https://www.facebook.com/SkycoinOfficial/"
   image = "images/facebook.svg"
 [[params.social]]
   name = "Instagram"
