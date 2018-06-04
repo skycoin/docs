@@ -523,6 +523,7 @@ have exchanged `INTR` messages, no other messages will be accepted.
 | 4        | version               | int32            | Required                                 | The highest protocol version understood by the transmitting node.  See the [protocol version section][section protocol versions]. Protocol version mismatch leads to disconnection.
 | 32       | genesis hash          | cipher.SHA256    | Required                                 | The hash of the genesis transaction
 
+At Skycoin Core 0.25, no message size check is executed, in order to accept both INTR messages with genesis hash field (>= 0.25) and without it (<=0.24). If genesis hash is present in incoming `INTR` message, it will be parsed and checked. If genesis hashes don't match, incoming connection will be rejected.
 
 Peers of a given node may establish a single connection and no more.
 Once an initial introduction handshake is established every node must
