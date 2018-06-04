@@ -521,7 +521,7 @@ have exchanged `INTR` messages, no other messages will be accepted.
 | 4        | mirror                 | uint32           | Required                                 | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt of an `INTR` message with a nonce it previously sent.
 | 2        | port                   | uint16           | Required                                 | The port number of the transmitting node in **big endian byte order**.
 | 4        | version               | int32            | Required                                 | The highest protocol version understood by the transmitting node.  See the [protocol version section][section protocol versions]. Protocol version mismatch leads to disconnection.
-| 32       | genesis hash          | cipher.SHA256    | Required                                 | The hash of the genesis transaction
+| 16       | genesis hash          | cipher.SHA256    | Required                                 | The hash of the genesis transaction
 
 At Skycoin Core 0.25, no message size check is executed, in order to accept both INTR messages with genesis hash field (>= 0.25) and without it (<=0.24). If genesis hash is present in incoming `INTR` message, it will be parsed and checked. If genesis hashes don't match, incoming connection will be rejected.
 
