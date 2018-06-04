@@ -522,6 +522,8 @@ have exchanged `INTR` messages, no other messages will be accepted.
 | 2        | port                   | uint16           | Required                                 | The port number of the transmitting node in **big endian byte order**.
 | 4        | version               | int32            | Required                                 | The highest protocol version understood by the transmitting node.  See the [protocol version section][section protocol versions]. Protocol version mismatch leads to disconnection.
 
+At Skycoin Core 0.24, no message size check is executed, in order to accept both INTR messages with genesis hash  field (>= 0.25) and without it (<=0.24).
+
 Peers of a given node may establish a single connection and no more.
 Once an initial introduction handshake is established every node must
 halt processing of subsequent `INTR` messages matching an already known
