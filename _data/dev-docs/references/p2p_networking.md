@@ -583,6 +583,9 @@ have exchanged `INTR` messages, no other messages will be accepted.
 | 4        | mirror                 | uint32           | Required                                 | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt of an `INTR` message with a nonce it previously sent.
 | 2        | port                   | uint16           | Required                                 | The port number of the transmitting node in **big endian byte order**.
 | 4        | version               | int32            | Required                                 | The highest protocol version understood by the transmitting node.  See the [protocol version section][section protocol versions]. Protocol version mismatch leads to disconnection.
+| 16       | genesis hash          | cipher.SHA256    | Required                                 | The hash of the genesis transaction
+
+At Skycoin Core 0.25, no message size check is executed, in order to accept both INTR messages with genesis hash field (>= 0.25) and without it (<=0.24). If genesis hash is present in incoming `INTR` message, it will be parsed and checked. If genesis hashes don't match, incoming connection will be rejected.
 
 At Skycoin Core 0.24, no message size check is executed, in order to accept both INTR messages with genesis hash  field (>= 0.25) and without it (<=0.24). If genesis hash is present in incoming `INTR` message, it will be parsed and checked. If genesis hashes don't match, incoming connection will be rejected.
 
@@ -612,7 +615,9 @@ IntroductionMessage:
 0x0008 | d2 04 00 00 ....................................... Mirror
 0x000c | d2 1e ............................................. Port
 0x000e | 05 00 00 00 ....................................... Version
-0x0012 |
+0x0012 | 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0x002c | 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ... Genesis hash
+0x003c |
 ```
 {{ </highlight > }}
 
