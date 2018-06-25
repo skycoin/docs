@@ -11,7 +11,7 @@ This file is licensed under the MIT License (MIT) available on
 
 # Encoder
 
-Package encoder binary implements translation between numbers and byte sequences and encoding and decoding of [varints][/en/glossary/varint]{:#term-varint}{:.term}.
+Package encoder binary implements translation between numbers and byte sequences and encoding and decoding of [varints][varint].
 
 Numbers are translated by reading and writing fixed-size values.
 
