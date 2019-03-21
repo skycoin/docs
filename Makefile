@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: run build help
+.PHONY: run build build-content help
 
 
 build-content: ## Build skycoin docs in ./content/ folder

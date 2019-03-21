@@ -1,10 +1,16 @@
 language: go
 
 go:
-- '1.10'
+- '1.11.x'
 
 install:
-- go get -v github.com/gohugoio/hugo
+- mkdir $HOME/src
+- cd $HOME/src
+- git clone https://github.com/gohugoio/hugo.git
+- cd hugo
+- git checkout v0.54.0
+- go install
+- cd $TRAVIS_BUILD_DIR
 - sudo pip install Pygments
 - sudo pip install s3cmd
 

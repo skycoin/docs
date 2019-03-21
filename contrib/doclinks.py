@@ -6,7 +6,7 @@ Synchronize Bitcoin.org -> Skycoin.net doc link references
 Skycoin docs structure is inspired on Bitcoin.org structure.
 Both are crypto currency systems powered by block chains.
 Therefore there are a lot of intersections. Similarities are
-particularly evident in the glossary of terms, but not limited 
+particularly evident in the glossary of terms, but not limited
 to that.
 
 This is a script implementing the following workflow:
@@ -114,13 +114,7 @@ for dirpath, subdirs, subfiles, dir_fd in os.fwalk(sky_base_path, 'content'):
                         sky_refs[key] = [source, None,  text + 'TODO: REVIEW"'\
                                 if key in btc_refs else text + 'TODO: EMPTY"', 1]
 
-print("""
-{% comment %}
-This file is licensed under the MIT License (MIT) available on
-http://opensource.org/licenses/MIT.
-{% endcomment %}
-
-""")
+print('')
 
 for key in sorted(sky_refs.keys()):
     value = sky_refs[key]
