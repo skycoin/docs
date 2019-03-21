@@ -3,7 +3,6 @@ title: "P2P Network"
 isdate: false
 weight: 3
 filename: "/_data/dev-docs/guides/p2p_network.md"
-subhead: true
 ---
 
 The Skycoin network protocol allows full nodes

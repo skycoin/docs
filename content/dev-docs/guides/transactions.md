@@ -3,7 +3,6 @@ title: "Transactions"
 isdate: false
 weight: 4
 filename: "/_data/dev-docs/guides/transactions.md"
-subhead: true
 ---
 
 {{% comment %}}

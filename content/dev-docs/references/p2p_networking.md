@@ -3,7 +3,6 @@ title: "P2P Network"
 isdate: false
 weight: 6
 filename: "/_data/dev-docs/references/p2p_networking.md"
-subhead: true
 ---
 
 This section describes the Skycoin P2P network protocol (but it is
