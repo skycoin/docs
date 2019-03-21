@@ -23,7 +23,7 @@ rules][/en/glossary/consensus-rules]{:#term-consensus-rules}{:.term}. This secti
 the consensus rules used by Skycoin Core.
 
 ### Block Chain Overview
-{{% subhead %}}
+
 
 ![Block Chain Overview](/img/en-blockchain-overview.svg)
 
@@ -77,7 +77,7 @@ coins transaction fee that can't be used any more.
 {{% /comment%}}
 
 ### Design Decisions
-{{% subhead %}}
+
 
 {{% comment%}}
 {% autocrossref %}
@@ -145,7 +145,7 @@ transactions) and produce an independent research that leads to a new opinion
 {% endautocrossref %}
 {{% /comment%}}
 ### Proof Of Burn
-{{% subhead %}}
+
 
 {{% comment%}}
 
@@ -183,7 +183,7 @@ spend at least one [coin hour][] to be valid, and half (rounded up) of the
 {{% /comment%}}
 
 ### Block Height And Forking
-{{% subhead %}}
+
 
 {{% comment%}}
 
@@ -195,7 +195,7 @@ TODO: Document block height and forking
 {{% /comment%}}
 
 ### Transaction Data
-{{% subhead %}}
+
 
 {{% comment%}}
 
@@ -262,7 +262,7 @@ otherwise, a valid block with the duplicates eliminated could have the same merk
 {{% /comment%}}
 
 ### Consensus Rule Changes
-{{% subhead %}}
+
 
 {{% comment%}}
 
@@ -274,7 +274,7 @@ TODO: Document changes in consensus rules
 {{% /comment%}}
 
 #### Detecting Forks
-{{% subhead %}}
+
 
 {{% comment%}}
 

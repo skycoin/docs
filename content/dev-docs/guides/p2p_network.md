@@ -5,10 +5,6 @@ weight: 3
 filename: "/_data/dev-docs/guides/p2p_network.md"
 subhead: true
 ---
-{{% comment %}}
-This file is licensed under the MIT License (MIT) available on
-http://opensource.org/licenses/MIT.
-{{% /comment %}}
 
 The Skycoin network protocol allows full nodes
 (peers) to collaboratively maintain a
@@ -33,7 +29,7 @@ IP addresses.
 
 
 ### Peer Discovery
-{{% subhead %}}
+
 
 
 
@@ -107,7 +103,7 @@ the same thing.
 
 
 ### Connecting To Peers
-{{% subhead %}}
+
 
 
 
@@ -132,7 +128,7 @@ the client will assume that connection has closed.
 
 
 ### Initial Block Download
-{{% subhead %}}
+
 
 
 
@@ -151,7 +147,7 @@ all the blocks which were produced since the last time it was online.
 
 
 #### Blocks-First
-{{% subhead %}}
+
 
 
 
@@ -236,7 +232,7 @@ in a later subsection.
 
 ##### Blocks-First Advantages & Disadvantages
 {:.no_toc}
-{{% subhead %}}
+
 
 
 
@@ -288,7 +284,7 @@ to the reference page for that message.
 
 
 ### Block Broadcasting
-{{% subhead %}}
+
 
 
 
@@ -335,7 +331,7 @@ TODO: Table : messages for block broadcasting
 
 
 #### Orphan Blocks
-{{% subhead %}}
+
 
 
 
@@ -363,7 +359,7 @@ orphan block.
 
 
 ### Transaction Broadcasting
-{{% subhead %}}
+
 
 
 
@@ -394,7 +390,7 @@ are filtered out.
 
 
 #### Memory Pool
-{{% subhead %}}
+
 
 
 
@@ -438,7 +434,7 @@ next block.
 
 
 ### Misbehaving Nodes
-{{% subhead %}}
+
 
 
 
@@ -451,7 +447,7 @@ be banned for a configurable number of seconds, which is *86,400* by default
 
 
 ### Final remarks
-{{% subhead %}}
+
 
 
 

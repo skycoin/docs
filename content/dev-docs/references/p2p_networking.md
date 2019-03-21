@@ -15,7 +15,7 @@ integers mentioned in this section are transmitted in little-endian order.
 
 
 ### Constants And Defaults
- {{% subhead %}}
+
 
 The following constants and defaults are taken from Skycoin Core's
 [skycoin.go at master][] and [skycoin.go at testnet][] source code files.
@@ -39,7 +39,7 @@ for the different networks.
 
 
 ### Protocol Versions
- {{% subhead %}}
+
 
 The table below lists some notable versions of the P2P network protocol,
 with the most recent versions listed first. (If you know of a protocol
@@ -54,7 +54,7 @@ As of Skycoin Core 0.21.1, the most recent protocol version is `2`.
 
 
 ### Message Headers
- {{% subhead %}}
+
 
 All messages in the network protocol use the same container format,
 which provides a required multi-field message header and an optional payload.
@@ -80,7 +80,7 @@ GetPeersMessage:
 
 
 ### Data Messages
- {{% subhead %}}
+
 
 
 
@@ -91,7 +91,7 @@ transactions and blocks.
 
 
 #### Give Blocks
- {{% subhead %}}
+
 
 {{% comment %}}
 Skycoin GIVB messages are similar to [Bitcoin block message][].
@@ -149,7 +149,7 @@ GiveBlocksMessage:
 
 
 #### Get Blocks
- {{% subhead %}}
+
 
 {{% comment %}}
 Skycoin GETB messages are similar to [Bitcoin getblocks message][].
@@ -184,7 +184,7 @@ GetBlocksMessage:
 
 
 #### Get Transactions
- {{% subhead %}}
+
 
 
 The `GETT` message requests one or more transaction objects from another
@@ -223,7 +223,7 @@ GetTxns:
 
 
 #### Announce Blocks
- {{% subhead %}}
+
 
 
 The `ANNB` message transmits the [block height][] of the [head block][]
@@ -255,7 +255,7 @@ AnnounceBlocksMessage:
 
 
 #### Announce Transactions
- {{% subhead %}}
+
 
 The `ANNT` message transmits one or more [TXID hashes][/en/glossary/txid]{:#term-txid}{:.term}
 of transaction objects known to the transmitting peer. It can be sent
@@ -292,7 +292,7 @@ AnnounceTxnsMessage:
 
 
 #### Give Transactions
- {{% subhead %}}
+
 
 {{% comment %}}
 Skycoin GIVT messages are similar to [Bitcoin tx message][].
@@ -372,7 +372,7 @@ GiveTxnsMessage:
 
 
 ### Control Messages
- {{% subhead %}}
+
 
 
 The following network messages all help control the connection between
@@ -390,7 +390,7 @@ information about Tor, please [open an issue][docs issue].
 
 
 #### Give Peers
- {{% subhead %}}
+
 
 {{% comment %}}
 Skycoin GIVP messages are similar to [Bitcoin addr message][].
@@ -445,7 +445,7 @@ GivePeersMessage:
 
 
 #### Get Peers
- {{% subhead %}}
+
 
 {{% comment %}}
 Skycoin GETP messages are similar to [Bitcoin getaddr message][].
@@ -465,7 +465,7 @@ message without a payload.
 
 
 #### Ping
-{{% subhead %}}
+
 
 {{% comment %}}
 Skycoin PING messages are similar to [Bitcoin ping message][].
@@ -485,7 +485,7 @@ message without a payload.
 
 
 #### Pong
-{{% subhead %}}
+
 
 {{% comment %}}
 Skycoin PONG messages are similar to [Bitcoin pong message][].
@@ -506,7 +506,7 @@ only the message header differs.
 
 
 #### Introduction
-{{% subhead %}}
+
 
 {{% comment %}}
 Skycoin INTR messages are similar to [Bitcoin version message][].
@@ -561,7 +561,7 @@ IntroductionMessage:
 
 
 #### Final remarks about the P2P network
-{{% subhead %}}
+
 
 
 Skycoin is a next generation blockchain ledger technology. Therefore
@@ -569,30 +569,30 @@ some of their innovatve concepts do not map one-to-one to similar
 elements present in other crypto-currencies. Some clarifications and
 comparisons will follow.
 
-Skycoin [gnet][network] does not implement [inventories][/en/glossary/inventory]{:#term-inventory}{:.term}.
-Hence there is no equivalent to [Bitcoin `inv` message][bitcoin inv message].
+Skycoin [gnet](/en/developer-guide#term-network) does not implement [inventories][/en/glossary/inventory]{:#term-inventory}{:.term}.
+Hence there is no equivalent to [Bitcoin `inv` message](https://bitcoin.org/en/developer-reference#inv).
 The closest match in Skycoin is [ANNT message][], but its scope is
-limited to transactions. [Bitcoin `getdata` message][bitcoin getdata message]
+limited to transactions. [Bitcoin `getdata` message](https://bitcoin.org/en/developer-reference#getdata)
 can not be mapped one-to-one to a single Skycoin messages type but many
 e.g. to [get blocks][getb message] and to [get transactions][gett message].
 
 Skycoin transactions are exchanged immediately after an
 introduction handshake has been successfully established. Hence there
-is no equivalent to [Bitcoin `mempool` message][bitcoin mempool message].
+is no equivalent to [Bitcoin `mempool` message](https://bitcoin.org/en/developer-reference#mempool).
 There is no need for a message type equivalent to Bitcoin's
-[VerAck][bitcoin verack message].
+[VerAck](https://bitcoin.org/en/developer-reference#verack).
 
-Current version of Skycoin only operates in [blocks-first][] mode.
+Current version of Skycoin only operates in [blocks-first][/dev-docs/guides/p2p_network#blocks-first] mode.
 Hence there is no Skycoin message type equivalent to neither Bitcoin's
-[GetHeaders][bitcoin getheaders message], [Heders][bitcoin headers message],
-[SendHeaders][bitcoin sendheaders message],
-nor [MerkleBlock][bitcoin merkleblock message] message types.
+[GetHeaders](https://bitcoin.org/en/developer-reference#getheaders), [Heders](https://bitcoin.org/en/developer-reference#headers),
+[SendHeaders](https://bitcoin.org/en/developer-reference#sendheaders),
+nor [MerkleBlock](https://bitcoin.org/en/developer-reference#merkleblock) message types.
 Skycoin does not implement [Bloom filters][section creating a bloom filter]
 so it does not offer equivalents to Bitcoin's
-[FeeFilter][bitcoin feefilter message],
-[FilterAdd][bitcoin filteradd message],
-[FilterClear][bitcoin filterclear message],
-[FilterLoad][bitcoin filterload message] message types.
-Skycoin does not implement [NotFound][bitcoin notfound message],
-[Reject][bitcoin reject message],
-and [Alert][bitcoin alert message] message types either.
+[FeeFilter](https://bitcoin.org/en/developer-reference#feefilter),
+[FilterAdd](https://bitcoin.org/en/developer-reference#filteradd),
+[FilterClear](https://bitcoin.org/en/developer-reference#filterclear),
+[FilterLoad](https://bitcoin.org/en/developer-reference#filterload) message types.
+Skycoin does not implement [NotFound](https://bitcoin.org/en/developer-reference#notfound),
+[Reject](https://bitcoin.org/en/developer-reference#reject),
+and [Alert](https://bitcoin.org/en/developer-reference#alert) message types either.

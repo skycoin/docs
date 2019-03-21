@@ -13,10 +13,7 @@ http://opensource.org/licenses/MIT.
 
 - [Coin Hours Overview](#coin-hours-overview)
 - [Coin Hours Fee](#coin-hours-fee)
-    - [Coin Hours Fee Examples](#coin-hours-fee-examples)
 - [Coin Hours Use Cases](#coin-hours-use-cases)
-    - [Skywire](#skywire)
-    - [CoinJoin](#coinjoin)
 
 <!-- /MarkdownTOC -->
 
@@ -137,4 +134,4 @@ In CoinJoin servers, Coin Hours can be used as collateral during the merging and
 
 <!-- Q: Can Coin Hours play a role with CX/CXO analogous to ETH's gas with EVM? -->
 
-{{% subhead %}}
+
