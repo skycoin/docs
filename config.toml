@@ -151,15 +151,15 @@ urlGit = "https://github.com/skycoin/docs"
 [[params.social]]
   name = "Apple"
   url = "https://itunes.apple.com/nl/podcast/skycoin/id1348472259?l=en"
-  image = "images/apple.svg"  
+  image = "images/apple.svg"
 [[params.social]]
   name = "Discord"
   url = "https://discord.gg/EgBenrW"
-  image = "images/discord.svg" 
+  image = "images/discord.svg"
 [[params.social]]
   name = "Telegram"
   url = "https://t.me/Skycoin"
-  image = "images/telegram.svg" 
+  image = "images/telegram.svg"
 
 [[menu.languages]]
 name = "English"
@@ -169,5 +169,5 @@ url = "/"
 [Languages]
 [Languages.en]
 weight = -1
-title = "Skycoin DevsDocs"
+title = "Skycoin Documentation"
 languageName = "English"
