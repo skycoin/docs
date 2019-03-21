@@ -1,9 +1,4 @@
 
-{{% comment %}}
-This file is licensed under the MIT License (MIT) available on
-http://opensource.org/licenses/MIT.
-{{% /comment %}}
-
 [bitcoin addr message]: https://bitcoin.org/en/developer-reference#addr "The P2P network message which relays IP addresses and port numbers of active nodes to other nodes and clients, allowing decentralized peer discovery."
 [bitcoin alert message]: https://bitcoin.org/en/developer-reference#alert "The P2P network message which sends alerts in case of major software problems."
 [bitcoin block message]: https://bitcoin.org/en/developer-reference#block "The P2P network message which sends a serialized block"
@@ -72,4 +67,3 @@ http://opensource.org/licenses/MIT.
 [secp256k1 signature]: https://en.bitcoin.it/wiki/Secp256k1
 [direct headers announcement]: https://bitcoin.org/en/developer-guide#block-broadcasting
 [varint]: http://code.google.com/apis/protocolbuffers/docs/encoding.html "Varints are a method of encoding integers using one or more bytes; numbers with smaller absolute value take a smaller number of bytes."
-.

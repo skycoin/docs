@@ -63,6 +63,3 @@ to confirm that it your coins are recorded on the Skycoin blockchain.
 
 You can skip this step and leave your Skycoin in the exchange,
 but the exchange can keep your Skycoin or lose them to hackers, so be cautious.
-
-## Option 3 - Buy Skycoin on an exchange
-
