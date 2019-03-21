@@ -199,12 +199,6 @@ Following block validation and immediately after broadcasting
 `ANNB` message to its peers the node also broadcasts a second
 `GETB` message, now containing its updated block height.
 
-This allows the IBD node to detect potential forks in its network, by validating block by block its blockchain.
-
-{{% comment %}}
-TODO: Explain conflict resolution after finding a fork
-{/{% comment %}}
-
 ![Second GETB Message Sent During IBD](/img/en-ibd-getb2.svg)
 
 If one peer has a longer block chain it will reply with another `GIVB`
