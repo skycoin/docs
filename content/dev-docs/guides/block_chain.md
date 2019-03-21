@@ -1,14 +1,7 @@
 ---
 title: "Block Chain"
-isdate: false
 weight: 2
-filename: "/_data/dev-docs/guides/block_chain.md"
 ---
-
-{{% comment %}}
-This file is licensed under the MIT License (MIT) available on
-http://opensource.org/licenses/MIT.
-{{% /comment %}}
 
 The block chain provides Skycoin's public ledger, an ordered and timestamped record
 of transactions. This system is used to protect against double spending

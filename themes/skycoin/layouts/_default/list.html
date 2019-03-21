@@ -16,7 +16,7 @@
                     {{ range $paginator.Pages }}
                       <li class="list__item">
                           <div class="list__item-inner">
-                            {{ if .Params.isdate }}
+                            {{ if .Params.Date }}
                               <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
                             {{ end }}
                             <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>

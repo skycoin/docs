@@ -1,6 +1,5 @@
 ---
 title: "How to Purchase Skycoin"
-isdate: false
 ---
 
 Here is a short guide to purchasing Skycoin!

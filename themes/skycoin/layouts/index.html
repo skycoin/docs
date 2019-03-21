@@ -11,7 +11,7 @@
             <img  src="{{ .Params.image | relURL }}">
             {{ end }}
             <div class="meta">
-              {{ if .Params.isdate }}
+              {{ if .Params.Date }}
               <span class="meta__date">{{ .Date.Format "Jan 2 2006" }}</span>
               {{ end }}
             </div>

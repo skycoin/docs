@@ -1,6 +1,5 @@
 ---
 title: "Why bitcoin transactions are not anonymous?"
-isdate: false
 
 ---
 

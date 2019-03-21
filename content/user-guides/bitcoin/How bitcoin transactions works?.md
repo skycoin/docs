@@ -1,6 +1,5 @@
 ---
 title: "How Bitcoin transaction works?"
-isdate: false
 ---
 
 

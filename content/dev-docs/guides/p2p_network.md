@@ -1,8 +1,6 @@
 ---
 title: "P2P Network"
-isdate: false
 weight: 3
-filename: "/_data/dev-docs/guides/p2p_network.md"
 ---
 
 The Skycoin network protocol allows full nodes
@@ -230,10 +228,6 @@ in a later subsection.
 
 
 ##### Blocks-First Advantages & Disadvantages
-{:.no_toc}
-
-
-
 
 The primary advantage of blocks-first IBD is its simplicity.
 It also has disadvantages with several implications:

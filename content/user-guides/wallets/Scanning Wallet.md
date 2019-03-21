@@ -1,6 +1,5 @@
 ---
 title: "Scanning wallet"
-isdate: false
 ---
 
 

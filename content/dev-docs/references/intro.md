@@ -1,8 +1,6 @@
 ---
 title: "Introduction"
-isdate: false
 weight: 5
-filename: "/_data/dev-docs/references/intro.md"
 ---
 
 The Developer Reference aims to provide technical details and API information
@@ -25,7 +23,6 @@ definition of the term will be displayed in a tooltip.
 
 
 #### Not A Specification
-{:.no_toc}
 
 The Skycoin.net Developer Documentation describes how Skycoin works to
 help educate new Skycoin developers, but it is not a specification---and

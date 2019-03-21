@@ -1,13 +1,7 @@
 ---
 title: "Coin Hours"
-isdate: false
 weight: 5
-filename: "/content/devdocs/guides/coin_hours.md"
 ---
-{{% comment %}}
-This file is licensed under the MIT License (MIT) available on
-http://opensource.org/licenses/MIT.
-{{% /comment %}}
 
 <!-- MarkdownTOC -->
 

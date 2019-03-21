@@ -1,6 +1,5 @@
 ---
 title: "How to recover a Skycoin Wallet."
-isdate: false
 image: "user-guides/wallets/skycoin_icon.png"
 ---
 

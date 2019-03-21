@@ -1,6 +1,5 @@
 ---
 title: "Introduction"
-isdate: false
 weight: 1
 ---
 
@@ -10,7 +9,7 @@ http://opensource.org/licenses/MIT.
 {{% /comment %}}
 
 The Developer Guide aims to provide the information you need to understand
-Skycoin and start building Skycoin-based applications, but it is 
+Skycoin and start building Skycoin-based applications, but it is
 [not a specification][]. To make the best use of
 this documentation, you may want to install the current version of Skycoin core,
 either from [source][core git] or from a [pre-compiled executable][core executable].
