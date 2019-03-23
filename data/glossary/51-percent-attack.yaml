@@ -1,0 +1,9 @@
+---
+title: 51% Attack
+summary: >
+    The ability of someone controlling a majority of the network
+    to revise transaction history and prevent new
+    transactions from confirming.
+references:
+  - "[Can Skycoin be 51% Attacked?](https://www.skycoin.net/blog/posts/can-skycoin-be-51-attacked/)"
+---

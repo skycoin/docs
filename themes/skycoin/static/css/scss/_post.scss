@@ -26,7 +26,7 @@
   &__title {
     font-size: 30px;
     color: $dark-gray;
-    font-weight: bold;    
+    font-weight: bold;
   }
 
   .meta {
@@ -46,7 +46,7 @@
       color: $gray;
       font-size: 12px;
       line-height: 24px;
-      border: 1px solid $gray;	
+      border: 1px solid $gray;
       border-radius: 13px;
       padding: 0 20px;
       margin: 0 10px 10px 0;
@@ -85,18 +85,13 @@
       margin-bottom: 44px;
     }
 
-    li > ul {
-      margin-bottom: 0;
-      margin-top: 0.5rem;
-    }
-
     dd, ol, ul {
       list-style-type: unset;
-    }   
+    }
 
     ul {
       padding-left: 1rem;
-      margin-bottom: 44px;
+      margin-bottom: 24px;
       line
 
       li {
@@ -118,4 +113,14 @@
       }
     }
   }
+}
+
+.glossary-list {
+	h3 {
+		margin-bottom: 8px;
+	}
+
+	p {
+		margin-bottom: 6px;
+	}
 }

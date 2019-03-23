@@ -1,0 +1,18 @@
+<li id="{{ .title | urlize }}">
+<h3>{{ .title }}</h3>
+<p class="glossary-summary">{{ .summary }}</p>
+
+{{ if .references }}
+<p class="glossary-references">
+References:
+<ul>
+{{ range .references }}
+<li>
+{{ . | markdownify }}
+</li>
+{{ end }}
+</ul>
+{{ end }}
+</p>
+
+</li>

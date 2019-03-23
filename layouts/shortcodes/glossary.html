@@ -1,0 +1,5 @@
+<ul class="glossary-list">
+{{ range $.Site.Data.glossary }}
+   {{ partial "definition.html" . }}
+{{ end }}
+</ul>
