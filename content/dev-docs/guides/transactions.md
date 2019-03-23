@@ -65,7 +65,7 @@ In future versions of the Skycoin protocol, Coin Hours will have an exchange rat
 
 ### Avoiding Key Reuse
 
-In a regular transaction, both the sender and receiver reveal to each other all public keys or addresses used in it. This allows either person to use the public block chain to track past and future transactions involving the other person's same public keys or addresses.
+In a regular transaction, both the sender and receiver reveal to each other all public keys or addresses used in it. This allows either person to use the public blockchain to track past and future transactions involving the other person's same public keys or addresses.
 
 If the same public key is reused often, as happens when people use Bitcoin addresses (hashed public keys) as static payment addresses, other people can easily track the receiving and spending habits of that person, including how many satoshis they control in known addresses.
 
@@ -79,7 +79,7 @@ Skycoin's UXTX model eliminates several defficiencies that allow Bitcoin transac
 
 Although the modifications are non-functional---so they do not change what inputs the transaction uses nor what outputs it pays---they do change the computed hash of the transaction. Since each transaction links to previous transactions using hashes as a transaction identifier (txid), a modified transaction will not have the txid its creator expected.
 
-This isn't a problem for most Bitcoin transactions which are designed to be added to the blockchain immediately. But it does become a problem when the output from a transaction is spent before that transaction is added to the block chain.
+This isn't a problem for most Bitcoin transactions which are designed to be added to the blockchain immediately. But it does become a problem when the output from a transaction is spent before that transaction is added to the blockchain.
 
 In Skycoin, the fact that signatures are associated to UXTX inputs renders transaction malleability attacks useless.
 

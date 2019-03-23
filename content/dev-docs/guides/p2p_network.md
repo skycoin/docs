@@ -132,7 +132,7 @@ the client will assume that connection has closed.
 Before a full node can validate unconfirmed transactions and
 recent blocks, it must download and validate all blocks from
 block 1 (the block after the hardcoded genesis block) to the current tip
-of the best block chain. This is the Initial Block Download (IBD) or
+of the best blockchain. This is the Initial Block Download (IBD) or
 initial sync.
 
 Although the word "initial" implies this method is only used once, it
@@ -150,12 +150,12 @@ all the blocks which were produced since the last time it was online.
 
 Skycoin Core uses a
 simple initial block download (IBD) method we'll call *blocks-first*.
-The goal is to download the blocks from the best block chain in sequence.
+The goal is to download the blocks from the best blockchain in sequence.
 
 ![Overview Of Blocks-First Method](/img/en-blocks-first-flowchart.svg)
 
 The first time a node is started, it only has a single block in its
-local best block chain---the hardcoded genesis block (block 0).  When this
+local best blockchain---the hardcoded genesis block (block 0).  When this
 node chooses a remote peer, called the sync node, both nodes should
 automatically exchange `GETB` messages.
 
@@ -165,12 +165,12 @@ Starting node includes the local block height (i.e. `0`) in the
 message it sends to its peer sync node.
 
 Upon receipt of the `GETB` message, the sync node matches
-message block height agains its local block chain.
+message block height agains its local blockchain.
 Given the fact that nodes with signed blocks will have positive
 block heights, quite likely the sync node will reply with
 one or more `GIVB` messages including blockchain data starting
 from block 1. The number of messages depends on the length of
-the best block chain stored by peers as well as the buffering
+the best blockchain stored by peers as well as the buffering
 capacity of nodes.
 
 ![First GIVB Message Sent During IBD](/img/en-ibd-givb.svg)
@@ -189,7 +189,7 @@ Immediately after this the node broadcasts an `ANNB` message so as to
 announce the availability of new blocks to the rest of its peers.
 Upon receipt of this message, peers will follow a similar process
 and compare announced block height with its local height. Once
-they detect they are behind the longest block chain subsequent
+they detect they are behind the longest blockchain subsequent
 `GETB` messages will be sent back. The repetition of this workflow
 ensures message propagation across the [gnet network](/en/developer-guide#term-network "The Skycoin gnet P2P network which broadcasts transactions and blocks").
 
@@ -201,9 +201,9 @@ Following block validation and immediately after broadcasting
 
 ![Second GETB Message Sent During IBD](/img/en-ibd-getb2.svg)
 
-If one peer has a longer block chain it will reply with another `GIVB`
+If one peer has a longer blockchain it will reply with another `GIVB`
 message. The repetition of this workflow ensures that the IDB
-node will extend its local block chain until it eventually
+node will extend its local blockchain until it eventually
 reaches the longest path shared by its peers.
 
 ![Second GIVB Message Sent During IBD](/img/en-ibd-givb2.svg)
@@ -215,7 +215,7 @@ while IBD node validates subsequent blocks and continues sending
 ![Second ANNB Message Sent During IBD](/img/en-ibd-annb2.svg)
 
 The cycle will repeat until the IBD node is synced to
-the tip of the longest block chain. At that point, the node
+the tip of the longest blockchain. At that point, the node
 will accept blocks sent through the regular block broadcasting described
 in a later subsection.
 
@@ -236,17 +236,17 @@ It also has disadvantages with several implications:
 
 {{% comment %}}
 * **Download Restarts:** The sync node can send a non-best (but
-  otherwise valid) block chain to the IBD node. The IBD node won't be
+  otherwise valid) blockchain to the IBD node. The IBD node won't be
   able to identify it as non-best until the initial block download nears
-  completion, forcing the IBD node to restart its block chain download
+  completion, forcing the IBD node to restart its blockchain download
   over again from a different node. Bitcoin Core ships with several
-  block chain checkpoints at various block heights selected by
+  blockchain checkpoints at various block heights selected by
   developers to help an IBD node detect that it is being fed an
-  alternative block chain history---allowing the IBD node to restart
+  alternative blockchain history---allowing the IBD node to restart
   its download earlier in the process.
 
 * **Disk Fill Attacks:** Closely related to the download restarts, if
-  the sync node sends a non-best (but otherwise valid) block chain, the
+  the sync node sends a non-best (but otherwise valid) blockchain, the
   chain will be stored on disk, wasting space and possibly filling up
   the disk drive with useless data.
 {{% /comment %}}
@@ -326,7 +326,7 @@ Blocks-first nodes may download orphan blocks---blocks whose previous
 block header hash field refers to a block header this node
 hasn't seen yet. In other words, orphan blocks have no known parent
 (unlike stale blocks, which have known parents but which aren't part of
-the best block chain).
+the best blockchain).
 
 ![Difference Between Orphan And Stale Blocks](/img/en-orphan-stale-definition.svg)
 
@@ -340,7 +340,7 @@ will not match the hash ID of the block at the tip of the chain.
 Orphan blocks discarded this way will be retrasmitted and eventually
 synchronized at a later time by following [standard block relay](/en/developer-guide#term-standard-block-relay "The regular block relay method: announcing a block with an inv message and waiting for a response TODO: REVIEW")
 given the fact that local block length for the node synchronizing with
-the block chain will be smaller than the sequence number of the
+the blockchain will be smaller than the sequence number of the
 orphan block.
 
 

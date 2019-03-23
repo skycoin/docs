@@ -154,7 +154,7 @@ Skycoin GETB messages are similar to [Bitcoin getblocks message][].
 
 
 The `GETB` message requests a `GIVB` message that provides block
-header hashes starting from a particular point in the block chain. It
+header hashes starting from a particular point in the blockchain. It
 allows a peer which has been disconnected or started for the first time
 to get the data it needs to request the blocks it hasn't seen.
 A `GETB` message is exchanged between peers as a result of a successful

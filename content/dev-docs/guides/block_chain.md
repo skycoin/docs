@@ -1,24 +1,24 @@
 ---
-title: "Block Chain"
+title: "Blockchain"
 weight: 2
 ---
 
-The block chain provides Skycoin's public ledger, an ordered and timestamped record
+The blockchain provides Skycoin's public ledger, an ordered and timestamped record
 of transactions. This system is used to protect against double spending
 and modification of previous transaction records.
 
-Each full node in the Skycoin network independently stores a block chain
+Each full node in the Skycoin network independently stores a blockchain
 containing only blocks validated by that node. When several nodes all
-have the same blocks in their block chain, they are considered to be in
+have the same blocks in their blockchain, they are considered to be in
 consensus. The validation rules these
 nodes follow to maintain consensus are called consensus
 rules. This section describes many of
 the consensus rules used by Skycoin.
 
-### Block Chain Overview
+### Blockchain Overview
 
 
-The illustration above shows a simplified version of a block chain.
+The illustration above shows a simplified version of a blockchain.
 A [block][/en/glossary/block]{:#term-block}{:.term} of one or more new transactions
 is collected into the transaction data part of a block.
 Copies of each transaction are hashed, and the hashes are then paired,
@@ -40,14 +40,14 @@ previous transaction.
 A single transaction can create multiple outputs, as would be
 the case when sending to multiple addresses, but each output of
 a particular transaction can only be used as an input once in the
-block chain. Any subsequent reference is a forbidden double
+blockchain. Any subsequent reference is a forbidden double
 spend---an attempt to spend the same coins twice.
 
 Output identifiers are formed by hashing the [hash identifier (TXIDs)][/en/glossary/txid]{:#term-txid}{:.term} of the corresponding transaction, together with
 its coins, hours value and the receipt address.
 
 Because each output of a particular transaction can only be spent once,
-the outputs of all transactions included in the block chain can be categorized as either
+the outputs of all transactions included in the blockchain can be categorized as either
 [Unspent Transaction Outputs (UTXOs)][/en/glossary/unspent-transaction-output]{:#term-utxo}{:.term} or spent transaction outputs. For a
 payment to be valid, it must only use UTXOs as inputs.
 
@@ -125,7 +125,7 @@ transactions) and produce an independent research that leads to a new opinion
 ### Proof Of Burn
 
 
-The block chain is collaboratively maintained by anonymous peers on the network.
+The blockchain is collaboratively maintained by anonymous peers on the network.
 Skycoin requires that each block resulted expensive enough for a node to create
 it and include it into the blockchain in consensus to others. Skycoin consensus
 relies on the generic mechanism of proof of burn combined with statistical opinion
@@ -133,11 +133,11 @@ dynamics framework. Coins are [burned][proof of burn] as blocks are included in
 the blockchain. Therefore, opposite to other cryptocurrency consensus systems
 based on [proof of work][/en/glossary/proof-of-work]{:#term-proof-of-work}{:.term}
 Skycoin does not force nodes to spend significant amounts of life saving
-resources and assets so as to add new blocks to the block chain.
+resources and assets so as to add new blocks to the blockchain.
 Chaining blocks together makes it impossible to modify transactions included
 in any block without modifying all following blocks. As a
 result, the cost to modify a particular block increases with every new block
-added to the block chain, magnifying the effect of the proof.
+added to the blockchain, magnifying the effect of the proof.
 
 In Skycoin there is no notion of mining . No new coins are created as
 blocks are included in the blockchain. There are no rewards. There are no fees
