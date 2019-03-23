@@ -17,7 +17,21 @@
               {{ end }}
             </div>
             <h1 class="post__title">{{ .Title }}</h1>
+
+            <p>{{ .Params.summary }}</p>
+
             {{ .Content }}
+
+            {{ if .Params.references }}
+            References:
+            <ul>
+            {{ range .Params.references }}
+            <li>
+            	{{ . | markdownify }}
+            </li>
+            {{ end }}
+            </ul>
+            {{ end }}
           </section>
         </div>
       </main>

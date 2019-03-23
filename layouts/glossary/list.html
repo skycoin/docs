@@ -1,0 +1,38 @@
+{{ partial "header.html" . }}
+<div class="page-content">
+  <div class="content-container">
+    <div class="content-inner">
+      {{ partial "categories.html" . }}
+      <main class="content">
+        <div class="list">
+            {{ if .Title }}
+              <h1 class="list__title">{{ .Title }}</h1>
+            {{ end }}
+            {{ if gt (len .Data.Pages) 0}}
+              <div class="list__container">
+                <section class="list__posts">
+                  <ul class="list__list">
+                    {{ range .Data.Pages }}
+                      <li class="list__item">
+                          <div class="list__item-inner">
+                            <h4><a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a></h4>
+                            {{ .Params.summary }}
+                          </div>
+                      </li>
+                    {{ end }}
+                  </ul>
+                </section>
+              </div>
+            {{ else }}
+              <div class="post__container">
+                <section class="post__content">
+                  {{ .Content }}
+                </section>
+              </div>
+            {{ end }}
+          </div>
+      </main>
+    </div>
+  </div>
+</div>
+{{ partial "footer.html" . }}

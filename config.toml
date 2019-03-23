@@ -67,19 +67,13 @@ pygmentsCodeFencesGuessSyntax = true
 name = "User Guides"
 identifier = "user-guides"
 url = "/user-guides/"
-weight = 1
+weight = 2
 
 [[menu.docs]]
 name = "Developer docs"
 identifier = "devdocs"
 url = "/dev-docs/"
-weight = 2
-
-[[menu.docs]]
-name="Glossary"
-identifier="glossary"
-url = "/glossary/"
-weight = 3
+weight = 1
 
 [[menu.devdocs]]
 name="Guides"
@@ -93,11 +87,18 @@ identifier="references"
 url = "/dev-docs/references/"
 weight = 2
 
+# [[menu.devdocs]]
+# name="Examples"
+# identifier="example"
+# url = "/dev-docs/examples/"
+# weight = 3
+
 [[menu.devdocs]]
-name="Examples"
-identifier="example"
-url = "/dev-docs/examples/"
-weight = 3
+name="Glossary"
+identifier="glossary"
+url = "/glossary/"
+weight = 4
+
 
 [author]
 name = "Skycoin"
