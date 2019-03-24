@@ -1,7 +1,7 @@
----
-title: "How to recover a Skycoin Wallet."
-image: "user-guides/wallets/skycoin_icon.png"
----
++++
+title = "How to recover a Skycoin Wallet."
+image = "user-guides/wallets/skycoin_icon.png"
++++
 
 
 Make sure this will only work if you got your unique Seedkey f.e.

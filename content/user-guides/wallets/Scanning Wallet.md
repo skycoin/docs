@@ -1,6 +1,6 @@
----
-title: "Scanning wallet"
----
++++
+title = "Scanning wallet"
++++
 
 
 It is a tool that allows you to scan N blocks of the blockchain to keep a record of the addresses that have received or not TXs, which were the minimum and maximum blocks scanned from each address and thus create a crypto wallet, which may be have a general balance of received cryptocurrencies.

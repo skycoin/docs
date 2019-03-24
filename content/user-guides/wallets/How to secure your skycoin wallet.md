@@ -1,7 +1,7 @@
----
-title: "How to Secure Skycoin Wallet"
-image: "user-guides/wallets/skycoin_icon.png"
----
++++
+title = "How to Secure Skycoin Wallet"
+image = "user-guides/wallets/skycoin_icon.png"
++++
 
 With Skycoin gaining popularity and value every day it’s now more important than ever to make sure your coins are safe. This guide will walk you through the steps of converting your live wallet to a paper wallet to ensure your skycoin are offline and safe from would be thieves.
 

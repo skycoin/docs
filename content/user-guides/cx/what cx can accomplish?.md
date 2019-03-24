@@ -1,6 +1,6 @@
----
-title: "What cx can accomplish?"
----
++++
+title = "What cx can accomplish?"
++++
 
 **Cx** being a high-level programming language compiled and interpreted, it can be used in a wide variety of branches of computer science, such as can be used to create programs that optimize processes or even create systems highly complex. Thanks to its easy and intuitive syntax, very similar to the go or python programming language, the learning curve is very short and allows developers and software engineers to focus on solving the main problem, without having to worry about the syntax.
 

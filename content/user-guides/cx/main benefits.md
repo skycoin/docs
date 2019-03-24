@@ -1,6 +1,6 @@
----
-title: "Main benefits"
----
++++
+title = "Main benefits"
++++
 
 **cx** has a very intuitive syntax and very similar to that of the [go programming language](https://golang.org/), which allows beginners to get into the software world to start, develop their first programs and get in touch of the world of computer science and it allows expert software developers can migrate to language, learn very quickly their syntax and special features, and start developing all kinds of systems, libraries, tools, frameworks, among other things.
 

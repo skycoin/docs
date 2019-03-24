@@ -1,7 +1,7 @@
----
-title: "Why bitcoin transactions are not anonymous?"
++++
+title = "Why bitcoin transactions are not anonymous?"
 
----
++++
 
 
 Each bitcoin transaction is recorded into the blockchain, which means that anyone can trace each transaction's address until the point to see the same address being sending or receiving bitcoins more than once. Is this bad? Yeah!, would you like that someone trace your transactions or even calculate your balance?, of course not, nobody wants that. The people want to keep their privacy over their money.

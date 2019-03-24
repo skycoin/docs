@@ -1,7 +1,7 @@
----
-title: "How to install Skycoin Wallet"
-image: "user-guides/wallets/skycoin_icon.png"
----
++++
+title = "How to install Skycoin Wallet"
+image = "user-guides/wallets/skycoin_icon.png"
++++
 
 So you’ve decided on investing in the coin of the future. Well done. You have
 your skycoin on an exchange but how do you transfer it to your wallet? Well,

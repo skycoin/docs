@@ -1,6 +1,6 @@
----
-title: "How to Purchase Skycoin"
----
++++
+title = "How to Purchase Skycoin"
++++
 
 Here is a short guide to purchasing Skycoin!
 

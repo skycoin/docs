@@ -1,6 +1,6 @@
----
-title: "How Bitcoin transaction works?"
----
++++
+title = "How Bitcoin transactions work"
++++
 
 
 `Party A wants to buy an asset and party B, only accepts bitcoins.`
