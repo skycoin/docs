@@ -1,5 +1,5 @@
 +++
-title = "How to Purchase Skycoin"
+title = "How to purchase Skycoin"
 +++
 
 Here is a short guide to purchasing Skycoin!
