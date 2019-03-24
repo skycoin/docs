@@ -11,20 +11,16 @@
             {{ if gt (len .Data.Pages) 0}}
               <div class="list__container">
                 <section class="list__posts">
-                  {{ $paginator := .Paginate (.Data.Pages.ByWeight) 9 }}
                   <ul class="list__list">
-                    {{ range $paginator.Pages }}
+                    {{ range .Data.Pages }}
                       <li class="list__item">
                           <div class="list__item-inner">
-                            {{ if .Params.Date }}
-                              <span class="list__meta">{{ .Date.Format "Jan 2 2006" }}</span>
-                            {{ end }}
-                            <a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a>
+                            <h4><a class="list__link" href="{{ .URL | relLangURL }}">{{ .Title }}</a></h4>
+                            {{ .Params.summary }}
                           </div>
                       </li>
                     {{ end }}
                   </ul>
-                  {{ partial "pagination.html" . }}
                 </section>
               </div>
             {{ else }}

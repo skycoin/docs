@@ -1,10 +1,11 @@
 {{ partial "header.html" . }}
 
-<div class="page-content home-page">
+<div class="page-content">
   <div class="content-container">
     <div class="content-inner">
       {{ partial "categories.html" . }}
       <main class="content">
+
         <div class="post__container">
           <section class="post__content">
             {{if .Params.image }}
@@ -16,7 +17,21 @@
               {{ end }}
             </div>
             <h1 class="post__title">{{ .Title }}</h1>
+
+            <p>{{ .Params.summary }}</p>
+
             {{ .Content }}
+
+            {{ if .Params.references }}
+            References:
+            <ul>
+            {{ range .Params.references }}
+            <li>
+            	{{ . | markdownify }}
+            </li>
+            {{ end }}
+            </ul>
+            {{ end }}
           </section>
         </div>
       </main>
