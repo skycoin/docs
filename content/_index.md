@@ -2,7 +2,10 @@
 title = "Introduction"
 +++
 
-The Developer Reference aims to provide technical details and API information
+The [User Guide](user-guides/) provides guides and tutorials on using Skycoin and
+Skycoin software.
+
+The [Developer Reference](dev-docs/) aims to provide technical details and API information
 to help you start building Skycoin-based applications.
 To make the best use of this documentation, you may want to install the current version of Skycoin core,
 either from [source](https://github.com/skycoin/skycoin)

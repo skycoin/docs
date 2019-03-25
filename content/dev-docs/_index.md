@@ -6,4 +6,4 @@ title = "Developer Documentation"
 
 * [**Guides**](guides)
 * [**References**](references)
-* [**Examples**](examples)
+* [**Glossary**](../glossary)
