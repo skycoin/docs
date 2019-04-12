@@ -2,8 +2,6 @@
 
 # Skycoin Docs Website Documentation
 
-![](https://user-images.githubusercontent.com/26845312/32426705-d95cb988-c281-11e7-9463-a3fce8076a72.png)
-
 [![Build Status](https://travis-ci.org/skycoin/docs.svg?branch=master)](https://travis-ci.org/skycoin/docs)
 
 The documentation in this repo is uploaded to https://www.skycoin.net/docs/.
