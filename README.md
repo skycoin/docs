@@ -1,6 +1,6 @@
-# Skycoin Docs Website Documentation
+![docs](https://user-images.githubusercontent.com/8619106/56056146-02264800-5d79-11e9-8483-1c891c3c49f4.png)
 
-![](https://user-images.githubusercontent.com/26845312/32426705-d95cb988-c281-11e7-9463-a3fce8076a72.png)
+# Skycoin Docs Website Documentation
 
 [![Build Status](https://travis-ci.org/skycoin/docs.svg?branch=master)](https://travis-ci.org/skycoin/docs)
 
