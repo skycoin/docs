@@ -2,7 +2,7 @@
 
 # Skycoin Docs Website Documentation
 
-[![Build Status](https://travis-ci.org/skycoin/docs.svg?branch=master)](https://travis-ci.org/skycoin/docs)
+[![Build Status](https://travis-ci.com/skycoin/docs.svg?branch=master)](https://travis-ci.com/skycoin/docs)
 
 The documentation in this repo is uploaded to https://www.skycoin.net/docs/.
 
