@@ -7,13 +7,19 @@
   "scripts": {
     "start": "node-sass static/css/scss/main.scss static/css/main.css --watch",
     "prebuild:css": "node-sass static/css/scss/main.scss static/css/main.css",
-    "build:css": "yarn prebuild:css && postcss static/css/main.css -o static/css/main.css"
+    "build:css": "yarn prebuild:css && postcss static/css/main.css -o static/css/main.css",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "cssnano": "^3.10.0",
+    "cssnano": "^4.0.0",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.8",
     "postcss-cli": "^6.0.0"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.199.2"
   }
 }
