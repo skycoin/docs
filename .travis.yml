@@ -20,6 +20,10 @@ before_script:
 - pygmentize -V
 - python --version
 - s3cmd --version
+- echo $AWS_REGION
+- echo $AWS_ACCESS_KEY_ID
+- echo $AWS_BUCKET
+
 
 script:
 - make build
