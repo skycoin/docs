@@ -1,7 +1,3 @@
-{{% comment %}}
-This file is licensed under the MIT License (MIT) available on
-http://opensource.org/licenses/MIT.
-{{% /comment %}}
 
 # Hardware Wallet
 
@@ -132,4 +128,4 @@ The signing process can be divided into three ordered sections:
 - Compute inner hash
 - Compute signatures
 
-![long-transactions](/img/long-transactions.png)
+![long-transactions](../../img/long-transactions.png)
