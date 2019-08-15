@@ -128,4 +128,4 @@ The signing process can be divided into three ordered sections:
 - Compute inner hash
 - Compute signatures
 
-![long-transactions](../../img/long-transactions.png)
+![long-transactions](../../img/long-transaction-sm.png)
