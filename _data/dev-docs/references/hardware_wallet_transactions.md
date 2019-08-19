@@ -119,8 +119,6 @@ message TxAck {
 
 ### Protocol operation
 
-Below is a diagram oriented in time down, respecting the order of the actions and the end of the protocol that may exist during the same, both satisfactorily, cancellation or failure.
-
 At all times the Hardware Wallet contains a context with the updated information on the status of the transaction being signed, keeping this status consistent and respecting the use and order of the messages is what guarantees a correct signature of the transaction.
 
 The signing process can be divided into three ordered sections:
