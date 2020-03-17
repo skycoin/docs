@@ -16,7 +16,7 @@
     "cssnano": "^4.0.0",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.8",
-    "postcss-cli": "^6.0.0"
+    "postcss-cli": "^7.0.0"
   },
   "snyk": true,
   "dependencies": {
